@@ -343,6 +343,34 @@
       "path": "skills/better-thinking/SKILL.md"
     },
     {
+      "name": "better-thinking-design-thinking",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Explicit entry point for Design Thinking (empathize, define, ideate, (prototype), test) — fixes recipe-runner to recipes/design-thinking.md so the recipe is directly invocable by name.",
+      "triggers": "user directly invokes 'design thinking' by name, wanting the recipe run rather than explained.",
+      "related": [
+        "recipe-runner",
+        "better-thinking-lean-startup"
+      ],
+      "path": "skills/better-thinking-design-thinking/SKILL.md"
+    },
+    {
+      "name": "better-thinking-lean-startup",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Explicit entry point for Lean Startup / Build-Measure-Learn (hypothesize, build, measure, learn, persevere-or-pivot) — fixes recipe-runner to recipes/lean-startup.md so the recipe is directly invocable by name.",
+      "triggers": "user directly invokes 'lean startup' or 'build-measure-learn' by name, wanting the recipe run rather than explained.",
+      "related": [
+        "recipe-runner",
+        "better-thinking-design-thinking"
+      ],
+      "path": "skills/better-thinking-lean-startup/SKILL.md"
+    },
+    {
       "name": "competing-hypotheses",
       "type": "composite",
       "category": "analysis",
@@ -1592,34 +1620,6 @@
       "path": "skills/reductio/SKILL.md"
     },
     {
-      "name": "recipe-design-thinking",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Design Thinking (empathize, define, ideate, (prototype), test) — fixes recipe-runner to recipes/design-thinking.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'design thinking' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "recipe-lean-startup"
-      ],
-      "path": "skills/recipe-design-thinking/SKILL.md"
-    },
-    {
-      "name": "recipe-lean-startup",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Lean Startup / Build-Measure-Learn (hypothesize, build, measure, learn, persevere-or-pivot) — fixes recipe-runner to recipes/lean-startup.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'lean startup' or 'build-measure-learn' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "recipe-design-thinking"
-      ],
-      "path": "skills/recipe-lean-startup/SKILL.md"
-    },
-    {
       "name": "recipe-runner",
       "type": "composite",
       "category": "metacognition",
@@ -1631,8 +1631,8 @@
         "better-thinking",
         "scientific-method",
         "decision-analysis",
-        "recipe-design-thinking",
-        "recipe-lean-startup"
+        "better-thinking-design-thinking",
+        "better-thinking-lean-startup"
       ],
       "path": "skills/recipe-runner/SKILL.md"
     },

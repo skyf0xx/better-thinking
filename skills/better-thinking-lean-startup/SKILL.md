@@ -1,5 +1,5 @@
 ---
-name: recipe-lean-startup
+name: better-thinking-lean-startup
 description: >
   Explicit entry point for the Lean Startup / Build-Measure-Learn
   framework — hypothesize, build, measure, learn, persevere-or-pivot.
@@ -10,7 +10,7 @@ category: metacognition
 difficulty: 3
 tokens: ~400
 dependencies: [recipe-runner]
-related: [recipe-runner, recipe-design-thinking]
+related: [recipe-runner, better-thinking-design-thinking]
 ---
 
 # Recipe: Lean Startup
@@ -49,10 +49,10 @@ Auto-detection from a stage description is useful but not guaranteed to fire —
 
 ## Examples
 
-- User types `/recipe-lean-startup` on a new pricing experiment — runs the full hypothesize→pivot-or-persevere loop via `recipe-runner`.
+- User types `/better-thinking-lean-startup` on a new pricing experiment — runs the full hypothesize→pivot-or-persevere loop via `recipe-runner`.
 - A nonprofit program-design bet invoked directly by name, same mechanism, different domain — proving this shim is domain-agnostic since all domain judgment lives in the delegated skills.
 
 ## Related
 
 - [[recipe-runner]] — does all the actual work; this skill only fixes which recipe to run and makes it directly nameable.
-- [[recipe-design-thinking]] — the sibling explicit entry point for the other currently-built recipe.
+- [[better-thinking-design-thinking]] — the sibling explicit entry point for the other currently-built recipe.

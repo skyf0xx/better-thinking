@@ -1,5 +1,5 @@
 ---
-name: recipe-design-thinking
+name: better-thinking-design-thinking
 description: >
   Explicit entry point for the Design Thinking framework — empathize,
   define, ideate, (prototype), test. Use when the user directly invokes
@@ -10,7 +10,7 @@ category: metacognition
 difficulty: 3
 tokens: ~400
 dependencies: [recipe-runner]
-related: [recipe-runner, recipe-lean-startup]
+related: [recipe-runner, better-thinking-lean-startup]
 ---
 
 # Recipe: Design Thinking
@@ -49,10 +49,10 @@ Auto-detection from a stage description is useful but not guaranteed to fire —
 
 ## Examples
 
-- User types `/recipe-design-thinking` on a new product feature idea — runs the full empathize→test loop via `recipe-runner`.
+- User types `/better-thinking-design-thinking` on a new product feature idea — runs the full empathize→test loop via `recipe-runner`.
 - A support-process redesign invoked directly by name, same mechanism, different domain — proving this shim is domain-agnostic since all domain judgment lives in the delegated skills.
 
 ## Related
 
 - [[recipe-runner]] — does all the actual work; this skill only fixes which recipe to run and makes it directly nameable.
-- [[recipe-lean-startup]] — the sibling explicit entry point for the other currently-built recipe.
+- [[better-thinking-lean-startup]] — the sibling explicit entry point for the other currently-built recipe.
