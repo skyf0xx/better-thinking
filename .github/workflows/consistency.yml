@@ -1,0 +1,31 @@
+name: Consistency check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  check-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Rebuild route index and check for drift
+        run: |
+          python3 scripts/build_route_index.py
+          if ! git diff --quiet -- skills/ROUTE_INDEX.json; then
+            echo "::error::skills/ROUTE_INDEX.json is out of date. Run 'python3 scripts/build_route_index.py' and commit the result."
+            git diff -- skills/ROUTE_INDEX.json
+            exit 1
+          fi
+
+      - name: Run consistency checks
+        run: python3 scripts/check_consistency.py
