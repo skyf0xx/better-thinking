@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Better Thinking — a library of thinking procedures for Claude Code</title>
+<meta name="description" content="A Claude Code plugin: 130+ explicit thinking procedures and a dispatcher that routes each task to the right one at the right depth.">
+
+<style>
+  @font-face {
+    font-family: 'Fraunces';
+    src: local('Fraunces');
+    font-display: swap;
+  }
+
+  :root {
+    --paper: #F6F3EA;
+    --paper-dim: #EAE5D4;
+    --ink: #1B1B15;
+    --ink-soft: #4A4A3E;
+    --accent: #A8681E;
+    --accent-soft: #C9902E;
+    --sage: #6E7A64;
+    --rule: #D9D2B8;
+    --card: #FFFDF6;
+    --shadow: rgba(27, 27, 21, 0.08);
+    --mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
+    --serif: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --sans: 'InterVar', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #16160F;
+      --paper-dim: #1E1E14;
+      --ink: #EDE8D8;
+      --ink-soft: #B8B2A0;
+      --accent: #E0A857;
+      --accent-soft: #C9902E;
+      --sage: #9DAA92;
+      --rule: #37372A;
+      --card: #1D1D14;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #16160F;
+    --paper-dim: #1E1E14;
+    --ink: #EDE8D8;
+    --ink-soft: #B8B2A0;
+    --accent: #E0A857;
+    --accent-soft: #C9902E;
+    --sage: #9DAA92;
+    --rule: #37372A;
+    --card: #1D1D14;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  :root[data-theme="light"] {
+    --paper: #F6F3EA;
+    --paper-dim: #EAE5D4;
+    --ink: #1B1B15;
+    --ink-soft: #4A4A3E;
+    --accent: #A8681E;
+    --accent-soft: #C9902E;
+    --sage: #6E7A64;
+    --rule: #D9D2B8;
+    --card: #FFFDF6;
+    --shadow: rgba(27, 27, 21, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--paper);
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0;
+    border-bottom: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(1.4) blur(8px);
+  }
+
+  .site-head-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+
+  .wordmark {
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .wordmark strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  nav.site-nav {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  nav.site-nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav.site-nav a:hover, nav.site-nav a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 76px 0 64px;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  h1.hero-title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 28px;
+    text-wrap: balance;
+    max-width: 15ch;
+  }
+
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0 0 36px;
+  }
+
+  .hero-sub strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 13px 22px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--paper);
+    box-shadow: 0 1px 0 var(--shadow);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--shadow);
+  }
+
+  .btn-ghost {
+    border-color: var(--rule);
+    color: var(--ink);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* command line sample */
+  .cmd-block {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: var(--ink);
+    color: var(--paper-dim);
+    border-radius: 5px;
+    padding: 18px 22px;
+    max-width: 560px;
+    line-height: 1.7;
+    box-shadow: 0 8px 30px var(--shadow);
+  }
+
+  :root[data-theme="light"] .cmd-block,
+  :root:not([data-theme]) .cmd-block {
+    background: #21201A;
+    color: #EDE7D3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .cmd-block { background: #0E0E09; color: #DCD5BE; }
+  }
+  :root[data-theme="dark"] .cmd-block { background: #0E0E09; color: #DCD5BE; }
+
+  .cmd-line { display: flex; gap: 10px; }
+  .cmd-prompt { color: var(--sage); user-select: none; }
+  .cmd-comment { color: #8A8470; }
+
+  /* ---------- Thesis strip ---------- */
+
+  .thesis {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 46px 0;
+    background: var(--paper-dim);
+  }
+
+  .thesis .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .thesis-bad, .thesis-good {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .thesis-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .thesis-bad .thesis-label { color: #A85B3E; }
+  .thesis-good .thesis-label { color: var(--sage); }
+
+  .thesis-bad p, .thesis-good p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .thesis-good ol {
+    margin: 0;
+    padding-left: 1.2em;
+    color: var(--ink);
+  }
+
+  .thesis-good li { margin-bottom: 4px; }
+
+  @media (max-width: 720px) {
+    .thesis .wrap { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ---------- How it works ---------- */
+
+  section.flow {
+    padding: 80px 0;
+  }
+
+  .section-head {
+    margin-bottom: 48px;
+    max-width: 60ch;
+  }
+
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.4vw, 38px);
+    font-weight: 600;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .section-desc {
+    color: var(--ink-soft);
+    font-size: 16.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .flow-step {
+    background: var(--card);
+    padding: 30px 26px;
+    position: relative;
+  }
+
+  .flow-step-index {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+  }
+
+  .flow-step h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 10px;
+  }
+
+  .flow-step p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 780px) {
+    .flow-steps { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Catalog ---------- */
+
+  section.catalog {
+    padding: 10px 0 80px;
+  }
+
+  .catalog-stats {
+    display: flex;
+    gap: 40px;
+    margin: 34px 0 44px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    font-family: var(--mono);
+  }
+
+  .stat-num {
+    font-size: 34px;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+  }
+
+  .cat-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .cat-card:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+  }
+
+  .cat-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+  }
+
+  .cat-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0;
+  }
+
+  .cat-example {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .cat-example::before {
+    content: '→ ';
+    color: var(--accent-soft);
+  }
+
+  /* ---------- Example transcript ---------- */
+
+  section.transcript {
+    padding: 0 0 84px;
+  }
+
+  .term {
+    background: var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px var(--shadow);
+    border: 1px solid var(--rule);
+  }
+
+  :root[data-theme="light"] .term,
+  :root:not([data-theme]) .term {
+    background: #1D1C16;
+  }
+  @media (prefers-color-scheme: dark) {
+    .term { background: #0F0F0A; }
+  }
+  :root[data-theme="dark"] .term { background: #0F0F0A; }
+
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .term-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .term-title {
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .term-body {
+    padding: 26px 28px 32px;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: #D8D2BC;
+  }
+
+  .term-user { color: #EDE7D3; }
+  .term-user::before { content: '❯ '; color: var(--accent-soft); }
+  .term-sys { color: #8A8470; padding-left: 1.4em; display: block; }
+  .term-highlight { color: var(--accent-soft); }
+  .term-skill { color: #9DAA92; }
+
+  /* ---------- Footer ---------- */
+
+  footer.site {
+    border-top: 1px solid var(--rule);
+    padding: 42px 0 48px;
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-note {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-head-row">
+    <div class="wordmark"><strong>better</strong>-thinking</div>
+    <nav class="site-nav">
+      <a href="#flow">How it works</a>
+      <a href="#catalog">The skills</a>
+      <a href="#install">Install</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow">A Claude Code plugin</span>
+    <h1 class="hero-title">Give Claude a better <em>procedure</em>, not a harder push.</h1>
+    <p class="hero-sub">
+      Models don't get smarter when you ask them to think harder — they get better when you
+      hand them a rigorous <strong>procedure</strong> for the situation in front of them.
+      Better Thinking is a library of <strong>130+ explicit thinking methods</strong> — decision
+      analysis, root-cause investigation, competing-hypotheses evaluation — and a dispatcher
+      that picks the right one automatically.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#install">Install the plugin</a>
+      <a class="btn btn-ghost" href="#catalog">Browse the skills</a>
+    </div>
+    <div class="cmd-block">
+      <div class="cmd-line"><span class="cmd-prompt">❯</span><span>/better-thinking</span></div>
+      <div class="cmd-line"><span class="cmd-comment"># classifies the task, checks the stakes,</span></div>
+      <div class="cmd-line"><span class="cmd-comment"># routes to the right skill at the right depth</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="thesis">
+  <div class="wrap">
+    <div class="thesis-bad">
+      <span class="thesis-label">Not a persona</span>
+      <p>"Act like a senior analyst." "Think like a scientist." A costume changes tone, not rigor —
+      the model still reaches for the first reasonable-sounding answer.</p>
+    </div>
+    <div class="thesis-good">
+      <span class="thesis-label">A checklist a skilled analyst would follow</span>
+      <ol>
+        <li>Form hypotheses</li>
+        <li>Identify assumptions</li>
+        <li>Design experiments</li>
+        <li>Evaluate evidence quality</li>
+        <li>Attempt falsification</li>
+        <li>Update confidence</li>
+        <li>Report remaining uncertainty</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">How it works</span>
+      <h2 class="section-title">One command routes to the right method.</h2>
+      <p class="section-desc">
+        You don't need to memorize any skill names. Type <code>/better-thinking</code> at the
+        start of any nontrivial task and the dispatcher does the rest.
+      </p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <span class="flow-step-index">Classify</span>
+        <h3>Shape and stakes</h3>
+        <p>Is this a decision, a diagnosis, a negotiation, research, a creative task? And how
+        costly is it to get wrong or reverse?</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-index">Route</span>
+        <h3>Match to method</h3>
+        <p>The dispatcher reads a machine-indexed catalog of every skill and selects the ones
+        suited to the task — not the ones easiest to reach for.</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-index">Calibrate</span>
+        <h3>Depth follows stakes</h3>
+        <p>A quick, low-stakes question gets a fast gut-check. A costly, hard-to-reverse decision
+        gets the full structured treatment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">The catalog</span>
+      <h2 class="section-title">130+ procedures, across 13 categories.</h2>
+      <p class="section-desc">
+        Atomic skills implement one cognitive move well — <code>bayesian-updating</code>,
+        <code>steelmanning</code>, <code>premortem</code>. Composite skills orchestrate several
+        atomics into a full workflow — <code>decision-analysis</code>, <code>scientific-method</code>,
+        <code>negotiation</code>. Improve one atomic skill and every composite built on it improves too.
+      </p>
+    </div>
+
+    <div class="catalog-stats">
+      <div class="stat"><span class="stat-num">130+</span><span class="stat-label">Skills</span></div>
+      <div class="stat"><span class="stat-num">13</span><span class="stat-label">Categories</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Skill types — atomic / composite</span></div>
+    </div>
+
+    <div class="catalog-grid">
+      <div class="cat-card">
+        <span class="cat-num">01 · Reasoning</span>
+        <h3 class="cat-name">Reasoning</h3>
+        <p class="cat-example">abductive-inference, causal-analysis, deductive-validation</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">02 · Problem Solving</span>
+        <h3 class="cat-name">Problem Solving</h3>
+        <p class="cat-example">root-cause-investigation, five-whys, bottleneck-analysis</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">03 · Decision Making</span>
+        <h3 class="cat-name">Decision Making</h3>
+        <p class="cat-example">decision-analysis, expected-value, premortem</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">04 · Research</span>
+        <h3 class="cat-name">Research</h3>
+        <p class="cat-example">claim-verification, evidence-triangulation, source-credibility</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">05 · Analysis</span>
+        <h3 class="cat-name">Analysis</h3>
+        <p class="cat-example">competing-hypotheses, differential-diagnosis, sensitivity-analysis</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">06 · Systems &amp; Strategy</span>
+        <h3 class="cat-name">Systems &amp; Strategy</h3>
+        <p class="cat-example">systems-mapping, leverage-points, strategic-planning</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">07 · Forecasting</span>
+        <h3 class="cat-name">Forecasting</h3>
+        <p class="cat-example">reference-class-forecasting, scenario-planning, monte-carlo-reasoning</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">08 · Creativity</span>
+        <h3 class="cat-name">Creativity</h3>
+        <p class="cat-example">divergent-ideation, scamper, creative-constraints</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">09 · Communication</span>
+        <h3 class="cat-name">Communication</h3>
+        <p class="cat-example">audience-modeling, pyramid-structuring, executive-summarization</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">10 · Collaboration</span>
+        <h3 class="cat-name">Collaboration</h3>
+        <p class="cat-example">active-listening, negotiation, conflict-mediation</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">11 · Learning</span>
+        <h3 class="cat-name">Learning</h3>
+        <p class="cat-example">curriculum-design, deliberate-practice-design, error-analysis</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">12 · Metacognition</span>
+        <h3 class="cat-name">Metacognition</h3>
+        <p class="cat-example">after-action-review, bias-audit, confidence-calibration</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">13 · Ethics</span>
+        <h3 class="cat-name">Ethics</h3>
+        <p class="cat-example">ethical-framework-rotation, stakeholder-impact, value-tradeoffs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="transcript">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">In practice</span>
+      <h2 class="section-title">What routing actually looks like.</h2>
+    </div>
+    <div class="term">
+      <div class="term-bar">
+        <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+        <span class="term-title">claude — better-thinking</span>
+      </div>
+      <div class="term-body">
+        <div class="term-user">/better-thinking should we migrate the billing service to a new database before Q3?</div>
+        <span class="term-sys">classifying task… decision, costly + hard to reverse</span>
+        <span class="term-sys">routing → <span class="term-skill">decision-analysis</span> (composite)</span>
+        <span class="term-sys">  invoking <span class="term-skill">decision-framing</span> → options, decider, criteria, deadline</span>
+        <span class="term-sys">  invoking <span class="term-skill">premortem</span> → imagine the migration failed — why?</span>
+        <span class="term-sys">  invoking <span class="term-skill">sensitivity-analysis</span> → which assumptions the call hinges on</span>
+        <span class="term-sys" style="margin-top: 14px; display:block;">— versus —</span>
+        <div class="term-user" style="margin-top:14px;">/better-thinking why did the retry logic double-charge three users last night?</div>
+        <span class="term-sys">classifying task… diagnosis, needs a fast, checkable answer</span>
+        <span class="term-sys">routing → <span class="term-skill">root-cause-investigation</span></span>
+        <span class="term-sys">  invoking <span class="term-skill">five-whys</span> → symptom to mechanism, stopping at a fixable cause</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site" id="install">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:28px;">
+      <span class="section-eyebrow">Install</span>
+      <h2 class="section-title">Install steps live in the README.</h2>
+    </div>
+    <div class="hero-ctas" style="margin-bottom:36px;">
+      <a class="btn btn-primary" href="https://github.com/skyf0xx/better-thinking#installation">Installation instructions on GitHub</a>
+    </div>
+    <div class="footer-row">
+      <p class="footer-note">
+        130+ skills, one dispatcher. Every skill is a procedure, never a persona.
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/skyf0xx/better-thinking">GitHub</a>
+        <a href="#catalog">Skill index</a>
+        <a href="#flow">How it works</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

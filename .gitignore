@@ -1,2 +1,7 @@
 .claude
 .serena
+
+# zenbin.org publish key material — never commit private keys
+site/.zenbin/
+zenbin_key.json
+*.zenbin-key.json
