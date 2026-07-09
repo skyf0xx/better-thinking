@@ -5,8 +5,8 @@
     "recipes/*.md"
   ],
   "counts": {
-    "total": 135,
-    "built": 135
+    "total": 131,
+    "built": 131
   },
   "skills": [
     {
@@ -341,79 +341,6 @@
         "recipe-runner"
       ],
       "path": "skills/better-thinking/SKILL.md"
-    },
-    {
-      "name": "better-thinking-design-thinking",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Design Thinking (empathize, define, ideate, (prototype), test) — fixes recipe-runner to recipes/design-thinking.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'design thinking' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "better-thinking-lean-startup"
-      ],
-      "path": "skills/better-thinking-design-thinking/SKILL.md"
-    },
-    {
-      "name": "better-thinking-lean-startup",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Lean Startup / Build-Measure-Learn (hypothesize, build, measure, learn, persevere-or-pivot) — fixes recipe-runner to recipes/lean-startup.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'lean startup' or 'build-measure-learn' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "better-thinking-design-thinking"
-      ],
-      "path": "skills/better-thinking-lean-startup/SKILL.md"
-    },
-    {
-      "name": "better-thinking-jobs-to-be-done",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Jobs-to-be-Done (decompose, interview, triangulate, rank rival explanations, audit thesis) — fixes recipe-runner to recipes/jobs-to-be-done.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'jobs-to-be-done' or 'JTBD' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "better-thinking-rice-prioritization",
-        "better-thinking-five-forces-strategy"
-      ],
-      "path": "skills/better-thinking-jobs-to-be-done/SKILL.md"
-    },
-    {
-      "name": "better-thinking-rice-prioritization",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for RICE Prioritization (decompose backlog, score reach/impact/confidence, price effort, sequence) — fixes recipe-runner to recipes/rice-prioritization.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'RICE' or 'RICE prioritization' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "better-thinking-jobs-to-be-done",
-        "better-thinking-five-forces-strategy"
-      ],
-      "path": "skills/better-thinking-rice-prioritization/SKILL.md"
-    },
-    {
-      "name": "better-thinking-five-forces-strategy",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 3,
-      "status": "built",
-      "one_line": "Explicit entry point for Porter's Five Forces (map forces, analyze incentives, map system, scenario-test, decide posture) — fixes recipe-runner to recipes/five-forces-strategy.md so the recipe is directly invocable by name.",
-      "triggers": "user directly invokes 'Five Forces' or 'Porter's Five Forces' by name, wanting the recipe run rather than explained.",
-      "related": [
-        "recipe-runner",
-        "better-thinking-jobs-to-be-done",
-        "better-thinking-rice-prioritization"
-      ],
-      "path": "skills/better-thinking-five-forces-strategy/SKILL.md"
     },
     {
       "name": "competing-hypotheses",
@@ -1676,11 +1603,7 @@
         "better-thinking",
         "scientific-method",
         "decision-analysis",
-        "better-thinking-design-thinking",
-        "better-thinking-lean-startup",
-        "better-thinking-jobs-to-be-done",
-        "better-thinking-rice-prioritization",
-        "better-thinking-five-forces-strategy"
+        "better-thinking-recipes"
       ],
       "path": "skills/recipe-runner/SKILL.md"
     },
@@ -2327,6 +2250,20 @@
         }
       ],
       "path": "skills/working-backwards/SKILL.md"
+    },
+    {
+      "name": "better-thinking-recipes",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Lists every named external framework recipe with a one-line description and runs whichever one the user picks via recipe-runner.",
+      "triggers": "user invokes this command directly, asks what recipes/frameworks are available, or wants to browse before naming one.",
+      "related": [
+        "recipe-runner",
+        "better-thinking"
+      ],
+      "path": "skills/better-thinking-recipes/SKILL.md"
     }
   ]
 }

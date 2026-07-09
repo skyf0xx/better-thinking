@@ -21,7 +21,7 @@
 
 Recipe docs stay pure content — no new skill is required to make a recipe executable. [[recipe-runner]] (`skills/recipe-runner/SKILL.md`) is a composite skill that bridges this directory into the routable skill system: name a framework (or describe its stages) and `recipe-runner` finds the matching doc here and executes its stage sequence as one orchestrated pass, instead of leaving the mapping as reference material a human has to walk manually. Adding a recipe here makes it auto-detectable for free — no per-recipe skill needed.
 
-For recipes reached for often enough to deserve their own direct slash command, a thin shim skill can also be added, prefixed `better-thinking-` so every recipe (and the dispatcher itself) shares one discoverable stem (e.g. `skills/better-thinking-design-thinking/SKILL.md`, invocable as `/better-thinking-design-thinking`). Its entire procedure is "invoke `recipe-runner` fixed to this recipe" — it holds no orchestration logic of its own, just a name and a fixed parameter. This is optional per recipe: `recipe-runner`'s auto-detection alone is enough for a recipe to work; the shim only adds a shortcut for direct, explicit invocation.
+Two commands cover discovery and direct invocation for the whole directory: [[better-thinking-recipes]] (`/better-thinking-recipes`) lists every recipe here with a one-line description and runs whichever one the user picks; naming a framework directly (or describing its stages) also reaches it through `recipe-runner`'s own auto-detection. There is no per-recipe shim skill — a new recipe added here is reachable through both commands automatically, no new skill file needed.
 
 ## Adding a new recipe
 
