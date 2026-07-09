@@ -1,14 +1,12 @@
 {
-  "$schema_note": "Machine-readable companion to TAXONOMY.md, generated from skills/*/SKILL.md frontmatter, catalog/*.md (for cataloged_not_built entries). Consulted by skills/better-thinking/SKILL.md before skill selection. Not a substitute for reading a skill's full SKILL.md before invoking it.",
+  "$schema_note": "Machine-readable companion to TAXONOMY.md, generated from skills/*/SKILL.md frontmatter. Consulted by skills/better-thinking/SKILL.md before skill selection. Not a substitute for reading a skill's full SKILL.md before invoking it.",
   "generated_from": [
     "skills/*/SKILL.md",
-    "catalog/*.md",
     "recipes/*.md"
   ],
   "counts": {
     "total": 131,
-    "built": 131,
-    "cataloged_not_built": 0
+    "built": 131
   },
   "skills": [
     {

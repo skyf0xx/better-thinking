@@ -10,13 +10,13 @@ Checks, with no dependencies beyond the stdlib:
   5. skills/INDEX.json <-> frontmatter: name/type/category/difficulty/related
      in the index match the SKILL.md frontmatter (index is generated from it).
   6. No dangling [[wiki-links]]: every link in a built skill's body or
-     frontmatter `related`/`dependencies` resolves to a built or
-     cataloged_not_built name in INDEX.json.
+     frontmatter `related`/`dependencies` resolves to a built name in
+     INDEX.json.
   7. Every name mentioned in catalog/*.md (backtick + difficulty marker) has a
-     corresponding INDEX.json entry (built or cataloged_not_built) -- names
-     that exist only in catalog prose, with nothing tracking them, are silent
-     gaps (see e.g. the scientific-method incident this script was written
-     to catch in the future).
+     corresponding built INDEX.json entry -- names that exist only in catalog
+     prose, with nothing built, are silent gaps (see e.g. the
+     scientific-method incident this script was written to catch in the
+     future).
 
 Exit code 0 if clean, 1 if any errors found. Run from repo root:
     python3 scripts/check_consistency.py
