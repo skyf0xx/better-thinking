@@ -1,0 +1,20 @@
+{
+  "name": "cognitive-algorithms",
+  "displayName": "Cognitive Algorithms",
+  "description": "An operating system for cognition: 121 composable Agent Skills that encode transferable thinking procedures (reasoning, decision-making, research, analysis, forecasting, creativity, communication, collaboration, learning, metacognition, ethics), routed through a cognitive-triage dispatcher backed by a machine-readable index.",
+  "version": "0.4.0",
+  "author": {
+    "name": "Will"
+  },
+  "homepage": "https://github.com/skyf0xx/cognitive-algorithms",
+  "repository": "https://github.com/skyf0xx/cognitive-algorithms",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "cognition",
+    "reasoning",
+    "decision-making",
+    "metacognition",
+    "agent-skills"
+  ]
+}

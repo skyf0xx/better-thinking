@@ -4,6 +4,24 @@
 
 Each Skill is a **reusable cognitive algorithm**: a repeatable, domain-independent thinking procedure that can be invoked on its own or composed with other Skills.
 
+## Installation
+
+This repo is a Claude Code plugin. Install it directly from GitHub:
+
+```
+/plugin marketplace add skyf0xx/cognitive-algorithms
+/plugin install cognitive-algorithms@cognitive-algorithms
+```
+
+Or from a local clone:
+
+```
+/plugin marketplace add /path/to/cognitive-algorithms
+/plugin install cognitive-algorithms@cognitive-algorithms
+```
+
+This registers all 121 skills for discovery. Start any nontrivial task with `cognitive-triage` (or let it auto-route) — it reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
+
 ## What a Skill is (and is not)
 
 A Skill encodes a *procedure*, never a *persona*.
