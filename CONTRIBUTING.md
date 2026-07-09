@@ -1,10 +1,10 @@
 # Contributing
 
-Better Thinking is a library of thinking *procedures*, not a library of prompts, personas, or reference docs. Every contribution — new skill, edit, or recipe — is judged against that bar. If in doubt, read [SKILL_TEMPLATE.md](SKILL_TEMPLATE.md) and [TAXONOMY.md](TAXONOMY.md) before opening a PR; this doc is the process, those are the spec.
+Better Thinking is a library of thinking *procedures*, not a library of prompts, personas, or reference docs. Every contribution — new skill, edit, or recipe — is judged against that bar. If in doubt, read [SKILL_TEMPLATE.md](SKILL_TEMPLATE.md) before opening a PR; that doc is the process and the spec.
 
 ## Before you start
 
-- **Search first.** Check [TAXONOMY.md](TAXONOMY.md) and [skills/INDEX.json](skills/INDEX.json) for something that already covers your idea, atomically or as part of a composite. Near-duplicate skills fragment routing quality.
+- **Search first.** Check [skills/INDEX.json](skills/INDEX.json) for something that already covers your idea, atomically or as part of a composite. Near-duplicate skills fragment routing quality.
 - **Ask: is this a thinking process, or is it domain knowledge?** Excluded by design: programming languages, framework/API knowledge, professional personas, static reference material. A skill must be transferable across unrelated domains — if you can't imagine it applying to both a medical question and a legal one, it's probably not a skill.
 - **Decide atomic vs. composite.**
   - **Atomic** = one cognitive move, done well, executable standalone. No required dependencies.
@@ -20,13 +20,12 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
    - Examples must span **at least two unrelated domains** — this is the transferability test.
    - Composite procedures must name the atomic skill they invoke (e.g. "Run `assumption-audit` on the leading hypothesis"), never inline its logic.
 4. **Stay in budget.** Token estimate (chars ÷ 4) is enforced: atomic skills ≤ 900 tokens, composite ≤ 1,700. If a skill keeps pushing past its ceiling, it's doing too much — split it.
-5. **Update `skills/INDEX.json`.** Add an entry matching your `SKILL.md` frontmatter (`name`, `type`, `category`, `difficulty`, `status: "built"`, `one_line`, `triggers`, `related`, `path`). This file is the machine-readable companion to `TAXONOMY.md` and is what the `/better-thinking` dispatcher reads to route — an undocumented skill is invisible to it.
-6. **Update `TAXONOMY.md`** under the relevant category so the human-facing index stays in sync with `INDEX.json`.
-7. **Cross-link `related` skills both directions.** If skill A lists skill B as related, B should list A back.
+5. **Update `skills/INDEX.json`.** Add an entry matching your `SKILL.md` frontmatter (`name`, `type`, `category`, `difficulty`, `status: "built"`, `one_line`, `triggers`, `related`, `path`). This is what the `/better-thinking` dispatcher reads to route — an undocumented skill is invisible to it.
+6. **Cross-link `related` skills both directions.** If skill A lists skill B as related, B should list A back.
 
 ## Editing an existing skill
 
-- Keep the frontmatter and body in sync — if you change `dependencies`, `difficulty`, or `related`, update `skills/INDEX.json` and `TAXONOMY.md` to match.
+- Keep the frontmatter and body in sync — if you change `dependencies`, `difficulty`, or `related`, update `skills/INDEX.json` to match.
 - Don't widen an atomic skill into a composite (adding dependencies) without renaming it clearly and re-checking every skill that lists it as `related`.
 - Preserve cross-domain examples when editing — don't collapse them into a single domain for brevity.
 
@@ -48,8 +47,8 @@ Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning
 - [ ] No personas — procedure only
 - [ ] Final procedure step reports residual uncertainty
 - [ ] `skills/INDEX.json` updated with a matching entry
-- [ ] `TAXONOMY.md` updated under the correct category
 - [ ] `related` links added both directions
+- [ ] `python3 scripts/check_consistency.py` passes
 
 ## Questions
 

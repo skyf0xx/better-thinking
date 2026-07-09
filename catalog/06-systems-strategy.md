@@ -63,7 +63,7 @@ Locate the single binding constraint in a system and subordinate all other impro
   7. Repeat — identify where the constraint moved to next.
 - **Mistakes:** optimizing a non-constraint stage because it's easier or more visible; adding capacity before exploiting (expensive fix for a cheap problem); declaring victory after one round instead of repeating.
 - **Examples:** a hiring pipeline bottlenecked at reference checks, not sourcing; a factory line's slowest station; an engineering org bottlenecked at code review, not coding; a sales funnel's actual drop-off stage.
-- **Related:** [[constraint-relaxation]], [[systems-mapping]], [[prioritization-triage]]. **Prereqs:** none.
+- **Related:** [[systems-mapping]], [[prioritization-triage]]. **Prereqs:** none.
 
 ---
 

@@ -7,8 +7,8 @@
   ],
   "counts": {
     "total": 131,
-    "built": 124,
-    "cataloged_not_built": 7
+    "built": 131,
+    "cataloged_not_built": 0
   },
   "skills": [
     {
@@ -224,7 +224,6 @@
       "one_line": "Locate the single binding constraint in a system and subordinate all other improvement effort to it.",
       "triggers": "improvement effort feels diffuse or isn't moving the outcome metric; \"everything is a priority\"; a process has an obvious slow point everyone routes around instead of fixing.",
       "related": [
-        "constraint-relaxation",
         "systems-mapping",
         "prioritization-triage"
       ],
@@ -304,7 +303,6 @@
         "epistemic-tagging"
       ],
       "related": [
-        "literature-synthesis",
         "critical-reading"
       ],
       "path": "skills/claim-verification/SKILL.md"
@@ -376,7 +374,6 @@
       "triggers": "two domains both seem relevant but neither alone solves the problem; naming or designing something that needs to evoke two different ideas at once.",
       "related": [
         "analogical-reasoning",
-        "triz-contradiction",
         "random-stimulus"
       ],
       "path": "skills/concept-blending/SKILL.md"
@@ -472,8 +469,6 @@
       "one_line": "Deliberately add artificial constraints to a generative task, since bounded problems provoke more inventive solutions than open ones.",
       "triggers": "ideation under full freedom is producing only conventional output; a team needs to break out of \"the way we've always done it.\"",
       "related": [
-        "constraint-relaxation",
-        "triz-contradiction",
         "divergent-ideation"
       ],
       "path": "skills/creative-constraints/SKILL.md"
@@ -813,8 +808,14 @@
       "type": "atomic",
       "category": "research",
       "difficulty": 3,
-      "status": "cataloged_not_built",
-      "one_line": "Rank the available evidence by its strength for the specific claim class \u2014 because evidence types have different power for different kinds of questions.",
+      "status": "built",
+      "one_line": "Rank the available evidence by its strength for the specific claim class, because evidence types have different power for different kinds of questions.",
+      "triggers": "evidence conflicts; a decision leans on \"studies show\" or \"experts say\"; synthesizing mixed material.",
+      "related": [
+        "methodology-critique",
+        "statistical-audit",
+        "bayesian-updating"
+      ],
       "path": "skills/evidence-hierarchy/SKILL.md"
     },
     {
@@ -968,8 +969,13 @@
       "type": "atomic",
       "category": "reasoning",
       "difficulty": 3,
-      "status": "cataloged_not_built",
+      "status": "built",
       "one_line": "Decompose a problem into base truths and rebuild the solution without inherited assumptions.",
+      "triggers": "the standard answer feels expensive, impossible, or arbitrary; entering a novel domain; someone says \"that's just how it's done.\"",
+      "related": [
+        "assumption-audit",
+        "chestertons-fence"
+      ],
       "path": "skills/first-principles/SKILL.md"
     },
     {
@@ -1099,6 +1105,28 @@
       "path": "skills/interest-based-bargaining/SKILL.md"
     },
     {
+      "name": "interview-synthesis",
+      "type": "composite",
+      "category": "research",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Design non-leading questions, conduct inquiry-driven interviews, and cluster raw responses into findings that survive scrutiny.",
+      "triggers": "the knowledge lives in people's experience \u2014 users, experts, witnesses, stakeholders; validating assumptions about what others think or do.",
+      "dependencies": [
+        "question-decomposition",
+        "active-listening",
+        "precision-questioning",
+        "inductive-generalization",
+        "epistemic-tagging",
+        "frame-detection"
+      ],
+      "related": [
+        "delphi-aggregation",
+        "empathy-mapping"
+      ],
+      "path": "skills/interview-synthesis/SKILL.md"
+    },
+    {
       "name": "inversion",
       "type": "atomic",
       "category": "problem-solving",
@@ -1213,8 +1241,14 @@
       "type": "atomic",
       "category": "research",
       "difficulty": 4,
-      "status": "cataloged_not_built",
-      "one_line": "Find the design flaws that break a study's claimed inference \u2014 auditing how the knowledge was manufactured, not just what it concludes.",
+      "status": "built",
+      "one_line": "Find the design flaws that break a study's claimed inference, auditing how the knowledge was manufactured rather than just what it concludes.",
+      "triggers": "a study anchors a decision; findings conflict across studies; results are surprising or suspiciously aligned with the funder.",
+      "related": [
+        "evidence-hierarchy",
+        "statistical-audit",
+        "peer-review"
+      ],
       "path": "skills/methodology-critique/SKILL.md"
     },
     {
@@ -1456,8 +1490,14 @@
       "type": "atomic",
       "category": "metacognition",
       "difficulty": 2,
-      "status": "cataloged_not_built",
-      "one_line": "Periodically compare actual progress against the plan, and explicitly decide whether to continue, adjust, or replan \u2014 rather than drifting on autopilot.",
+      "status": "built",
+      "one_line": "Periodically compare actual progress against the plan, and explicitly decide whether to continue, adjust, or replan, rather than drifting on autopilot.",
+      "triggers": "any plan or project extending over multiple work sessions, especially after decision-analysis or ooda-loop commits to a course of action.",
+      "related": [
+        "tripwires",
+        "after-action-review",
+        "ooda-loop"
+      ],
       "path": "skills/progress-monitoring/SKILL.md"
     },
     {
@@ -1583,15 +1623,6 @@
         "structured-forecasting"
       ],
       "path": "skills/reference-class-forecasting/SKILL.md"
-    },
-    {
-      "name": "regret-minimization",
-      "type": "atomic",
-      "category": "decision-making",
-      "difficulty": 1,
-      "status": "cataloged_not_built",
-      "one_line": "Evaluate options from the projected perspective of your future self, distinguishing regret over action from regret over inaction.",
-      "path": "skills/regret-minimization/SKILL.md"
     },
     {
       "name": "retrospective-facilitation",
@@ -1734,8 +1765,7 @@
       "triggers": "improving or reinventing something that already exists; stuck after direct brainstorming; a mature product or process needs fresh angles.",
       "related": [
         "divergent-ideation",
-        "morphological-analysis",
-        "triz-contradiction"
+        "morphological-analysis"
       ],
       "path": "skills/scamper/SKILL.md"
     },
@@ -1761,6 +1791,22 @@
         "decision-analysis"
       ],
       "path": "skills/scenario-planning/SKILL.md"
+    },
+    {
+      "name": "scientific-method",
+      "type": "composite",
+      "category": "research",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "The full empirical loop: hypothesize, operationalize predictions, design a test that could fail, run it, attempt falsification, and update.",
+      "triggers": "a belief is testable and consequential, or a debate could be settled by looking instead of arguing.",
+      "related": [
+        "differential-diagnosis",
+        "structured-forecasting",
+        "decision-analysis",
+        "structured-problem-solving"
+      ],
+      "path": "skills/scientific-method/SKILL.md"
     },
     {
       "name": "search-strategy",
@@ -1872,10 +1918,13 @@
       "type": "atomic",
       "category": "problem-solving",
       "difficulty": 2,
-      "status": "cataloged_not_built",
+      "status": "built",
       "one_line": "Enumerate the families of possible solutions before evaluating any candidate, so the choice is made from the full space rather than the first basin found.",
-      "referenced_by": [
-        "decision-analysis"
+      "triggers": "about to commit design, architecture, or strategy effort to the first plausible approach; someone asks \"what are our options?\"",
+      "related": [
+        "morphological-analysis",
+        "divergent-ideation",
+        "decision-framing"
       ],
       "path": "skills/solution-space-mapping/SKILL.md"
     },
@@ -1929,10 +1978,12 @@
       "type": "atomic",
       "category": "research",
       "difficulty": 4,
-      "status": "cataloged_not_built",
+      "status": "built",
       "one_line": "Interrogate quantitative claims: base rates, denominators, comparison groups, significance, effect size, and the path the number took to reach you.",
-      "referenced_by": [
-        "lean-startup (recipe)"
+      "triggers": "any statistic used to persuade \u2014 \"X% more,\" \"studies show,\" \"record high,\" rankings, risk figures.",
+      "related": [
+        "bayesian-updating",
+        "methodology-critique"
       ],
       "path": "skills/statistical-audit/SKILL.md"
     },
@@ -2191,7 +2242,6 @@
       "triggers": "planning toward a fixed outcome or deadline; the goal is clear but the path to it isn't; writing the \"press release\" before building the product it describes.",
       "related": [
         "backcasting",
-        "means-ends-analysis",
         "premortem"
       ],
       "disambiguates_from": [

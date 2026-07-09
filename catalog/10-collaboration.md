@@ -234,16 +234,15 @@ GROW: goal, reality, options, will — a question-led dialogue that helps someon
 
 - **Why:** Advice handed down is more easily discarded than an insight someone reaches themselves, and often misses context the advisor doesn't have. A well-run question sequence gets to a better, more owned outcome than direct instruction — at the cost of taking longer.
 - **Inputs:** a person facing a decision or challenge, in a coaching (not directing) relationship → **Outputs:** the person's own articulated goal, honest assessment of current reality, generated options, and a committed next action.
-- **Dependencies:** `active-listening`, `precision-questioning`, `divergent-ideation` (lightweight), `regret-minimization` (optional).
+- **Dependencies:** `active-listening`, `precision-questioning`, `divergent-ideation` (lightweight).
 - **Activate when:** the person has the capability to solve their own problem and would benefit more from ownership than from a direct answer; a mentoring or management relationship where growth matters, not just the immediate outcome. **Skip when:** the situation needs a fast, directive answer — an emergency, a clear policy question, or genuine lack of relevant knowledge on the coachee's part where teaching (see [[socratic-teaching]] or direct instruction) is more appropriate.
 - **Principles:** ask, don't tell — the coach's job is to sharpen the coachee's own thinking via questions, resisting the urge to supply the answer; reality must be assessed honestly before options are generated, or the options solve the wrong problem; the "will" stage must produce a specific commitment, not a vague intention, or the dialogue doesn't translate into change.
 - **Procedure:**
   1. **Goal:** ask what they want from this conversation and, more broadly, from the situation — sharpen a vague goal into something specific via `precision-questioning`.
   2. **Reality:** ask what's actually happening now — facts, not story; use `active-listening` to draw out the honest picture, including what they might be avoiding.
   3. **Options:** ask what options they see, deferring judgment (`divergent-ideation` lightweight) — resist supplying your own options unless genuinely stuck, and even then offer rather than prescribe.
-  4. Optionally use `regret-minimization` framing if the block is fear-driven rather than option-scarce.
-  5. **Will:** ask what they'll actually commit to, by when, and what might get in the way — press for specificity.
-  6. Close by having them state the commitment in their own words.
+  4. **Will:** ask what they'll actually commit to, by when, and what might get in the way — press for specificity.
+  5. Close by having them state the commitment in their own words.
 - **Mistakes:** answering your own questions when the coachee pauses (collapses back into advice-giving); rushing to options before reality is honestly assessed; ending without a specific, owned commitment, leaving the conversation as pleasant but inert.
 - **Examples:** a manager's 1:1 helping a report work through a stuck project; an executive coaching session; a mentor helping a mentee decide between paths.
 - **Related:** [[active-listening]], [[socratic-teaching]], [[feedback-delivery]].

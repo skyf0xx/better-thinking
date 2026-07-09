@@ -9,7 +9,7 @@ category: systems-strategy
 difficulty: 2
 tokens: ~750
 dependencies: []
-related: [constraint-relaxation, systems-mapping, prioritization-triage]
+related: [systems-mapping, prioritization-triage]
 ---
 
 # Bottleneck Analysis
@@ -60,6 +60,5 @@ Improving anything that isn't the constraint doesn't change system throughput �
 
 ## Related
 
-- [[constraint-relaxation]] — a complementary technique for testing which constraints actually bind.
 - [[systems-mapping]] — supplies the structural model this analysis works within.
 - [[prioritization-triage]] — treats capacity as a constraint problem at the portfolio level.

@@ -10,7 +10,7 @@ category: problem-solving
 difficulty: 2
 tokens: ~820
 dependencies: []
-related: [backcasting, means-ends-analysis, premortem]
+related: [backcasting, premortem]
 ---
 
 # Working Backwards
@@ -61,5 +61,4 @@ Forward planning from the present explores a huge branching space and drifts tow
 ## Related
 
 - [[backcasting]] — the same core move applied at a longer, strategic horizon with a deliberately chosen future.
-- [[means-ends-analysis]] — subgoaling within this skill's recursion is itself a form of backward chaining.
 - [[premortem]] — a natural next step to stress-test the resulting plan before committing to it.

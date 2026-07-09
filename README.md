@@ -6,7 +6,7 @@ Models don't get smarter when you ask them to think harder - they get better whe
 
 Structured reasoning (naming assumptions, weighing alternatives, checking evidence) reliably produces better answers than "think step by step" ever could, but Claude usually defaults to the first reasonable-sounding approach instead of the rigorous one for the situation.
 
-Better Thinking is a plugin that gives it a library of 121 explicit thinking procedures, e.g.:
+Better Thinking is a plugin that gives it a library of 131 explicit thinking procedures, e.g.:
 
 1. How to run a proper decision analysis.
 2. How to debug from symptoms to root cause.
@@ -18,7 +18,7 @@ Think of it less like a persona ("act like an analyst") and more like a checklis
 
 ![Skill ecosystem: composite skills orchestrate atomic skills](assets/ecosystem.png)
 
-![13 categories, 121 skills](assets/skills.png)
+![13 categories, 131 skills](assets/skills.png)
 
 ## How to activate it
 
@@ -34,7 +34,7 @@ That's it. It looks at what you're asking, classifies the task (is this a decisi
 
 A quick, low-stakes question gets a fast gut-check; a costly, hard-to-reverse decision gets the full structured treatment.
 
-You don't need to memorize any of the 121 skill names - `/better-thinking` reads the index and routes for you.
+You don't need to memorize any of the 131 skill names - `/better-thinking` reads the index and routes for you.
 
 ![From task to insight](assets/insight.png)
 
@@ -54,7 +54,7 @@ Or from a local clone:
 /plugin install better-thinking@better-thinking
 ```
 
-This registers all 121 skills for discovery. It reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
+This registers all 131 skills for discovery. It reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
 
 ## What a Skill is (and is not)
 
@@ -88,7 +88,6 @@ This keeps the ecosystem modular: improving one atomic skill upgrades every comp
 ```
 README.md               ← you are here
 SKILL_TEMPLATE.md       ← canonical template every skill follows
-TAXONOMY.md             ← hierarchical index of all skills
 catalog/                ← full specification of every skill, by category
   01-reasoning.md
   02-problem-solving.md

@@ -124,25 +124,6 @@ Trace the consequences of consequences — asking "and then what?" through at le
 
 ---
 
-### regret-minimization `atomic · D1 · ~350 tok`
-Evaluate options from the projected perspective of your future self, distinguishing regret over action from regret over inaction.
-
-- **Why:** Present-tense evaluation overweights near-term discomfort and social friction. The long-horizon vantage reweights toward what durably matters — and captures the asymmetry that inaction-regret tends to grow while action-regret tends to fade.
-- **Inputs:** a personally significant choice → **Outputs:** a regret assessment per option and a recommendation, flagged as one input among several.
-- **Activate when:** choices trading near-term cost against long-term meaning (career moves, endings, commitments); when fear is plausibly the real decision-maker. **Skip when:** the decision is analytic with commensurable outcomes — use [[expected-value]]; this skill is a values probe, not a calculator.
-- **Principles:** project to a horizon where today's frictions have depreciated; regret-of-omission compounds, regret-of-commission is usually repairable and educational; the projection reveals *values*, not probabilities — it complements analysis, never replaces it.
-- **Procedure:**
-  1. Project to a concrete distant vantage (age 80, ten years out).
-  2. From there, look back at each option: taken and failed, taken and succeeded, not taken at all.
-  3. Rate anticipated regret per branch; note the omission/commission asymmetry.
-  4. Ask what the regret pattern reveals about actual values; check against the stated criteria of the decision.
-  5. Feed the result into the broader decision as one weighted input.
-- **Mistakes:** using it as the sole criterion (it ignores probabilities and costs); projecting current preferences unchanged onto a future self; romantic bias — assuming all bold choices age well.
-- **Examples:** leaving a stable role for a risky venture; whether to attempt a difficult reconciliation; an organization deciding whether to cannibalize its own product.
-- **Related:** [[value-tradeoffs]], [[reversibility-classification]], [[decision-framing]]. **Prereqs:** none.
-
----
-
 ### satisficing-thresholds `atomic · D2 · ~400 tok`
 Define "good enough" criteria in advance, then take the first option that clears them — bounding search cost on decisions that don't reward optimization.
 

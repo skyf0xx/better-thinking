@@ -59,28 +59,7 @@ Start from a concrete goal state and chain prerequisites backwards until reachin
   6. Sanity-check forward: walk the chain front-to-back looking for hidden gaps.
 - **Mistakes:** vague goal states ("be successful") that can't anchor the chain; forgetting the forward pass (backward chains can skip enabling conditions that seem obvious); treating the chain as the only path.
 - **Examples:** planning a product launch from the launch date backwards; deriving tonight's experiment from the thesis defense; structuring a legal case from the verdict you need.
-- **Related:** [[backcasting]] (same move at strategy horizon), [[means-ends-analysis]], [[premortem]] (stress-tests the resulting plan). **Prereqs:** none.
-
----
-
-### means-ends-analysis `atomic · D3 · ~450 tok`
-Repeatedly identify the biggest difference between the current state and the goal state, and apply the operator that best reduces it.
-
-- **Why:** When no complete plan is visible, difference-reduction makes progress anyway — and its explicit bookkeeping (state, differences, operators) prevents the wandering that unstructured effort produces.
-- **Inputs:** current state, goal state, and a repertoire of available operators/actions → **Outputs:** a sequence of applied operators, or a precise statement of the blocking difference no operator addresses.
-- **Activate when:** navigating toward a goal with no known route (debugging, negotiation gaps, research programs); classic "I know where I want to be but not how." **Skip when:** a known algorithm or full plan exists — just execute it.
-- **Principles:** name the differences explicitly, then rank by importance; if the best operator can't apply yet, achieving *its preconditions* becomes the new subgoal (this recursion is the engine); watch for loops — reducing one difference by enlarging another.
-- **Procedure:**
-  1. Describe current state and goal state in comparable terms.
-  2. List the differences; rank by importance.
-  3. Select the operator most relevant to the top difference.
-  4. If it applies: apply it, reassess state, return to step 2.
-  5. If it doesn't apply: set up its preconditions as a subgoal and recurse.
-  6. If no operator touches the top difference: report the blocking gap precisely — that statement is itself progress.
-  7. Track visited states; if cycling, escalate to [[problem-framing]] or [[constraint-relaxation]].
-- **Mistakes:** hill-climbing into dead ends (sometimes the path increases the difference temporarily); grinding on the tractable difference instead of the important one; failing to notice a loop.
-- **Examples:** debugging by reducing the diff between expected and actual behavior; closing a negotiation gap term by term; getting a stuck proof to the known-lemma frontier.
-- **Related:** [[working-backwards]] (subgoaling is backward chaining), [[bottleneck-analysis]]. **Prereqs:** none.
+- **Related:** [[backcasting]] (same move at strategy horizon), [[premortem]] (stress-tests the resulting plan). **Prereqs:** none.
 
 ---
 
@@ -100,26 +79,6 @@ Solve the opposite problem — "how would I guarantee failure?" — and negate t
 - **Mistakes:** producing only exotic failure modes while missing the mundane ones (neglect, drift, boredom); treating the guardrail list as a strategy; stopping at listing without auditing the current plan against it.
 - **Examples:** "how would I make this migration fail?" → no rollback plan, big-bang cutover; "how would I ruin this hire's first month?"; "how do I guarantee nobody reads this report?"
 - **Related:** [[premortem]] (inversion applied to a specific plan with a timeline), [[devils-advocacy]]. **Prereqs:** none.
-
----
-
-### constraint-relaxation `atomic · D2 · ~450 tok`
-Remove constraints one at a time to discover which ones actually bind, which are self-imposed, and what solutions live just outside them.
-
-- **Why:** Stuck problems are usually over-constrained, and several of the constraints are assumptions nobody decided. Systematically relaxing them separates the physics from the habit and reveals where the solution space actually opens up.
-- **Inputs:** a stuck problem + its constraint list (explicit and implicit) → **Outputs:** classification of each constraint (hard / negotiable / self-imposed), and candidate solutions unlocked by each relaxation.
-- **Activate when:** all candidate solutions violate something; the problem feels impossible; costs seem irreducible. **Skip when:** the problem is under-constrained — add constraints instead ([[creative-constraints]]).
-- **Principles:** implicit constraints (assumed budget, assumed actor, assumed sequence) bind harder than stated ones because nobody examines them; relax one at a time or you learn nothing about which mattered; "what would you do with infinite X?" is a probe, not a plan — the value is seeing which solutions *almost* survive realistic X.
-- **Procedure:**
-  1. List all constraints — stated ones, then hunt for implicit ones (who, when, how much, in what order, using what).
-  2. For each, ask: who imposed this, and what happens if violated? Classify hard / negotiable / self-imposed.
-  3. Relax constraints one at a time; for each relaxation, sketch the best solution now available.
-  4. For each attractive unlocked solution, ask: what's the *minimum* relaxation that keeps it viable?
-  5. Take negotiable constraints that block good solutions back to their owners.
-  6. Report: which constraint binds, and the best solution per feasible relaxation.
-- **Mistakes:** relaxing several constraints at once; treating organizational constraints as physical ones (or vice versa); enjoying the fantasy solutions without running step 4.
-- **Examples:** "the report must be weekly" — says who?; assuming the fix must avoid downtime when a 5-minute window is available; assuming the team can't hire contractors.
-- **Related:** [[first-principles]], [[triz-contradiction]], [[bottleneck-analysis]] (the quantitative sibling). **Prereqs:** none.
 
 ---
 
@@ -160,26 +119,6 @@ Enumerate the *families* of possible solutions before evaluating any candidate, 
 - **Mistakes:** listing five variants of one approach and calling it a space; skipping the do-nothing baseline; evaluating while enumerating (kills generation); losing the rejected-families record.
 - **Examples:** reducing churn — product fixes vs pricing vs onboarding vs customer selection vs expectations-setting; treating pain — remove cause vs block signal vs raise tolerance; scaling a service — optimize vs shard vs cache vs shed load vs renegotiate the SLA.
 - **Related:** [[morphological-analysis]] (the systematic-combinatorial version), [[divergent-ideation]], [[decision-framing]]. **Prereqs:** [[problem-framing]] recommended.
-
----
-
-### triz-contradiction `atomic · D4 · ~550 tok`
-Resolve "improving X necessarily worsens Y" by refusing the trade-off and applying contradiction-breaking patterns instead.
-
-- **Why:** Trade-off acceptance is the default failure of mature optimization: teams split the difference forever. TRIZ's insight is that inventive solutions usually *dissolve* the contradiction — the trade-off was an artifact of one design assumption.
-- **Inputs:** a stated trade-off between two desired properties → **Outputs:** the contradiction stated sharply, candidate dissolutions via standard patterns, and the assumption each dissolution breaks.
-- **Activate when:** every option sacrifices something important; a parameter has been pushed to a "fundamental" limit; the team is negotiating percentages of a compromise. **Skip when:** the trade-off is genuinely thermodynamic/information-theoretic — verify before accepting, but they exist.
-- **Principles:** state the contradiction at physical/mechanism level, not preference level; most contradictions dissolve by *separation* — the two demands don't actually apply at the same time, place, scale, or condition; someone in another domain has solved this contradiction's abstract form.
-- **Procedure:**
-  1. State the contradiction: improving property A by mechanism M worsens property B because ⟨causal link⟩.
-  2. Interrogate the causal link — the contradiction lives there, not in A or B.
-  3. Try separation patterns: in **time** (A when needed, B otherwise), in **space** (A here, B there), in **scale** (A at the part level, B at the system level), on **condition** (A under load, B at rest).
-  4. Try transformation patterns: segmentation, asymmetry, do-it-in-advance, turn the harm into a benefit, self-service (the system provides its own fix).
-  5. For each candidate, name the design assumption it abandons.
-  6. Verify the top candidate against the actual constraint set; report which contradiction remains, if any.
-- **Mistakes:** stating the contradiction at preference level ("cheap vs good") where no mechanism is visible; treating separation as a hack rather than the solution; giving up because the first pattern doesn't apply.
-- **Examples:** strong-but-light (composites: strength at micro-scale, lightness at macro); secure-but-usable (strict auth only on sensitive actions — separation on condition); fast-release-but-stable (feature flags — separation in space/population).
-- **Related:** [[constraint-relaxation]], [[first-principles]], [[concept-blending]]. **Prereqs:** [[causal-analysis]] helps with step 2.
 
 ---
 

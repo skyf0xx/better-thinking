@@ -10,7 +10,7 @@ category: creativity
 difficulty: 3
 tokens: ~780
 dependencies: []
-related: [analogical-reasoning, triz-contradiction, random-stimulus]
+related: [analogical-reasoning, random-stimulus]
 ---
 
 # Concept Blending
@@ -61,5 +61,4 @@ Some of the most novel ideas aren't found in either source domain but emerge spe
 ## Related
 
 - [[analogical-reasoning]] — the simpler transfer move this skill goes beyond.
-- [[triz-contradiction]] — another mechanism for combining incompatible demands.
 - [[random-stimulus]] — a lighter-weight technique for forcing an unrelated connection.

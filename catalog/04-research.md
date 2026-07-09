@@ -141,27 +141,7 @@ Interrogate quantitative claims: base rates, denominators, comparison groups, si
   7. Verdict: what the number honestly supports, what it's being used to imply, and the gap between them.
 - **Mistakes:** relative risk without absolute risk ("40% increase" of something rare); comparing raw counts across differently-sized populations; percentage-of-percentage confusion; assuming a precise number is an accurate one; being *so* suspicious that all numbers are dismissed — the audit grades, it doesn't nuke.
 - **Examples:** "crime doubled" (from 2 to 4 incidents); a fund's returns (surviving funds only); "users spend 3× longer" (which users, doing what, vs when); a medical screening's impressive sensitivity hiding a base-rate collapse.
-- **Related:** [[bayesian-updating]] (base-rate machinery), [[methodology-critique]] (upstream: how the number was made), [[data-quality-assessment]]. **Prereqs:** none.
-
----
-
-### data-quality-assessment `atomic · D3 · ~450 tok`
-Evaluate a dataset's provenance, completeness, bias, and fitness-for-purpose before any conclusion is drawn from it.
-
-- **Why:** Analysis quality is capped by data quality, and datasets misrepresent silently: missing rows are invisible, collection artifacts look like patterns, and definitions drift mid-series. Auditing the data first is cheaper than retracting the conclusion later.
-- **Inputs:** a dataset + the question it's meant to answer → **Outputs:** a fitness verdict with known defects, their likely direction of bias, and no-go zones (questions this data cannot answer).
-- **Activate when:** any analysis on data you didn't collect; a pattern seems too clean; merging sources; the data is a byproduct of a process built for something else (most data). **Skip when:** the data's pedigree was established for this exact use.
-- **Principles:** ask how the data was *born* — measurement instrument, incentive of the recorder, what triggers a record existing at all; missingness is rarely random — model *why* rows are absent; a definition that changed mid-series creates fake trends; data collected for operations answers operational questions — repurposing needs re-validation.
-- **Procedure:**
-  1. Provenance: who recorded this, with what instrument, under what incentive, for what original purpose?
-  2. Coverage: what population/time does it actually span vs what the question needs? Who or what never generates a record?
-  3. Missingness: how much, and is it correlated with the outcome of interest?
-  4. Consistency: definition changes, unit changes, pipeline changes mid-series? Duplicates, impossible values ([[sanity-checking]] on distributions)?
-  5. Bias direction: for each defect, which way does it push conclusions?
-  6. Verdict: fit / fit-with-corrections / unfit-for-this-question — and which questions it *can* still answer.
-- **Mistakes:** treating big as clean (volume doesn't fix bias); imputing missingness as if random; discovering the definition change after publishing the trend; using operational exhaust to answer causal questions without noticing the selection process.
-- **Examples:** support tickets as a proxy for user sentiment (only angry-enough users file); crime statistics reflecting enforcement patterns; historical medical records with changed diagnostic criteria.
-- **Related:** [[statistical-audit]] (downstream), [[causal-analysis]] (selection effects), [[source-credibility]]. **Prereqs:** none.
+- **Related:** [[bayesian-updating]] (base-rate machinery), [[methodology-critique]] (upstream: how the number was made). **Prereqs:** none.
 
 ---
 
@@ -203,30 +183,7 @@ Journalism-grade fact-checking of a specific claim: decompose it, trace to origi
   6. Grade: verified / verified-with-distortion (true origin, mutated in transit) / unsupported / false / unverifiable. Tag residual uncertainty (`epistemic-tagging`).
 - **Mistakes:** verifying the paraphrase instead of the claim; stopping at a "reputable" repeater; treating the origin's existence as its correctness; over-verifying trivia while load-bearing claims skate.
 - **Examples:** a statistic in a strategy memo before board presentation; a historical "quote"; a rival's benchmark claim; a viral study result.
-- **Related:** [[literature-synthesis]] (many claims, one field), [[critical-reading]] (upstream extraction of what to verify).
-
----
-
-### literature-synthesis `composite · D4 · ~950 tok`
-Systematic survey of what's known on a question: gather comprehensively, grade quality, extract findings, reconcile conflicts, and map the frontier.
-
-- **Why:** Cherry-picked literature supports anything. A synthesis with explicit inclusion rules and quality grading yields the *distribution* of evidence — including the disagreements and gaps that single-study reading hides.
-- **Inputs:** a research question → **Outputs:** a synthesis: consensus findings with strength grades, live disagreements with their cruxes, known gaps, and an annotated source map.
-- **Dependencies:** `question-decomposition`, `search-strategy`, `methodology-critique`, `evidence-hierarchy`, `evidence-triangulation`, `statistical-audit`, `executive-summarization`.
-- **Activate when:** a field's state-of-knowledge matters for a decision or a research program; before forming a strong opinion in a contested area. **Skip when:** one authoritative synthesis already exists — critique that instead.
-- **Principles:** define inclusion criteria *before* searching, or the conclusion picks the corpus; weight by quality, not by count — twenty weak studies don't outvote two strong ones; disagreement gets *explained* (different populations? methods? definitions?), not averaged; the gaps are a first-class output.
-- **Procedure:**
-  1. Run `question-decomposition`; set inclusion criteria (scope, dates, evidence types) and write them down.
-  2. Run `search-strategy` for comprehensiveness — multiple source types, forward and backward citation-chasing, explicit hunt for negative results.
-  3. Screen against the criteria; log exclusions and why (the exclusion log is your defense against cherry-picking accusations, including your own).
-  4. Grade each included source: `methodology-critique` for the load-bearing ones, `evidence-hierarchy` placement for all.
-  5. Extract findings into a common frame (population, intervention/variable, outcome, effect, quality).
-  6. Synthesize: where does quality-weighted evidence converge? Where it conflicts, run the reconciliation — do the studies actually measure the same thing on the same populations? Most "conflicts" dissolve into scope differences; the residue is the real frontier.
-  7. Map gaps: what has nobody studied, and what would the highest-value next study be?
-  8. Report via `executive-summarization`: consensus, contested, unknown — each with its strength grade.
-- **Mistakes:** search stopping at the convenient corpus (one database, one language, one decade); counting studies instead of weighing them; averaging over a real disagreement; presenting the synthesis without its exclusion log; letting the first review paper found define the frame.
-- **Examples:** what's known about remote work and productivity; the evidence on a clinical intervention; prior art before committing a research agenda; the actual literature behind a popularized claim.
-- **Related:** [[claim-verification]] (single-claim version), [[scientific-method]] (generates what this consumes).
+- **Related:** [[critical-reading]] (upstream extraction of what to verify).
 
 ---
 

@@ -42,7 +42,7 @@ Transform an existing thing by systematically applying seven operations: Substit
   9. Collect the resulting ideas; hand to convergence.
 - **Mistakes:** only applying the operations that feel comfortable and skipping the rest; treating the output of each operation as a finished idea rather than raw material; running it without a clear starting artifact.
 - **Examples:** redesigning an onboarding flow; reinventing a stale product line; improving a recurring meeting format; revising a pricing model.
-- **Related:** [[divergent-ideation]], [[morphological-analysis]], [[triz-contradiction]]. **Prereqs:** none.
+- **Related:** [[divergent-ideation]], [[morphological-analysis]]. **Prereqs:** none.
 
 ---
 
@@ -101,7 +101,7 @@ Deliberately add artificial constraints to a generative task, since bounded prob
   5. Keep the ideas that survive constraint removal; discard pure workarounds unless the constraint is permanent.
 - **Mistakes:** choosing a constraint too weak to eliminate the default answer; forgetting to test ideas after removing the constraint (keeping brittle workarounds); applying constraints to an already tightly-constrained problem, adding friction without payoff.
 - **Examples:** "design this with zero budget" to find the truly essential feature; "explain this in one sentence" to force clarity; a writing exercise banning the most common word in the genre.
-- **Related:** [[constraint-relaxation]] (the inverse move), [[triz-contradiction]], [[divergent-ideation]]. **Prereqs:** none.
+- **Related:** [[divergent-ideation]]. **Prereqs:** none.
 
 ---
 
@@ -121,7 +121,7 @@ Merge two distinct conceptual frames into a new blended space, then develop the 
   6. Develop the useful ones into concrete ideas.
 - **Mistakes:** producing a superficial mashup (just naming two things together) instead of running the blend's emergent logic forward; forcing a blend where the frames don't share enough structure to merge coherently; stopping at the mapping step without generating the emergent properties, which is where the actual creative payoff is.
 - **Examples:** a "wiki" (encyclopedia + open collaborative editing) as a blend with emergent properties (versioning, edit wars) neither source predicted; gamification blending game mechanics with a non-game task; a hybrid organizational structure blending startup and cooperative governance.
-- **Related:** [[analogical-reasoning]], [[triz-contradiction]], [[random-stimulus]]. **Prereqs:** none.
+- **Related:** [[analogical-reasoning]], [[random-stimulus]]. **Prereqs:** none.
 
 ---
 

@@ -9,7 +9,7 @@ category: research
 difficulty: 3
 tokens: ~850
 dependencies: [question-decomposition, search-strategy, source-credibility, evidence-triangulation, statistical-audit, epistemic-tagging]
-related: [literature-synthesis, critical-reading]
+related: [critical-reading]
 ---
 
 # Claim Verification
@@ -61,5 +61,4 @@ Claims travel farther than their evidence. A repeatable verification pipeline re
 
 ## Related
 
-- [[literature-synthesis]] — the many-claims, one-field version of this same discipline.
 - [[critical-reading]] — the upstream extraction step that identifies which claims are actually worth verifying.

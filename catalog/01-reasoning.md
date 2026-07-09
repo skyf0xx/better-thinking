@@ -21,7 +21,7 @@ Decompose a problem into base truths and rebuild the solution without inherited 
   7. Report which discarded assumptions carry the most risk if you're wrong about them.
 - **Mistakes:** stopping decomposition one level too early (treating a convention as a law); rebuilding into the same design by anchoring; using it on well-solved problems where convention encodes real learning.
 - **Examples:** questioning why a rocket costs $60M when its materials cost $2M; asking why a hiring process requires degrees; re-deriving a pricing model from unit costs instead of competitor prices.
-- **Related:** [[assumption-audit]] (the extraction step generalized), [[chestertons-fence]] (the counterweight — understand before discarding), [[constraint-relaxation]]. **Prereqs:** none.
+- **Related:** [[assumption-audit]] (the extraction step generalized), [[chestertons-fence]] (the counterweight — understand before discarding). **Prereqs:** none.
 
 ---
 

@@ -10,7 +10,7 @@ category: creativity
 difficulty: 1
 tokens: ~750
 dependencies: []
-related: [divergent-ideation, morphological-analysis, triz-contradiction]
+related: [divergent-ideation, morphological-analysis]
 ---
 
 # SCAMPER
@@ -65,4 +65,3 @@ Most novel ideas are recombinations or transformations of existing ones, not cre
 
 - [[divergent-ideation]] — the broader generation discipline this technique sits inside.
 - [[morphological-analysis]] — the systematic-combinatorial sibling.
-- [[triz-contradiction]] — for when transformation must resolve a genuine tradeoff, not just vary a feature.

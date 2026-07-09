@@ -9,7 +9,7 @@ category: creativity
 difficulty: 2
 tokens: ~740
 dependencies: []
-related: [constraint-relaxation, triz-contradiction, divergent-ideation]
+related: [divergent-ideation]
 ---
 
 # Creative Constraints
@@ -58,6 +58,4 @@ Unlimited freedom paradoxically produces conventional output — without a forci
 
 ## Related
 
-- [[constraint-relaxation]] — the inverse move, removing rather than adding constraints.
-- [[triz-contradiction]] — for constraints that force resolving an actual tradeoff.
 - [[divergent-ideation]] — the generation discipline this constraint is applied within.
