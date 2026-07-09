@@ -1,5 +1,7 @@
 # Better Thinking
 
+![Better Thinking](assets/hero.png)
+
 Models don't get smarter when you ask them to think harder - they get better when you give them a better *procedure* to think with.
 
 Structured reasoning (naming assumptions, weighing alternatives, checking evidence) reliably produces better answers than "think step by step" ever could, but Claude usually defaults to the first reasonable-sounding approach instead of the rigorous one for the situation.
@@ -14,6 +16,10 @@ Better Thinking has a dispatcher that picks the right method for the task in fro
 
 Think of it less like a persona ("act like an analyst") and more like a checklist a skilled analyst would actually follow.
 
+![Skill ecosystem: composite skills orchestrate atomic skills](assets/ecosystem.png)
+
+![13 categories, 121 skills](assets/skills.png)
+
 ## How to activate it
 
 Once installed (see below), just start any nontrivial task by typing:
@@ -24,9 +30,13 @@ Once installed (see below), just start any nontrivial task by typing:
 
 That's it. It looks at what you're asking, classifies the task (is this a decision? a diagnosis? a negotiation? research?) and how much is riding on it, then pulls in the right thinking skill(s) at the right depth automatically.
 
+![Task, dispatcher, tailored procedure](assets/process.png)
+
 A quick, low-stakes question gets a fast gut-check; a costly, hard-to-reverse decision gets the full structured treatment.
 
 You don't need to memorize any of the 121 skill names - `/better-thinking` reads the index and routes for you.
+
+![From task to insight](assets/insight.png)
 
 ## Installation
 
