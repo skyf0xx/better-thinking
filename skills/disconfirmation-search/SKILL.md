@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: metacognition
 difficulty: 2
-tokens: ~500
+tokens: ~800
 dependencies: []
 related: [bias-audit, bayesian-updating, scientific-method]
 ---
@@ -19,38 +19,38 @@ Ask "what would change my mind?" and then actually go look for it, rather than o
 
 ## Why
 
-The mind is fluent at generating supporting evidence for whatever it already believes, and sluggish at generating counter-evidence unprompted. Explicitly asking what would disconfirm the belief — and then actually searching for exactly that — is the single most reliable counter to confirmation bias available, and it's cheap enough to run on nearly every consequential conclusion.
+The mind is fluent at generating supporting evidence for what it already believes, and sluggish at generating counter-evidence unprompted. Explicitly asking what would disconfirm the belief — then actually searching for it — is the most reliable counter to confirmation bias available.
 
 ## Use when / Don't use when
 
-- **Use when:** a conclusion feels settled or obvious; before committing to a belief-driven action; as the final step of most reasoning processes, especially forecasting and diagnosis.
-- **Don't use when:** the belief is genuinely inconsequential and nothing hinges on whether it's right.
+- **Use when:** a conclusion feels settled or obvious; before committing to a belief-driven action; as a final check on most reasoning processes.
+- **Don't use when:** the belief is genuinely inconsequential.
 
 ## Inputs → Outputs
 
 - **Inputs:** a belief or conclusion held with some confidence.
-- **Outputs:** the specific evidence that would change the belief, and the result of an actual search for it (found / not found / inconclusive).
+- **Outputs:** the specific evidence that would change the belief, and the result of an actual search for it.
 
 ## Principles
 
-- The question "what would change my mind?" must produce a *specific, checkable* answer — "if I saw evidence against it" is not specific enough to actually search for.
-- If nothing comes to mind that would change the belief, the belief isn't actually evidence-based — it's a commitment, and that's worth knowing explicitly.
-- Actually go look. Asking the question rhetorically without searching captures none of the benefit.
+- "What would change my mind?" must produce a *specific, checkable* answer — "if I saw evidence against it" isn't specific enough to search for.
+- If nothing comes to mind, the belief isn't evidence-based — it's a commitment, worth knowing explicitly.
+- Actually go look. Asking rhetorically without searching captures none of the benefit.
 
 ## Procedure
 
 1. State the belief precisely.
-2. Ask: what specific observation, if it existed, would make me doubt or abandon this belief?
-3. If nothing comes to mind, that itself is the finding — flag the belief as currently unfalsifiable and examine why (is it actually well-supported, or just comfortable?).
-4. If a specific disconfirming observation is named, actively search for it — don't just note it hypothetically and move on.
-5. If found: update the belief accordingly, proportional to what was found.
-6. If genuinely not found after a real search: report increased — not absolute — confidence, since the search itself is evidence, and state how thorough the search actually was as the residual uncertainty.
+2. Ask: what specific observation would make me doubt or abandon this belief?
+3. If nothing comes to mind, that's the finding — flag the belief as unfalsifiable and examine why.
+4. If a specific observation is named, actively search for it — don't just note it hypothetically.
+5. If found: update the belief proportionally.
+6. If not found after a real search: report increased, not absolute, confidence, and state how thorough the search was as residual uncertainty.
 
 ## Common mistakes
 
-- Asking the question rhetorically without actually searching for the answer.
-- Naming a disconfirming condition so extreme or unlikely that the search is meaningless theater.
-- Treating "I looked and didn't find it" as proof rather than as evidence that should update confidence only proportionally to how hard and how well you actually looked.
+- Asking the question rhetorically without actually searching.
+- Naming a disconfirming condition so extreme the search is meaningless theater.
+- Treating "I looked and didn't find it" as proof rather than evidence proportional to search effort.
 
 ## Examples
 

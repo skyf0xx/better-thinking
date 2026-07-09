@@ -9,7 +9,7 @@ description: >
 type: atomic
 category: metacognition
 difficulty: 2
-tokens: ~500
+tokens: ~830
 dependencies: []
 related: [reversibility-classification, cognitive-triage, satisficing-thresholds]
 ---
@@ -20,43 +20,43 @@ Match the depth of analysis applied to a task to its actual stakes and reversibi
 
 ## Why
 
-Effort allocation is rarely deliberate — it tracks how interesting or comfortable a task is, not its actual importance. Left unchecked, this produces two failure modes at once: costly negligence on decisions that matter, and analysis-paralysis on ones that don't. Explicitly calibrating effort to stakes fixes the allocation before either failure mode has a chance to happen.
+Effort allocation is rarely deliberate — it tracks how interesting a task is, not its actual importance. Unchecked, this produces two failures at once: negligence on decisions that matter, and analysis-paralysis on ones that don't.
 
 ## Use when / Don't use when
 
-- **Use when:** paired with [[cognitive-triage]] on every nontrivial task; whenever you notice you're speeding through something important or laboring over something trivial.
-- **Don't use when:** never skip it — this runs as a standing check alongside triage, not as an optional add-on.
+- **Use when:** paired with [[cognitive-triage]] on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.
+- **Don't use when:** never skip it — a standing check alongside triage, not an optional add-on.
 
 ## Inputs → Outputs
 
 - **Inputs:** a task plus its stakes/reversibility assessment.
-- **Outputs:** an explicit effort level (quick call / moderate analysis / full process) matched to that assessment.
+- **Outputs:** an explicit effort level (quick call / moderate analysis / full process).
 
 ## Principles
 
-- Stakes and reversibility — not interest level, not social pressure, not how the task happened to be phrased — should set the effort dial.
-- The cost of over-analysis (time, opportunity cost, decision fatigue that degrades later choices) is real and should be weighed, not treated as free.
-- When genuinely unsure how much a task matters, that uncertainty is itself informative — err toward a bit more care until it resolves, rather than defaulting low.
+- Stakes and reversibility — not interest level, not social pressure — should set the effort dial.
+- The cost of over-analysis (time, opportunity cost, decision fatigue) is real and should be weighed, not treated as free.
+- When genuinely unsure how much a task matters, that uncertainty is informative — err toward more care until it resolves.
 
 ## Procedure
 
 1. Assess stakes: what's the actual cost of a wrong call here?
-2. Assess reversibility: how expensive is it to correct later if the call turns out wrong? (Use [[reversibility-classification]] if this isn't immediately obvious.)
-3. Set the effort level explicitly: a quick heuristic call for low stakes or easy reversibility, a moderate structured analysis for meaningful-but-correctable stakes, or a full rigorous process for high stakes that are hard to reverse.
-4. Notice and correct mismatches — are you spending senior-decision-level effort on a reversible triviality, or dashing through something that actually deserves real analysis?
-5. Proceed at the calibrated level. Don't second-guess the choice mid-task unless new information genuinely changes the stakes assessment; note explicitly if the level was uncertain and could plausibly have been set higher.
+2. Assess reversibility: how expensive is correcting it later? (Use [[reversibility-classification]] if unclear.)
+3. Set the effort level explicitly: quick heuristic call for low stakes, moderate structured analysis for meaningful-but-correctable stakes, or a full rigorous process for high, hard-to-reverse stakes.
+4. Notice and correct mismatches — senior-level effort on a reversible triviality, or a dash through something that deserves real analysis.
+5. Proceed at the calibrated level. Don't second-guess mid-task unless new information changes the stakes assessment; note explicitly if the level was uncertain.
 
 ## Common mistakes
 
 - Letting how *interesting* a problem is, rather than its stakes, set the effort level.
-- Treating all decisions as equally deserving of full rigor — this burns out the capacity to actually apply full rigor where it matters most.
-- Under-investing in a high-stakes call because taking it seriously feels socially awkward or slow.
+- Treating all decisions as equally deserving of full rigor, burning out the capacity to apply it where it matters most.
+- Under-investing in a high-stakes call because taking it seriously feels socially awkward.
 
 ## Examples
 
-- Spending five minutes on a reversible internal tool choice instead of a week of comparison.
-- Giving a one-way-door hiring decision the full structured process instead of a snap read based on rapport.
-- Deliberately not over-processing a cheap, quickly-correctable experiment, so the team's analytical capacity stays available for the decisions that actually need it.
+- Spending five minutes on a reversible tool choice instead of a week of comparison.
+- Giving a one-way-door hiring decision the full process instead of a snap read.
+- Deliberately not over-processing a cheap, correctable experiment.
 
 ## Related
 

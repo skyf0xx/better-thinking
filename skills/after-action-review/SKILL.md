@@ -8,7 +8,7 @@ description: >
 type: composite
 category: metacognition
 difficulty: 2
-tokens: ~900
+tokens: ~1110
 dependencies: [counterfactual-reasoning, decision-journaling, epistemic-tagging]
 related: [retrospective-facilitation, root-cause-investigation]
 ---

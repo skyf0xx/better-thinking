@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: analysis
 difficulty: 2
-tokens: ~500
+tokens: ~880
 dependencies: []
 related: [devils-advocacy, argument-mapping, reductio]
 ---

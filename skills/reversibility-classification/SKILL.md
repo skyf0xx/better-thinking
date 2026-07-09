@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: decision-making
 difficulty: 1
-tokens: ~450
+tokens: ~890
 dependencies: []
 related: [effort-calibration, decision-framing, cognitive-triage]
 ---

@@ -9,7 +9,7 @@ description: >
 type: atomic
 category: metacognition
 difficulty: 3
-tokens: ~550
+tokens: ~860
 dependencies: []
 related: [disconfirmation-search, devils-advocacy, confidence-calibration, cognitive-triage]
 ---
@@ -20,37 +20,37 @@ Run a targeted checklist of the specific cognitive biases a given task shape inv
 
 ## Why
 
-Generic bias-awareness rarely changes behavior because it isn't targeted — different task shapes invite different specific biases, and naming the right one for the situation is what actually catches it. A targeted checklist with a concrete symptom to test for beats a vague caution every time.
+Generic bias-awareness rarely changes behavior because it isn't targeted — different task shapes invite different biases, and naming the right one is what catches it. A targeted checklist beats a vague caution.
 
 ## Use when / Don't use when
 
-- **Use when:** a conclusion arrived too easily or too quickly; high-stakes judgments; whenever the task shape is known to carry a specific bias risk (forecasting → overconfidence; evaluating your own plan → optimism bias; hiring → affinity bias).
-- **Don't use when:** the task is too low-stakes to warrant the check — running this on every trivial judgment dilutes its use where it matters.
+- **Use when:** a conclusion arrived too easily; high-stakes judgments; whenever the task shape carries a known bias risk (forecasting → overconfidence; own plan → optimism bias; hiring → affinity bias).
+- **Don't use when:** the task is too low-stakes to warrant the check.
 
 ## Inputs → Outputs
 
-- **Inputs:** a task, judgment, or conclusion, plus its shape (a decision, forecast, evaluation, judgment-of-a-person, etc.).
-- **Outputs:** the specific biases most likely to be operating, each flagged with the concrete symptom to check for, and what was corrected if anything was found.
+- **Inputs:** a task, judgment, or conclusion, plus its shape.
+- **Outputs:** the specific biases likely operating, each flagged with a concrete symptom to check, and what was corrected.
 
 ## Principles
 
-- Match the bias to the task shape: forecasting invites overconfidence and planning fallacy; evaluating evidence for a preferred conclusion invites confirmation bias; judging people invites halo effects and affinity bias; recent, vivid events invite availability bias in probability judgments.
-- A bias check needs a concrete behavioral symptom to test for, not just the bias's name — "am I anchoring?" is unfalsifiable, "did I generate an independent estimate before seeing theirs?" is checkable.
+- Match the bias to the task shape: forecasting invites overconfidence; evaluating evidence for a preferred conclusion invites confirmation bias; judging people invites halo and affinity bias; vivid recent events invite availability bias.
+- A bias check needs a concrete behavioral symptom, not just a name — "am I anchoring?" is unfalsifiable; "did I estimate independently before seeing theirs?" is checkable.
 
 ## Procedure
 
-1. Identify the task shape (forecast, evaluation, decision, judgment-of-person, negotiation, etc.).
-2. Select the 2–3 biases most characteristic of that shape — not a generic full list run every time.
-3. For each, state the concrete, checkable symptom: what would this specific bias look like happening right now, in this conclusion?
+1. Identify the task shape (forecast, evaluation, decision, judgment-of-person, negotiation).
+2. Select the 2–3 biases most characteristic of that shape, not a generic full list.
+3. For each, state the concrete, checkable symptom: what would this bias look like happening right now?
 4. Check the actual reasoning against that symptom.
-5. Where a bias is plausibly present, apply the specific counter — a disconfirmation search for confirmation bias, a reference-class check for planning fallacy or overconfidence, a steelman for motivated reasoning.
-6. Report what was checked, what — if anything — was found and corrected, and name any bias risk that remains unaddressed as residual uncertainty.
+5. Where present, apply the specific counter — disconfirmation search for confirmation bias, reference-class check for overconfidence, steelman for motivated reasoning.
+6. Report what was checked and corrected, and any remaining bias risk as residual uncertainty.
 
 ## Common mistakes
 
-- Running a generic, unfocused "am I biased?" check that doesn't target anything specific and therefore catches nothing.
-- Checking for bias only in conclusions you already doubt, not ones that feel comfortable — comfortable conclusions are exactly where bias hides best.
-- Treating a bias-audit as a formality without applying an actual counter-technique when something is genuinely found.
+- Running a generic, unfocused "am I biased?" check that targets nothing.
+- Checking only conclusions you already doubt — comfortable ones are where bias hides best.
+- Treating the audit as a formality without applying an actual counter-technique when something is found.
 
 ## Examples
 

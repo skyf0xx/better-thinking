@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: reasoning
 difficulty: 1
-tokens: ~450
+tokens: ~840
 dependencies: []
 related: [fermi-estimation, epistemic-tagging]
 ---

@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: analysis
 difficulty: 2
-tokens: ~500
+tokens: ~870
 dependencies: []
 related: [first-principles, premortem, disconfirmation-search, epistemic-tagging]
 ---
