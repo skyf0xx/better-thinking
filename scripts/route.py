@@ -121,11 +121,28 @@ def main():
     query_tokens = tokenize(args.query)
     query_vec = vectorize_query(query_tokens, route_index["idf"])
 
+    if not query_tokens:
+        print(
+            "WARNING: query tokenized to nothing (too short, or all stopwords/"
+            "single letters) -- lexical routing has no signal here. Do not "
+            "treat the list below as ranked matches; skim skills/INDEX.json "
+            "by category instead.",
+            file=sys.stderr,
+        )
+
     scored = []
     for name, vec in route_index["vectors"].items():
         score = cosine(query_vec, vec)
         scored.append((score, name))
     scored.sort(key=lambda x: x[0], reverse=True)
+
+    if query_tokens and scored and scored[0][0] == 0.0:
+        print(
+            "WARNING: top score is 0.0 -- no lexical overlap with any skill's "
+            "vocabulary. Do not treat the list below as ranked matches; skim "
+            "skills/INDEX.json by category instead.",
+            file=sys.stderr,
+        )
 
     top = scored[: args.top]
     results = []

@@ -42,7 +42,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 
 1. Identify the task's shape: decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination.
 2. Identify stakes and reversibility — a gut check, or run [[reversibility-classification]] if unclear.
-3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. Separately skim `skills/INDEX.json`'s `name`+`category`+`one_line` for the shape's category — a cheap net for a right answer the router missed on wording. Merge both, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
+3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. If it prints a stderr warning about zero/no signal (short or abstract queries tokenize to nothing), discard its output and rely on the index skim alone. Separately skim `skills/INDEX.json`'s `name`+`category`+`one_line` for the shape's category — a cheap net for a right answer the router missed on wording. Merge both, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
 4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
 5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
 6. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `🧠 Classifying...` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
@@ -64,7 +64,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 
 ## Examples
 
-- Routing "should we do X or Y" to a full decision pipeline, but "which font should I use" to no formal process.
+- Routing "should we relocate the warehouse or expand the current one" to a full decision pipeline, but "which font should I use" to no formal process.
 - Recognizing a "quick question" about odd behavior is actually a diagnosis task needing a structured differential.
 - Catching that a casually-worded request feeds a board decision, and escalating depth accordingly.
 
