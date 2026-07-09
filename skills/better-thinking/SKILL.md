@@ -8,7 +8,7 @@ description: >
 type: atomic
 category: metacognition
 difficulty: 3
-tokens: ~1000
+tokens: ~987
 dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging]
 ---
@@ -24,7 +24,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 ## Use when / Don't use when
 
 - **Use when:** at first contact with any nontrivial task — the entry point other skills dispatch from.
-- **Don't use when:** never skip it; scale its own depth down instead — triage on a small task should take seconds.
+- **Don't use when:** never skip it; scale depth down instead — triage on a small task takes seconds.
 
 ## Inputs → Outputs
 
@@ -36,13 +36,13 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Classify by shape first — decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination. Shape determines which skill family is even relevant.
 - Classify by stakes and reversibility second. This determines depth, independent of shape.
 - A task can be routine in domain but high-stakes in consequence — don't classify by surface topic or tone alone.
-- Re-triage if the task's real shape differs once work is underway; the initial classification is a hypothesis, not a commitment.
+- Re-triage if the task's real shape differs once underway; the initial classification is a hypothesis, not a commitment.
 
 ## Procedure
 
 1. Identify the task's shape: decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination.
 2. Identify stakes and reversibility — a gut check, or run [[reversibility-classification]] if unclear.
-3. Read `skills/INDEX.json`; filter to the shape's category and narrow by `triggers`, using `disambiguates_from` to break ties instead of guessing. Skip `status: cataloged_not_built` entries.
+3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. Separately skim `skills/INDEX.json`'s `name`+`category`+`one_line` for the shape's category — a cheap net for a right answer the router missed on wording. Merge both, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
 4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
 5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
 6. Proceed with the selected skills at the selected depth.

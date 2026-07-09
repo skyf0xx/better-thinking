@@ -48,6 +48,7 @@ Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning
 - [ ] Final procedure step reports residual uncertainty
 - [ ] `skills/INDEX.json` updated with a matching entry
 - [ ] `related` links added both directions
+- [ ] `python3 scripts/build_route_index.py` re-run (regenerates `skills/ROUTE_INDEX.json`, the router's lexical index — goes stale otherwise)
 - [ ] `python3 scripts/check_consistency.py` passes
 
 ## Questions
