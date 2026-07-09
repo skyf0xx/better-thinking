@@ -1,6 +1,6 @@
 # Taxonomy of Cognitive Skills
 
-**135 skills · 107 atomic (A) · 28 composite (C)** across 13 categories. Full specifications live in [catalog/](catalog/). Format: `name` (type · difficulty) — one-liner.
+**135 skills · 107 atomic (A) · 28 composite (C)** across 13 categories. Full specifications live in [catalog/](catalog/). Format: `name` (type · difficulty) — one-liner. Machine-readable counterpart: [skills/INDEX.json](skills/INDEX.json) — the lookup [[cognitive-triage]] consults to select skills instead of relying on this document from memory.
 
 Sources mined: cognitive science, psychology, philosophy, education, scientific research, systems engineering, military strategy, intelligence analysis (CIA structured analytic techniques), decision science, economics, product management, UX research, design thinking, negotiation, executive coaching, journalism, law (IRAC), medicine (differential diagnosis), academia, creative writing.
 
@@ -211,5 +211,5 @@ Reasoning about should, not just can.
 ## Cross-cutting notes
 
 - **The metacognition category is the kernel.** `cognitive-triage` is the dispatcher that decides which other skills load; `epistemic-tagging`, `confidence-calibration`, and `effort-calibration` are invariants that should run inside *every* composite.
-- **Some atomic skills are shared organs.** `assumption-audit`, `steelmanning`, `premortem`, `evidence-triangulation`, and `second-order-scan` each appear as dependencies of 4+ composites — see the dependency graph in [ROADMAP.md](ROADMAP.md).
+- **Some atomic skills are shared organs.** `assumption-audit`, `steelmanning`, `premortem`, `evidence-triangulation`, and `second-order-scan` each appear as dependencies of 4+ composites.
 - **Category placement is primary-home, not exclusive.** `confidence-calibration` lives in metacognition but is load-bearing for forecasting; `steelmanning` lives in analysis but is essential to communication. The `related` links carry these edges.

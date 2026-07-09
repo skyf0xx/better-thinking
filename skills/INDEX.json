@@ -2049,15 +2049,6 @@
       "path": "skills/structured-what-if/SKILL.md"
     },
     {
-      "name": "swot-analysis",
-      "type": "recipe",
-      "category": "recipes",
-      "status": "built",
-      "one_line": "SWOT analysis: internal/external scan, graded grid, framed decision \u2014 mapped onto stakeholder-mapping, second-order-scan, incentive-analysis, risk-matrix, weighted-scoring, decision-framing.",
-      "triggers": "user names 'SWOT' explicitly, or asks for a strengths/weaknesses/opportunities/threats analysis.",
-      "path": "recipes/swot-analysis.md"
-    },
-    {
       "name": "systems-mapping",
       "type": "atomic",
       "category": "systems-strategy",

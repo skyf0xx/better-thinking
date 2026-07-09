@@ -50,9 +50,9 @@ catalog/                ← full specification of every skill, by category
   11-learning.md
   12-metacognition.md
   13-ethics.md
-CONSOLIDATION.md        ← duplicate analysis and merge decisions
-ROADMAP.md              ← build order, dependency graph, top 25, phased plan
-skills/                 ← (future) one directory per skill: skills/<name>/SKILL.md
+skills/                 ← one directory per skill: skills/<name>/SKILL.md
+  INDEX.json             ← machine-readable index; cognitive-triage reads this to route instead of relying on memorized recall
+recipes/                ← named-framework mappings (design thinking, ...) onto skill sequences
 ```
 
 ## Design principles
@@ -72,4 +72,4 @@ skills/                 ← (future) one directory per skill: skills/<name>/SKIL
 
 ## Status
 
-Design phase. The catalog specifies **135 skills (107 atomic, 28 composite)** across 13 categories. See [ROADMAP.md](ROADMAP.md) for the build order.
+The catalog specifies **135 skills (107 atomic, 28 composite)** across 13 categories; **121 are built** as `skills/<name>/SKILL.md` (Phases 0–3). [recipes/](recipes/) (Phase 4) maps well-known named frameworks — design thinking, lean startup — onto sequences of existing skills.
