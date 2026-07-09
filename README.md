@@ -1,26 +1,50 @@
-# Cognitive Algorithms
+# Better Thinking
 
-**An operating system for cognition.** A composable, open-source collection of AI Skills that teach a model *how to think* — not what to know, and never who to pretend to be.
+Models don't get smarter when you ask them to think harder - they get better when you give them a better *procedure* to think with.
 
-Each Skill is a **reusable cognitive algorithm**: a repeatable, domain-independent thinking procedure that can be invoked on its own or composed with other Skills.
+Structured reasoning (naming assumptions, weighing alternatives, checking evidence) reliably produces better answers than "think step by step" ever could, but Claude usually defaults to the first reasonable-sounding approach instead of the rigorous one for the situation.
+
+Better Thinking is a plugin that gives it a library of 121 explicit thinking procedures, e.g.:
+
+1. How to run a proper decision analysis.
+2. How to debug from symptoms to root cause.
+3. How to evaluate competing hypotheses.
+
+Better Thinking has a dispatcher that picks the right method for the task in front of it, instead of you having to know which technique to ask for.
+
+Think of it less like a persona ("act like an analyst") and more like a checklist a skilled analyst would actually follow.
+
+## How to activate it
+
+Once installed (see below), just start any nontrivial task by typing:
+
+```
+/better-thinking
+```
+
+That's it. It looks at what you're asking, classifies the task (is this a decision? a diagnosis? a negotiation? research?) and how much is riding on it, then pulls in the right thinking skill(s) at the right depth automatically.
+
+A quick, low-stakes question gets a fast gut-check; a costly, hard-to-reverse decision gets the full structured treatment.
+
+You don't need to memorize any of the 121 skill names - `/better-thinking` reads the index and routes for you.
 
 ## Installation
 
 This repo is a Claude Code plugin. Install it directly from GitHub:
 
 ```
-/plugin marketplace add skyf0xx/cognitive-algorithms
-/plugin install cognitive-algorithms@cognitive-algorithms
+/plugin marketplace add skyf0xx/better-thinking
+/plugin install better-thinking@better-thinking
 ```
 
 Or from a local clone:
 
 ```
-/plugin marketplace add /path/to/cognitive-algorithms
-/plugin install cognitive-algorithms@cognitive-algorithms
+/plugin marketplace add /path/to/better-thinking
+/plugin install better-thinking@better-thinking
 ```
 
-This registers all 121 skills for discovery. Start any nontrivial task with `cognitive-triage` (or let it auto-route) — it reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
+This registers all 121 skills for discovery. It reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
 
 ## What a Skill is (and is not)
 
@@ -29,6 +53,7 @@ A Skill encodes a *procedure*, never a *persona*.
 **Bad:** "Act like a scientist."
 
 **Good:**
+
 1. Form hypotheses.
 2. Identify assumptions.
 3. Design experiments.
@@ -69,7 +94,7 @@ catalog/                ← full specification of every skill, by category
   12-metacognition.md
   13-ethics.md
 skills/                 ← one directory per skill: skills/<name>/SKILL.md
-  INDEX.json             ← machine-readable index; cognitive-triage reads this to route instead of relying on memorized recall
+  INDEX.json             ← machine-readable index; better-thinking reads this to route instead of relying on memorized recall
 recipes/                ← named-framework mappings (design thinking, ...) onto skill sequences
 ```
 
