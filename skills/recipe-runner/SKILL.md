@@ -10,7 +10,7 @@ description: >
 type: composite
 category: metacognition
 difficulty: 3
-tokens: ~950
+tokens: ~1770
 dependencies: [interview-synthesis, empathy-mapping, problem-framing, ideation-sprint, scientific-method, decision-framing, bayesian-updating, confidence-calibration, decision-analysis, statistical-audit, premortem, second-order-scan, decision-journaling]
 related: [better-thinking, scientific-method, decision-analysis, better-thinking-recipes]
 ---
@@ -43,24 +43,27 @@ A recipe doc under `recipes/` states which skills implement each stage of a fram
 ## Procedure
 
 1. Identify the named framework (or infer it from a stage description) and confirm a matching file exists at `recipes/<name>.md`. If none matches, say so and hand back to `better-thinking`'s normal routing rather than forcing a fit.
-2. Read the recipe doc's full skill sequence and its **Residual gap** section before starting — know up front which stages this run will actually cover.
-3. Execute each stage in order, invoking the named skill(s) for that stage (e.g. `interview-synthesis` then `empathy-mapping` for Design Thinking's Empathize stage), feeding each stage's output forward as the next stage's input.
-4. When a stage is marked as outside this collection's scope (e.g. Prototype, Build), state that explicitly and pause for the human/external work to happen, rather than skipping silently or hallucinating a substitute.
-5. On loop-shaped recipes (e.g. Lean Startup's persevere-or-pivot), treat the return to stage 1 as a genuine new pass with updated inputs, not a repeat of the same run.
-6. Report which stages ran, which were out-of-scope gaps, and any point where the task's actual shape diverged from the recipe's assumed shape — recipes are a good fit until they aren't, and forcing one past its fit is a common failure mode.
+2. Read the recipe doc's full skill sequence and its **Residual gap** section before starting. State the full stage list up front (names only, one line) so the user knows the shape of the run before committing to it — this is the one place the whole sequence is shown at once.
+3. Run **one stage only**: invoke that stage's named skill(s) (e.g. `interview-synthesis` then `empathy-mapping` for Design Thinking's Empathize stage), then present that stage's output in full.
+4. Stop the turn. State which stage just ran and which stage is next, then wait for the user's explicit go-ahead (approval, edit, or redirect) before touching the next stage. Do not draft, preview, or summarize a later stage while waiting — a stage that hasn't been checkpointed hasn't happened yet.
+5. When the user responds, treat any correction or added detail as an amendment to the just-completed stage's output before it feeds forward — the next stage should consume the corrected version, not the original.
+6. When a stage is marked as outside this collection's scope (e.g. Prototype, Build), state that explicitly as its own checkpoint and pause for the human/external work to happen, rather than skipping silently, hallucinating a substitute, or bundling it into an adjacent stage's turn.
+7. On loop-shaped recipes (e.g. Lean Startup's persevere-or-pivot), treat the return to stage 1 as a genuine new pass with updated inputs, checkpointed the same way as the first pass — not a repeat run inline in the same turn as the pivot decision.
+8. On the final stage, report which stages ran, which were out-of-scope gaps, and any point where the task's actual shape diverged from the recipe's assumed shape — recipes are a good fit until they aren't, and forcing one past its fit is a common failure mode.
 
 ## Common mistakes
 
 - Improvising a plausible-sounding skill sequence instead of reading the actual recipe doc, silently drifting from its deliberate stage-to-skill choices.
-- Silently skipping or faking an out-of-scope stage (Build, Prototype) instead of naming it as a residual gap.
-- Running stages out of order or in isolation, losing the compounding effect of each stage consuming the last one's output.
+- Running every stage in one turn and presenting the whole recipe as a finished report — this defeats the checkpoint model as completely as skipping it outright; a recipe is a workshop the user steps through, not a document generated at them.
+- Silently skipping or faking an out-of-scope stage (Build, Prototype) instead of naming it as a residual gap and its own checkpoint.
+- Running stages out of order or without waiting for go-ahead, losing the compounding effect of each stage consuming the last one's (possibly user-corrected) output.
 - Forcing a task into a named framework's shape when the fit is poor, instead of falling back to plain `better-thinking` routing.
 
 ## Examples
 
-- "Run this new feature idea through design thinking" — loads `recipes/design-thinking.md`, runs `interview-synthesis` → `empathy-mapping` → `problem-framing` → `ideation-sprint`, flags Prototype as a human build step, then `scientific-method` for Test.
-- "Let's do build-measure-learn on this pricing experiment" — loads `recipes/lean-startup.md`, runs `decision-framing` through the persevere-or-pivot `decision-analysis` stage, logging each cycle via `decision-journaling`.
-- A user describes empathize/define/ideate stages without naming "design thinking" — recipe-runner recognizes the shape from `recipes/README.md`'s index and confirms before running.
+- "Run this new feature idea through design thinking" — loads `recipes/design-thinking.md`, states the five-stage shape, then runs `interview-synthesis` + `empathy-mapping` for Empathize alone, presents that output, and stops for go-ahead before touching Define.
+- "Let's do build-measure-learn on this pricing experiment" — loads `recipes/lean-startup.md`, runs the hypothesize stage via `decision-framing`, checkpoints, and only reaches the persevere-or-pivot `decision-analysis` stage (logged via `decision-journaling`) turns later, once the user has confirmed each prior stage.
+- A user describes empathize/define/ideate stages without naming "design thinking" — recipe-runner recognizes the shape from `recipes/README.md`'s index, confirms the framework match, then runs and checkpoints Empathize the same as any named-framework invocation.
 
 ## Related
 

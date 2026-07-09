@@ -4,7 +4,9 @@
 Checks, with no dependencies beyond the stdlib:
   1. Every skills/<name>/SKILL.md has valid frontmatter with required fields.
   2. Frontmatter type/dependency rules: atomic has no dependencies; composite does.
-  3. Token budget: atomic <= 900, composite <= 1700 (chars/4 estimate).
+  3. Token budget: atomic <= 900, composite <= 1700 (chars/4 estimate),
+     except per-skill overrides in TOKEN_BUDGET_EXCEPTIONS (documented in
+     CONTRIBUTING.md).
   4. skills/INDEX.json <-> filesystem: every built skill dir has an index entry
      and vice versa; counts in INDEX.json match reality.
   5. skills/INDEX.json <-> frontmatter: name/type/category/difficulty/related
@@ -41,6 +43,10 @@ VALID_CATEGORIES = {
     "collaboration", "learning", "metacognition", "ethics",
 }
 TOKEN_BUDGET = {"atomic": 900, "composite": 1700}
+# Per-skill budget exceptions, documented in CONTRIBUTING.md's "Stay in
+# budget" section. Grant sparingly -- a skill earns one by actually needing
+# more procedure text for its specific job, not by category membership.
+TOKEN_BUDGET_EXCEPTIONS = {"recipe-runner": 2200}
 
 errors = []
 warnings = []
@@ -142,7 +148,7 @@ def check_skill_files(index_by_name):
 
         if skill_type in TOKEN_BUDGET:
             actual = estimate_tokens(path)
-            budget = TOKEN_BUDGET[skill_type]
+            budget = TOKEN_BUDGET_EXCEPTIONS.get(d, TOKEN_BUDGET[skill_type])
             if actual > budget:
                 warn(f"skills/{d}/SKILL.md: ~{actual} tokens exceeds {skill_type} budget of {budget}")
 

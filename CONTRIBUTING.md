@@ -20,6 +20,7 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
    - Examples must span **at least two unrelated domains** — this is the transferability test.
    - Composite procedures must name the atomic skill they invoke (e.g. "Run `assumption-audit` on the leading hypothesis"), never inline its logic.
 4. **Stay in budget.** Token estimate (chars ÷ 4) is enforced: atomic skills ≤ 900 tokens, composite ≤ 1,700. If a skill keeps pushing past its ceiling, it's doing too much — split it.
+   - **Exception: interactive orchestrators.** [[recipe-runner]] is exempt from the 1,700 ceiling, capped instead at 2,200. Its procedure must specify checkpoint behavior (when to stop and wait for user go-ahead between stages) on top of the stage-invocation logic every composite carries, and that costs real procedure text. This exception is granted per-skill, not by category — a new composite doesn't get the higher ceiling just for being multi-stage; it has to actually orchestrate a paused, multi-turn interaction the same way.
 5. **Update `skills/INDEX.json`.** Add an entry matching your `SKILL.md` frontmatter (`name`, `type`, `category`, `difficulty`, `status: "built"`, `one_line`, `triggers`, `related`, `path`). This is what the `/better-thinking` dispatcher reads to route — an undocumented skill is invisible to it.
 6. **Cross-link `related` skills both directions.** If skill A lists skill B as related, B should list A back.
 
@@ -44,7 +45,7 @@ Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning
 - [ ] Skill lives at `skills/<name>/SKILL.md` and follows the template structure exactly
 - [ ] `description` frontmatter contains concrete trigger conditions, not a vague summary
 - [ ] Atomic skill has no `dependencies`; composite skill's procedure invokes dependencies by name
-- [ ] Token estimate within budget (atomic ≤ 900, composite ≤ 1,700)
+- [ ] Token estimate within budget (atomic ≤ 900, composite ≤ 1,700; [[recipe-runner]] is the sole exception, ≤ 2,200)
 - [ ] Examples span ≥2 unrelated domains
 - [ ] No personas — procedure only
 - [ ] Final procedure step reports residual uncertainty

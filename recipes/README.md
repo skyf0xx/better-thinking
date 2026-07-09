@@ -16,10 +16,11 @@
 - Every recipe links each stage to a real skill in [skills/](../skills/) by `[[name]]`, in the order they run.
 - Every recipe ends with a **Residual gap** section — what the mapping doesn't cover, usually a "build/do" stage this collection deliberately excludes (see [README.md](../README.md)'s "Excluded by design" list), or a repurposed skill that's an imperfect fit.
 - Recipes cross-link each other under **Related recipes** where their stages overlap, the same way skills cross-link via `related`.
+- A recipe is a multi-session workshop, not a single-turn report. Each numbered stage in **Skill sequence** is a checkpoint: [[recipe-runner]] runs that stage's skill(s), presents the output, and stops — it does not run ahead into the next stage in the same turn. A recipe doc doesn't need its own checkpoint language per stage; `recipe-runner`'s procedure carries that behavior generically for every recipe in this directory.
 
 ## Running a recipe
 
-Recipe docs stay pure content — no new skill is required to make a recipe executable. [[recipe-runner]] (`skills/recipe-runner/SKILL.md`) is a composite skill that bridges this directory into the routable skill system: name a framework (or describe its stages) and `recipe-runner` finds the matching doc here and executes its stage sequence as one orchestrated pass, instead of leaving the mapping as reference material a human has to walk manually. Adding a recipe here makes it auto-detectable for free — no per-recipe skill needed.
+Recipe docs stay pure content — no new skill is required to make a recipe executable. [[recipe-runner]] (`skills/recipe-runner/SKILL.md`) is a composite skill that bridges this directory into the routable skill system: name a framework (or describe its stages) and `recipe-runner` finds the matching doc here and executes its stage sequence one checkpointed stage at a time, instead of leaving the mapping as reference material a human has to walk manually, or dumping every stage at once. Adding a recipe here makes it auto-detectable for free — no per-recipe skill needed.
 
 Two commands cover discovery and direct invocation for the whole directory: [[better-thinking-recipes]] (`/better-thinking-recipes`) lists every recipe here with a one-line description and runs whichever one the user picks; naming a framework directly (or describing its stages) also reaches it through `recipe-runner`'s own auto-detection. There is no per-recipe shim skill — a new recipe added here is reachable through both commands automatically, no new skill file needed.
 
