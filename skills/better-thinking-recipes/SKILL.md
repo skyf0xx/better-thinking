@@ -40,7 +40,7 @@ List the named frameworks available in `recipes/`, then run the one the user pic
 
 ## Procedure
 
-1. Read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description — plain-language purpose, not the stage sequence or framework jargon. A user picking from this list doesn't yet know what "empathize → define → ideate" means; they know what problem they have.
+1. Read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description — plain-language purpose, not the stage sequence or framework jargon. A user picking from this list doesn't yet know what "empathize → define → ideate" means; they know what problem they have. Resolve `recipes/README.md` relative to this skill's own base directory, not the user's project: take the `Base directory for this skill:` value supplied with this invocation (a path ending in `.../skills/better-thinking-recipes`), go up one level to its parent, and read `recipes/README.md` there (a sibling of `skills/`) — don't search the current working directory for it.
 2. Ask the user which number they want, and for the task to run it against (if not already given).
 3. Once picked, invoke `recipe-runner` with the framework fixed to the chosen recipe's file (`recipes/<name>.md`), passing along the task.
 4. Follow `recipe-runner`'s own procedure exactly as written — this skill changes only how the recipe is found and reached, not how it runs.
