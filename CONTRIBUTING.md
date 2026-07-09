@@ -33,6 +33,8 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
 
 Recipes (`recipes/`) map a named, well-known framework (design thinking, lean startup, etc.) onto a sequence of *existing* skills — they don't introduce new cognition. If your idea requires a new atomic move to make the recipe work, build that skill first, then reference it from the recipe.
 
+A recipe doc alone is enough to make a framework runnable: [[recipe-runner]] auto-detects a named framework or its stage description and executes the mapped sequence directly from the doc — no skill file required. Optionally, a frequently-reached-for recipe can also get a thin shim skill for direct slash-command invocation (e.g. `skills/recipe-design-thinking/SKILL.md`, `/recipe-design-thinking`). Always prefix these shims `recipe-<name>` — never the bare framework name — so they read as recipe entry points rather than primitive thinking skills in a flat, alphabetical list of 130+ skills. A shim's entire procedure is "invoke `recipe-runner` fixed to this recipe"; it must not duplicate `recipe-runner`'s orchestration logic inline.
+
 ## Categories
 
 Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning, problem-solving, decision-making, research, analysis, systems-strategy, forecasting, creativity, communication, collaboration, learning, metacognition, ethics. If none fit, that's a signal to revisit whether the contribution is really a thinking procedure — open an issue to discuss a new category before adding one unilaterally.
