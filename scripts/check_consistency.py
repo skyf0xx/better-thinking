@@ -12,9 +12,11 @@ Checks, with no dependencies beyond the stdlib:
   6. No dangling [[wiki-links]]: every link in a built skill's body or
      frontmatter `related`/`dependencies` resolves to a built or
      cataloged_not_built name in INDEX.json.
-  7. Every name mentioned in TAXONOMY.md (backtick + difficulty marker) has a
+  7. Every name mentioned in catalog/*.md (backtick + difficulty marker) has a
      corresponding INDEX.json entry (built or cataloged_not_built) -- names
-     that exist only in prose, with nothing tracking them, are silent gaps.
+     that exist only in catalog prose, with nothing tracking them, are silent
+     gaps (see e.g. the scientific-method incident this script was written
+     to catch in the future).
 
 Exit code 0 if clean, 1 if any errors found. Run from repo root:
     python3 scripts/check_consistency.py
@@ -27,7 +29,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKILLS_DIR = os.path.join(ROOT, "skills")
 INDEX_PATH = os.path.join(SKILLS_DIR, "INDEX.json")
-TAXONOMY_PATH = os.path.join(ROOT, "TAXONOMY.md")
+CATALOG_DIR = os.path.join(ROOT, "catalog")
 
 REQUIRED_FIELDS = [
     "name", "description", "type", "category", "difficulty",
@@ -204,15 +206,21 @@ def check_dangling_links(fm_by_name, index_by_name):
                 err(f"skills/{name}/SKILL.md: related '{rel}' does not resolve to any known skill")
 
 
-def check_taxonomy_coverage(index_by_name):
-    if not os.path.isfile(TAXONOMY_PATH):
-        warn("TAXONOMY.md not found, skipping taxonomy coverage check")
+def check_catalog_coverage(index_by_name):
+    if not os.path.isdir(CATALOG_DIR):
+        warn("catalog/ not found, skipping catalog coverage check")
         return
-    text = open(TAXONOMY_PATH, encoding="utf-8").read()
-    tax_names = set(re.findall(r"`([a-z0-9-]+)`\s*\((?:A|C)", text))
     known = set(index_by_name)
-    for name in sorted(tax_names - known):
-        err(f"TAXONOMY.md mentions '{name}' but INDEX.json has no entry for it (built or cataloged_not_built)")
+    for fname in sorted(os.listdir(CATALOG_DIR)):
+        if not fname.endswith(".md"):
+            continue
+        path = os.path.join(CATALOG_DIR, fname)
+        text = open(path, encoding="utf-8").read()
+        # full spec headers: "### skill-name `atomic · D2 · ~500 tok`"
+        for name in re.findall(r"^### ([a-z0-9-]+) `(?:atomic|composite)", text, re.MULTILINE):
+            if name not in known:
+                err(f"catalog/{fname} fully specs '{name}' but INDEX.json has no entry for it — "
+                    f"either build it (skills/{name}/SKILL.md) or remove the catalog spec")
 
 
 def main():
@@ -229,7 +237,7 @@ def main():
     fm_by_name, fs_dirs = check_skill_files(index_by_name_raw)
     index_by_name = check_index_sync(index_data, fm_by_name, fs_dirs)
     check_dangling_links(fm_by_name, index_by_name)
-    check_taxonomy_coverage(index_by_name)
+    check_catalog_coverage(index_by_name)
 
     if warnings:
         print(f"{len(warnings)} warning(s):")
