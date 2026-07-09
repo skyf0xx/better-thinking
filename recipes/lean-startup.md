@@ -26,3 +26,5 @@ The "Build" step's actual construction work has no cognitive-algorithm equivalen
 ## Related recipes
 
 - [[design-thinking]] — the general-purpose ancestor of this loop; lean startup is design thinking's empathize/test cycle specialized to a business hypothesis with an explicit persevere/pivot decision gate.
+- [[jobs-to-be-done]] — the natural predecessor: JTBD establishes whether a falsifiable hypothesis about a real customer job exists at all; this recipe takes that hypothesis and runs build-measure-learn on it.
+- [[rice-prioritization]] — the natural successor: once a feature built under this loop ships, its measured impact is exactly the input RICE's Impact/Confidence terms need for the next round of prioritization.

@@ -6,6 +6,9 @@
 |---|---|---|
 | [design-thinking.md](design-thinking.md) | Design Thinking | empathize → define → ideate → (prototype) → test, iterated |
 | [lean-startup.md](lean-startup.md) | Lean Startup / Build-Measure-Learn | hypothesize → build → measure → learn → persevere-or-pivot |
+| [jobs-to-be-done.md](jobs-to-be-done.md) | Jobs-to-be-Done | decompose → interview → triangulate → rank rival explanations → audit thesis |
+| [rice-prioritization.md](rice-prioritization.md) | RICE Prioritization | decompose backlog → score reach/impact/confidence → price effort → sequence |
+| [five-forces-strategy.md](five-forces-strategy.md) | Five Forces Competitive Strategy | map forces → analyze incentives → map system → scenario-test → decide posture |
 
 ## Conventions
 

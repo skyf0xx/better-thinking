@@ -12,7 +12,7 @@ category: metacognition
 difficulty: 3
 tokens: ~950
 dependencies: [interview-synthesis, empathy-mapping, problem-framing, ideation-sprint, scientific-method, decision-framing, bayesian-updating, confidence-calibration, decision-analysis, statistical-audit, premortem, second-order-scan, decision-journaling]
-related: [better-thinking, scientific-method, decision-analysis, better-thinking-design-thinking, better-thinking-lean-startup]
+related: [better-thinking, scientific-method, decision-analysis, better-thinking-design-thinking, better-thinking-lean-startup, better-thinking-jobs-to-be-done, better-thinking-rice-prioritization, better-thinking-five-forces-strategy]
 ---
 
 # Recipe Runner

@@ -5,8 +5,8 @@
     "recipes/*.md"
   ],
   "counts": {
-    "total": 132,
-    "built": 132
+    "total": 135,
+    "built": 135
   },
   "skills": [
     {
@@ -331,7 +331,7 @@
       "category": "metacognition",
       "difficulty": 3,
       "status": "built",
-      "one_line": "Classify an incoming task by its shape (decision, diagnosis, research, creative, communication, learning, negotiation) and its stakes, then select which skills to deploy at what depth.",
+      "one_line": "🧠 Classify an incoming task by its shape (decision, diagnosis, research, creative, communication, learning, negotiation) and its stakes, then select which skills to deploy at what depth.",
       "triggers": "at first contact with any nontrivial task \u2014 the entry point other skills get dispatched from.",
       "related": [
         "effort-calibration",
@@ -369,6 +369,51 @@
         "better-thinking-design-thinking"
       ],
       "path": "skills/better-thinking-lean-startup/SKILL.md"
+    },
+    {
+      "name": "better-thinking-jobs-to-be-done",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Explicit entry point for Jobs-to-be-Done (decompose, interview, triangulate, rank rival explanations, audit thesis) — fixes recipe-runner to recipes/jobs-to-be-done.md so the recipe is directly invocable by name.",
+      "triggers": "user directly invokes 'jobs-to-be-done' or 'JTBD' by name, wanting the recipe run rather than explained.",
+      "related": [
+        "recipe-runner",
+        "better-thinking-rice-prioritization",
+        "better-thinking-five-forces-strategy"
+      ],
+      "path": "skills/better-thinking-jobs-to-be-done/SKILL.md"
+    },
+    {
+      "name": "better-thinking-rice-prioritization",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Explicit entry point for RICE Prioritization (decompose backlog, score reach/impact/confidence, price effort, sequence) — fixes recipe-runner to recipes/rice-prioritization.md so the recipe is directly invocable by name.",
+      "triggers": "user directly invokes 'RICE' or 'RICE prioritization' by name, wanting the recipe run rather than explained.",
+      "related": [
+        "recipe-runner",
+        "better-thinking-jobs-to-be-done",
+        "better-thinking-five-forces-strategy"
+      ],
+      "path": "skills/better-thinking-rice-prioritization/SKILL.md"
+    },
+    {
+      "name": "better-thinking-five-forces-strategy",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Explicit entry point for Porter's Five Forces (map forces, analyze incentives, map system, scenario-test, decide posture) — fixes recipe-runner to recipes/five-forces-strategy.md so the recipe is directly invocable by name.",
+      "triggers": "user directly invokes 'Five Forces' or 'Porter's Five Forces' by name, wanting the recipe run rather than explained.",
+      "related": [
+        "recipe-runner",
+        "better-thinking-jobs-to-be-done",
+        "better-thinking-rice-prioritization"
+      ],
+      "path": "skills/better-thinking-five-forces-strategy/SKILL.md"
     },
     {
       "name": "competing-hypotheses",
@@ -1632,7 +1677,10 @@
         "scientific-method",
         "decision-analysis",
         "better-thinking-design-thinking",
-        "better-thinking-lean-startup"
+        "better-thinking-lean-startup",
+        "better-thinking-jobs-to-be-done",
+        "better-thinking-rice-prioritization",
+        "better-thinking-five-forces-strategy"
       ],
       "path": "skills/recipe-runner/SKILL.md"
     },

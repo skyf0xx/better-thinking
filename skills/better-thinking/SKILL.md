@@ -1,7 +1,7 @@
 ---
 name: better-thinking
 description: >
-  Classify an incoming task by its shape (decision, diagnosis, research,
+  🧠 Classify an incoming task by its shape (decision, diagnosis, research,
   creative, communication, learning, negotiation) and its stakes, then select
   which skills to deploy at what depth. Use as the first move on any
   nontrivial task, before any substantive work begins.
