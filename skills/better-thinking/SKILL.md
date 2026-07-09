@@ -45,8 +45,12 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. Separately skim `skills/INDEX.json`'s `name`+`category`+`one_line` for the shape's category — a cheap net for a right answer the router missed on wording. Merge both, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
 4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
 5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
-6. Proceed with the selected skills at the selected depth.
-7. Re-triage explicitly if the actual shape turns out different mid-work — adjust rather than silently continuing. Report remaining ambiguity in shape or stakes as residual uncertainty.
+6. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `🧠 Classifying...` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
+7. Proceed with the selected skills at the selected depth.
+8. Re-triage explicitly if the actual shape turns out different mid-work — mark the pivot with `🔄 Re-triaging...` and say what changed, rather than adjusting silently. Report remaining ambiguity in shape or stakes as residual uncertainty.
+9. Always close with a one-line footer, prefixed 🧠, naming the skill(s) applied — each tagged with its category emoji below — and the stakes/depth call, e.g. `🧠 Applied: 🎯 premortem → 📊 red-teaming → 🎯 decision-analysis (high stakes, hard to reverse)` or `🧠 Applied: 🔍 fermi-estimation (low stakes, reversible)`. One line even for a single skill — the emoji mark it as a recognizable signature, not a badge to escalate.
+
+**Category emoji** (for the footer, keyed to each skill's `category` in `skills/INDEX.json`): decision-making 🎯 · problem-solving 🧩 · reasoning 🔍 · analysis 📊 · forecasting 📈 · creativity 🎨 · communication 💬 · collaboration 🤝 · learning 📚 · metacognition 🪞 · ethics ⚖️ · systems-strategy ⚙️ · research 🔎 · recipes 🧭.
 
 ## Common mistakes
 
@@ -54,6 +58,9 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Skipping triage on tasks that look routine but carry hidden stakes.
 - Triaging once and never revisiting, even after the true shape becomes clear.
 - Picking a skill from memory instead of the index when two names sound alike.
+- Turning the footer into a dashboard (badges, progress bars, extra emoji beyond the 🧠 prefix and one category tag per skill) instead of one plain line.
+- Omitting the footer on single-skill answers — it should appear every time, not just for multi-skill pipelines.
+- Sprinkling 🧠/🔄 markers on trivial, single-line answers — they mark that real triage happened, so they're wasted (and desensitizing) on answers with no triage to show.
 
 ## Examples
 
