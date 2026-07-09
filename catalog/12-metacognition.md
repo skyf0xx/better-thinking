@@ -4,7 +4,7 @@ Thinking about the thinking itself. The kernel layer that routes and corrects al
 
 ---
 
-### cognitive-triage `atomic · D3 · ~550 tok`
+### better-thinking `atomic · D3 · ~550 tok`
 Classify an incoming task by its shape and stakes, and select which skills to deploy at what depth — the dispatcher that decides how much thinking machinery a task deserves.
 
 - **Why:** Applying full analytical machinery to a trivial task wastes effort; applying none to a consequential one is negligent. A fast, explicit classification step routes effort proportionally before any substantive work begins.
@@ -27,8 +27,8 @@ Classify an incoming task by its shape and stakes, and select which skills to de
 Run a targeted checklist of the specific cognitive biases a given task shape invites, rather than a generic "watch out for bias" gesture.
 
 - **Why:** Generic bias-awareness rarely changes behavior because it isn't targeted — different task shapes invite different specific biases, and naming the right one for the situation is what actually catches it. A targeted checklist beats a vague caution.
-- **Inputs:** a task, judgment, or conclusion + its shape (from [[cognitive-triage]]) → **Outputs:** the specific biases most likely to be operating, flagged with the concrete symptom to check for.
-- **Activate when:** a conclusion arrived too easily or too quickly; high-stakes judgments; whenever [[cognitive-triage]] flags a task shape with known bias risks (forecasting → overconfidence; evaluating your own plan → optimism bias; hiring → affinity bias). **Skip when:** the task is too low-stakes to warrant the check.
+- **Inputs:** a task, judgment, or conclusion + its shape (from [[better-thinking]]) → **Outputs:** the specific biases most likely to be operating, flagged with the concrete symptom to check for.
+- **Activate when:** a conclusion arrived too easily or too quickly; high-stakes judgments; whenever [[better-thinking]] flags a task shape with known bias risks (forecasting → overconfidence; evaluating your own plan → optimism bias; hiring → affinity bias). **Skip when:** the task is too low-stakes to warrant the check.
 - **Principles:** match the bias to the task shape — forecasting invites overconfidence and planning fallacy; evaluating evidence for a preferred conclusion invites confirmation bias; judging people invites halo effects and affinity bias; recent, vivid events invite availability bias in probability judgments; a bias check needs a concrete behavioral symptom to test for, not just the bias's name ("am I anchoring?" is unfalsifiable — "did I generate an independent estimate before seeing theirs?" is checkable).
 - **Procedure:**
   1. Identify the task shape (forecast, evaluation, decision, judgment-of-person, negotiation, etc.).
@@ -39,7 +39,7 @@ Run a targeted checklist of the specific cognitive biases a given task shape inv
   6. Report what was checked and what, if anything, was corrected.
 - **Mistakes:** running a generic, unfocused "am I biased?" check that doesn't target anything specific; checking for bias only in conclusions you already doubt, not ones that feel comfortable (that's exactly where bias hides best); treating a bias-audit as a formality without applying an actual counter-technique when something is found.
 - **Examples:** checking a project timeline for planning fallacy before committing to it; checking a hiring decision for affinity bias; checking a "the data clearly shows" claim for confirmation bias.
-- **Related:** [[disconfirmation-search]], [[devils-advocacy]], [[confidence-calibration]]. **Prereqs:** [[cognitive-triage]] recommended to select the right biases to check.
+- **Related:** [[disconfirmation-search]], [[devils-advocacy]], [[confidence-calibration]]. **Prereqs:** [[better-thinking]] recommended to select the right biases to check.
 
 ---
 
@@ -127,7 +127,7 @@ Match the depth of analysis applied to a task's actual stakes and reversibility,
 
 - **Why:** Effort allocation is rarely deliberate — it tracks how interesting or comfortable a task is, not its actual importance. Explicitly calibrating effort to stakes prevents both costly negligence and wasted analysis-paralysis.
 - **Inputs:** a task + its stakes/reversibility assessment → **Outputs:** an explicit effort level (quick call / moderate analysis / full process) matched to that assessment.
-- **Activate when:** paired with [[cognitive-triage]] on every nontrivial task; noticing you're either speeding through something important or laboring over something trivial. **Skip when:** never — this runs alongside triage as a standing check.
+- **Activate when:** paired with [[better-thinking]] on every nontrivial task; noticing you're either speeding through something important or laboring over something trivial. **Skip when:** never — this runs alongside triage as a standing check.
 - **Principles:** stakes and reversibility ([[reversibility-classification]]) — not interest level, not social pressure, not how the task was phrased — should set the effort dial; the cost of over-analysis (time, opportunity cost, decision fatigue on later choices) is real and should be weighed, not treated as free; when genuinely unsure how much a task matters, that uncertainty itself is informative — err toward a bit more care until it resolves.
 - **Procedure:**
   1. Assess stakes: what's the cost of a wrong call here?
@@ -137,7 +137,7 @@ Match the depth of analysis applied to a task's actual stakes and reversibility,
   5. Proceed at the calibrated level, and don't second-guess the choice mid-task unless new information changes the stakes assessment.
 - **Mistakes:** letting how *interesting* a problem is (rather than its stakes) set the effort level; treating all decisions as equally deserving of full rigor (burns out the capacity to actually do full rigor where it matters); under-investing in a high-stakes call because it's socially awkward to take it seriously.
 - **Examples:** spending five minutes on a reversible tool choice instead of a week; giving a one-way-door hiring decision the full process instead of a snap read; not over-processing a cheap, quickly-correctable experiment.
-- **Related:** [[reversibility-classification]], [[cognitive-triage]], [[satisficing-thresholds]]. **Prereqs:** none.
+- **Related:** [[reversibility-classification]], [[better-thinking]], [[satisficing-thresholds]]. **Prereqs:** none.
 
 ---
 

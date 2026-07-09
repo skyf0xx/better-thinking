@@ -1,5 +1,5 @@
 {
-  "$schema_note": "Machine-readable companion to TAXONOMY.md, generated from skills/*/SKILL.md frontmatter, catalog/*.md (for cataloged_not_built entries). Consulted by skills/cognitive-triage/SKILL.md before skill selection. Not a substitute for reading a skill's full SKILL.md before invoking it.",
+  "$schema_note": "Machine-readable companion to TAXONOMY.md, generated from skills/*/SKILL.md frontmatter, catalog/*.md (for cataloged_not_built entries). Consulted by skills/better-thinking/SKILL.md before skill selection. Not a substitute for reading a skill's full SKILL.md before invoking it.",
   "generated_from": [
     "skills/*/SKILL.md",
     "catalog/*.md",
@@ -211,7 +211,7 @@
         "disconfirmation-search",
         "devils-advocacy",
         "confidence-calibration",
-        "cognitive-triage"
+        "better-thinking"
       ],
       "path": "skills/bias-audit/SKILL.md"
     },
@@ -330,7 +330,7 @@
       "path": "skills/coaching-dialogue/SKILL.md"
     },
     {
-      "name": "cognitive-triage",
+      "name": "better-thinking",
       "type": "atomic",
       "category": "metacognition",
       "difficulty": 3,
@@ -343,7 +343,7 @@
         "bias-audit",
         "epistemic-tagging"
       ],
-      "path": "skills/cognitive-triage/SKILL.md"
+      "path": "skills/better-thinking/SKILL.md"
     },
     {
       "name": "competing-hypotheses",
@@ -734,10 +734,10 @@
       "difficulty": 2,
       "status": "built",
       "one_line": "Match the depth of analysis applied to a task's actual stakes and reversibility, instead of letting interest level or social pressure set the effort dial.",
-      "triggers": "paired with cognitive-triage on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.",
+      "triggers": "paired with better-thinking on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.",
       "related": [
         "reversibility-classification",
-        "cognitive-triage",
+        "better-thinking",
         "satisficing-thresholds"
       ],
       "path": "skills/effort-calibration/SKILL.md"
@@ -1624,7 +1624,7 @@
       "related": [
         "effort-calibration",
         "decision-framing",
-        "cognitive-triage"
+        "better-thinking"
       ],
       "path": "skills/reversibility-classification/SKILL.md"
     },

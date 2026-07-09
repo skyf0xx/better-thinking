@@ -4,14 +4,14 @@ description: >
   Run a targeted checklist of the specific cognitive biases a given task
   shape invites, with a concrete checkable symptom for each, rather than a
   generic "watch out for bias" gesture. Use when a conclusion arrived too
-  easily, for high-stakes judgments, or whenever cognitive-triage flags a
+  easily, for high-stakes judgments, or whenever better-thinking flags a
   task shape with known bias risk.
 type: atomic
 category: metacognition
 difficulty: 3
 tokens: ~860
 dependencies: []
-related: [disconfirmation-search, devils-advocacy, confidence-calibration, cognitive-triage]
+related: [disconfirmation-search, devils-advocacy, confidence-calibration, better-thinking]
 ---
 
 # Bias Audit
@@ -63,4 +63,4 @@ Generic bias-awareness rarely changes behavior because it isn't targeted — dif
 - [[disconfirmation-search]] — the primary counter this skill routes to for confirmation bias.
 - [[devils-advocacy]] — a structural counter for group-level motivated reasoning.
 - [[confidence-calibration]] — the check this skill's overconfidence findings feed into.
-- [[cognitive-triage]] — typically the skill that flags when a bias-audit is warranted.
+- [[better-thinking]] — typically the skill that flags when a bias-audit is warranted.

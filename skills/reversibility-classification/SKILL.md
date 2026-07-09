@@ -10,7 +10,7 @@ category: decision-making
 difficulty: 1
 tokens: ~890
 dependencies: []
-related: [effort-calibration, decision-framing, cognitive-triage]
+related: [effort-calibration, decision-framing, better-thinking]
 ---
 
 # Reversibility Classification
@@ -61,4 +61,4 @@ The most common process error is symmetric treatment of decisions: agonizing ove
 
 - [[effort-calibration]] — the general form of stakes-to-effort matching this skill feeds.
 - [[decision-framing]] — the next step once the process weight is set.
-- [[cognitive-triage]] — often invokes this skill directly when a task's shape is a decision.
+- [[better-thinking]] — often invokes this skill directly when a task's shape is a decision.

@@ -1,14 +1,14 @@
 {
-  "name": "cognitive-algorithms",
+  "name": "better-thinking",
   "description": "An operating system for cognition: composable Agent Skills for reasoning, decision-making, research, analysis, and more.",
   "owner": {
     "name": "Will"
   },
   "plugins": [
     {
-      "name": "cognitive-algorithms",
+      "name": "better-thinking",
       "source": "./",
-      "description": "121 composable Agent Skills encoding transferable thinking procedures, routed through a cognitive-triage dispatcher backed by a machine-readable index."
+      "description": "121 composable Agent Skills encoding transferable thinking procedures, routed through a better-thinking dispatcher backed by a machine-readable index."
     }
   ]
 }

@@ -3,7 +3,7 @@ name: effort-calibration
 description: >
   Match the depth of analysis applied to a task's actual stakes and
   reversibility, instead of letting interest level or social pressure set
-  the effort dial. Use alongside cognitive-triage on every nontrivial task,
+  the effort dial. Use alongside better-thinking on every nontrivial task,
   and whenever you notice you're either speeding through something
   important or over-analyzing something trivial.
 type: atomic
@@ -11,7 +11,7 @@ category: metacognition
 difficulty: 2
 tokens: ~830
 dependencies: []
-related: [reversibility-classification, cognitive-triage, satisficing-thresholds]
+related: [reversibility-classification, better-thinking, satisficing-thresholds]
 ---
 
 # Effort Calibration
@@ -24,7 +24,7 @@ Effort allocation is rarely deliberate — it tracks how interesting a task is, 
 
 ## Use when / Don't use when
 
-- **Use when:** paired with [[cognitive-triage]] on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.
+- **Use when:** paired with [[better-thinking]] on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.
 - **Don't use when:** never skip it — a standing check alongside triage, not an optional add-on.
 
 ## Inputs → Outputs
@@ -61,5 +61,5 @@ Effort allocation is rarely deliberate — it tracks how interesting a task is, 
 ## Related
 
 - [[reversibility-classification]] — the input this skill's dial is set from.
-- [[cognitive-triage]] — the dispatcher this skill runs alongside.
+- [[better-thinking]] — the dispatcher this skill runs alongside.
 - [[satisficing-thresholds]] — a specific technique for the "quick call" end of the effort spectrum.

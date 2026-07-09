@@ -1,5 +1,5 @@
 ---
-name: cognitive-triage
+name: better-thinking
 description: >
   Classify an incoming task by its shape (decision, diagnosis, research,
   creative, communication, learning, negotiation) and its stakes, then select
@@ -13,7 +13,7 @@ dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging]
 ---
 
-# Cognitive Triage
+# Better Thinking
 
 Classify an incoming task by its shape and stakes, and select which skills to deploy at what depth — the dispatcher that decides how much thinking machinery a task deserves.
 

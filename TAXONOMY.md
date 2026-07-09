@@ -1,6 +1,6 @@
 # Taxonomy of Cognitive Skills
 
-**135 skills · 107 atomic (A) · 28 composite (C)** across 13 categories. Full specifications live in [catalog/](catalog/). Format: `name` (type · difficulty) — one-liner. Machine-readable counterpart: [skills/INDEX.json](skills/INDEX.json) — the lookup [[cognitive-triage]] consults to select skills instead of relying on this document from memory.
+**135 skills · 107 atomic (A) · 28 composite (C)** across 13 categories. Full specifications live in [catalog/](catalog/). Format: `name` (type · difficulty) — one-liner. Machine-readable counterpart: [skills/INDEX.json](skills/INDEX.json) — the lookup [[better-thinking]] consults to select skills instead of relying on this document from memory.
 
 Sources mined: cognitive science, psychology, philosophy, education, scientific research, systems engineering, military strategy, intelligence analysis (CIA structured analytic techniques), decision science, economics, product management, UX research, design thinking, negotiation, executive coaching, journalism, law (IRAC), medicine (differential diagnosis), academia, creative writing.
 
@@ -188,7 +188,7 @@ Acquiring and transmitting understanding.
 
 Thinking about the thinking itself. The layer that routes and corrects all others.
 
-- `cognitive-triage` (A·D3) — classify the task and select which skills to deploy at what depth
+- `better-thinking` (A·D3) — classify the task and select which skills to deploy at what depth
 - `bias-audit` (A·D3) — run a targeted checklist of the biases this task shape invites
 - `epistemic-tagging` (A·D1) — label every claim as fact / inference / assumption / speculation
 - `confidence-calibration` (A·D3) — attach probabilities that match actual hit rates; check against base rates
@@ -210,6 +210,6 @@ Reasoning about should, not just can.
 
 ## Cross-cutting notes
 
-- **The metacognition category is the kernel.** `cognitive-triage` is the dispatcher that decides which other skills load; `epistemic-tagging`, `confidence-calibration`, and `effort-calibration` are invariants that should run inside *every* composite.
+- **The metacognition category is the kernel.** `better-thinking` is the dispatcher that decides which other skills load; `epistemic-tagging`, `confidence-calibration`, and `effort-calibration` are invariants that should run inside *every* composite.
 - **Some atomic skills are shared organs.** `assumption-audit`, `steelmanning`, `premortem`, `evidence-triangulation`, and `second-order-scan` each appear as dependencies of 4+ composites.
 - **Category placement is primary-home, not exclusive.** `confidence-calibration` lives in metacognition but is load-bearing for forecasting; `steelmanning` lives in analysis but is essential to communication. The `related` links carry these edges.
