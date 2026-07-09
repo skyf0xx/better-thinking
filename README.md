@@ -118,6 +118,10 @@ recipes/                ← named-framework mappings (design thinking, ...) onto
 6. **Failure-aware.** Every skill lists its characteristic misuses, because a thinking tool applied wrong is worse than no tool.
 7. **Token-budgeted.** Every skill carries a footprint estimate so orchestrators can reason about the cost of loading it.
 
+## Recipes
+
+Recipes map a named framework you already know — Design Thinking, Lean Startup — onto a sequence of skills from this collection, stage by stage. If you're looking for "what's the better-thinking equivalent of framework X," start at [recipes/README.md](recipes/README.md) rather than the skill index.
+
 ## Difficulty & footprint conventions
 
 - **Difficulty (D1–D5):** how hard the skill is to execute *well*. D1 = mechanical checklist; D3 = requires judgment at each step; D5 = requires orchestrating many judgment calls under uncertainty.
