@@ -2,13 +2,13 @@
 
 ## Index
 
-| Recipe | Framework | Core loop |
-|---|---|---|
-| [design-thinking.md](design-thinking.md) | Design Thinking | empathize → define → ideate → (prototype) → test, iterated |
-| [lean-startup.md](lean-startup.md) | Lean Startup / Build-Measure-Learn | hypothesize → build → measure → learn → persevere-or-pivot |
-| [jobs-to-be-done.md](jobs-to-be-done.md) | Jobs-to-be-Done | decompose → interview → triangulate → rank rival explanations → audit thesis |
-| [rice-prioritization.md](rice-prioritization.md) | RICE Prioritization | decompose backlog → score reach/impact/confidence → price effort → sequence |
-| [five-forces-strategy.md](five-forces-strategy.md) | Five Forces Competitive Strategy | map forces → analyze incentives → map system → scenario-test → decide posture |
+| Recipe | Framework | What it's for | What you get |
+|---|---|---|---|
+| [design-thinking.md](design-thinking.md) | Design Thinking | You're building something for other people and want it to solve their real problem, not the one you assumed. | A solution grounded in what users actually need, plus a plan to test it before you over-invest. |
+| [lean-startup.md](lean-startup.md) | Lean Startup / Build-Measure-Learn | You have a business idea and don't yet know if anyone wants it. | A cheap, fast way to find out — and an honest answer on whether to keep going or change direction. |
+| [jobs-to-be-done.md](jobs-to-be-done.md) | Jobs-to-be-Done | You want to know the real reason people buy or use something, beneath what they say. | The underlying motivation driving the behavior, checked against competing explanations before you trust it. |
+| [rice-prioritization.md](rice-prioritization.md) | RICE Prioritization | You have a long list of things you could work on and limited time to do them. | A ranked order, backed by a transparent score, so you can defend why X comes before Y. |
+| [five-forces-strategy.md](five-forces-strategy.md) | Five Forces Competitive Strategy | You want to understand why an industry is profitable (or brutal) and where your business stands in it. | A clear-eyed picture of the competitive pressures at play, and a stance for how to respond to them. |
 
 ## Conventions
 

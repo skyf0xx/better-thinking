@@ -20,7 +20,7 @@ List the named frameworks available in `recipes/`, then run the one the user pic
 
 ## Why
 
-`recipe-runner` executes a recipe once you name it, but a user who doesn't already know this collection's recipe names has no way to discover them short of reading `recipes/README.md` directly. This skill is the browsable front door: show what's available in one line each, then hand the choice straight to `recipe-runner` instead of making the user learn a second command per recipe.
+`recipe-runner` executes a recipe once you name it, but a user who doesn't already know this collection's recipe names — or the jargon of the frameworks themselves — has no way to discover them short of reading `recipes/README.md` directly. This skill is the browsable front door: show what's available in one plain-language line each (the problem it solves, not its stage names), then hand the choice straight to `recipe-runner` instead of making the user learn a second command per recipe or decode "empathize → define → ideate" themselves.
 
 ## Use when / Don't use when
 
@@ -40,7 +40,7 @@ List the named frameworks available in `recipes/`, then run the one the user pic
 
 ## Procedure
 
-1. Read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its core loop as the one-line description.
+1. Read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description — plain-language purpose, not the stage sequence or framework jargon. A user picking from this list doesn't yet know what "empathize → define → ideate" means; they know what problem they have.
 2. Ask the user which number they want, and for the task to run it against (if not already given).
 3. Once picked, invoke `recipe-runner` with the framework fixed to the chosen recipe's file (`recipes/<name>.md`), passing along the task.
 4. Follow `recipe-runner`'s own procedure exactly as written — this skill changes only how the recipe is found and reached, not how it runs.
