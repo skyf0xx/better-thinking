@@ -122,7 +122,3 @@ recipes/                ← named-framework mappings (design thinking, ...) onto
 
 - **Difficulty (D1–D5):** how hard the skill is to execute *well*. D1 = mechanical checklist; D3 = requires judgment at each step; D5 = requires orchestrating many judgment calls under uncertainty.
 - **Token footprint:** estimated size of the final SKILL.md body. Atomic skills target **300–700 tokens**; composites **800–1,500** (they lean on their dependencies for detail).
-
-## Status
-
-The catalog specifies **135 skills (107 atomic, 28 composite)** across 13 categories; **121 are built** as `skills/<name>/SKILL.md` (Phases 0–3). [recipes/](recipes/) (Phase 4) maps well-known named frameworks — design thinking, lean startup — onto sequences of existing skills.
