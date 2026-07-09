@@ -10,7 +10,7 @@ category: decision-making
 difficulty: 4
 tokens: ~1050
 dependencies: [decision-framing, reversibility-classification, solution-space-mapping, weighted-scoring, expected-value, premortem, second-order-scan, tripwires, decision-journaling, confidence-calibration]
-related: [structured-problem-solving, scenario-planning, negotiation]
+related: [structured-problem-solving, scenario-planning, negotiation, recipe-runner]
 ---
 
 # Decision Analysis

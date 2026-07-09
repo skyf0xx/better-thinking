@@ -5,8 +5,8 @@
     "recipes/*.md"
   ],
   "counts": {
-    "total": 131,
-    "built": 131
+    "total": 132,
+    "built": 132
   },
   "skills": [
     {
@@ -337,7 +337,8 @@
         "effort-calibration",
         "reversibility-classification",
         "bias-audit",
-        "epistemic-tagging"
+        "epistemic-tagging",
+        "recipe-runner"
       ],
       "path": "skills/better-thinking/SKILL.md"
     },
@@ -532,7 +533,8 @@
       "related": [
         "structured-problem-solving",
         "scenario-planning",
-        "negotiation"
+        "negotiation",
+        "recipe-runner"
       ],
       "path": "skills/decision-analysis/SKILL.md"
     },
@@ -1608,6 +1610,21 @@
       "path": "skills/reductio/SKILL.md"
     },
     {
+      "name": "recipe-runner",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Look up a named external framework (design thinking, lean startup, ...) in recipes/, then execute its mapped skill sequence stage by stage as a real orchestrated run.",
+      "triggers": "user names a known framework explicitly (\"run this as design thinking\", \"let's do a lean-startup loop\"), or describes a framework's stages without naming it, and wants it actually carried out.",
+      "related": [
+        "better-thinking",
+        "scientific-method",
+        "decision-analysis"
+      ],
+      "path": "skills/recipe-runner/SKILL.md"
+    },
+    {
       "name": "reference-class-forecasting",
       "type": "atomic",
       "category": "forecasting",
@@ -1802,7 +1819,8 @@
         "differential-diagnosis",
         "structured-forecasting",
         "decision-analysis",
-        "structured-problem-solving"
+        "structured-problem-solving",
+        "recipe-runner"
       ],
       "path": "skills/scientific-method/SKILL.md"
     },

@@ -14,6 +14,10 @@
 - Every recipe ends with a **Residual gap** section — what the mapping doesn't cover, usually a "build/do" stage this collection deliberately excludes (see [README.md](../README.md)'s "Excluded by design" list), or a repurposed skill that's an imperfect fit.
 - Recipes cross-link each other under **Related recipes** where their stages overlap, the same way skills cross-link via `related`.
 
+## Running a recipe
+
+Recipe docs stay pure content — no new skill is required to make a recipe executable. [[recipe-runner]] (`skills/recipe-runner/SKILL.md`) is a composite skill that bridges this directory into the routable skill system: name a framework (or describe its stages) and `recipe-runner` finds the matching doc here and executes its stage sequence as one orchestrated pass, instead of leaving the mapping as reference material a human has to walk manually. Adding a recipe here makes it runnable for free — no per-recipe skill needed.
+
 ## Adding a new recipe
 
 A framework belongs here, not as a skill, when it names a *combination* of existing procedures rather than contributing a new one.

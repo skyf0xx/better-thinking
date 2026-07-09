@@ -10,7 +10,7 @@ category: metacognition
 difficulty: 3
 tokens: ~987
 dependencies: []
-related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging]
+related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, recipe-runner]
 ---
 
 # Better Thinking
@@ -51,7 +51,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 9. Always close with a one-line footer, prefixed **🧠**, naming the skill(s) applied — each tagged with its category emoji below — and the stakes/depth call, e.g. `**🧠 Applied:** 🎯 premortem → 📐 red-teaming → 🎯 decision-analysis (high stakes, hard to reverse)` or `**🧠 Applied:** 🔍 fermi-estimation (low stakes, reversible)`. One line even for a single skill — the emoji mark it as a recognizable signature, not a badge to escalate.
 10. On multi-skill or non-obvious-depth tasks only (the same bar as step 6), follow the Applied footer with one more line, `**✨ Caught:**`, naming the *specific* thing this task's structure surfaced that a fast, unstructured answer would have missed — a risk, an assumption, a wrong default, a hidden dependency. It must name the concrete finding from this exact task, not a generic claim like "a more thorough analysis" or "extra confidence." If nothing structure-dependent was actually surfaced (the process confirmed the obvious answer), omit the line rather than inventing one — a false "Caught" line is worse than none.
 
-**Category emoji** (for the footer, keyed to each skill's `category` in `skills/INDEX.json`): decision-making 🎯 · problem-solving 🧩 · reasoning 🔍 · analysis 📐 · forecasting 📈 · creativity 🎨 · communication 💬 · collaboration 🤝 · learning 📚 · metacognition 🪞 · ethics ⚖️ · systems-strategy ⚙️ · research 🔎 · recipes 🧭.
+**Category emoji** (for the footer, keyed to each skill's `category` in `skills/INDEX.json`): decision-making 🎯 · problem-solving 🧩 · reasoning 🔍 · analysis 📐 · forecasting 📈 · creativity 🎨 · communication 💬 · collaboration 🤝 · learning 📚 · metacognition 🪞 · ethics ⚖️ · systems-strategy ⚙️ · research 🔎.
 
 ## Common mistakes
 
