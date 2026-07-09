@@ -1,0 +1,2215 @@
+{
+  "$schema_note": "Machine-readable companion to TAXONOMY.md, generated from skills/*/SKILL.md frontmatter, catalog/*.md (for cataloged_not_built entries). Consulted by skills/cognitive-triage/SKILL.md before skill selection. Not a substitute for reading a skill's full SKILL.md before invoking it.",
+  "generated_from": [
+    "skills/*/SKILL.md",
+    "catalog/*.md",
+    "recipes/*.md"
+  ],
+  "counts": {
+    "total": 131,
+    "built": 124,
+    "cataloged_not_built": 7
+  },
+  "skills": [
+    {
+      "name": "abductive-inference",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Generate multiple candidate explanations for a surprising observation and rank them by explanatory quality, not by which came to mind first.",
+      "triggers": "something unexpected happened and you're about to say \"probably because\u2026\" without having considered alternatives.",
+      "related": [
+        "competing-hypotheses",
+        "bayesian-updating",
+        "causal-analysis"
+      ],
+      "path": "skills/abductive-inference/SKILL.md"
+    },
+    {
+      "name": "active-listening",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Paraphrase, label, and verify understanding before responding, so the response addresses what was actually meant rather than what was assumed.",
+      "triggers": "any conversation where getting it right matters more than getting a response out fast \u2014 negotiations, difficult conversations, interviews, conflict.",
+      "related": [
+        "empathy-mapping",
+        "precision-questioning",
+        "nonviolent-communication"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "empathy-mapping",
+          "distinction": "active-listening operates in real-time, in-conversation, on what's actually being said; empathy-mapping is offline/preparatory, constructing a fuller model including unstated needs."
+        }
+      ],
+      "path": "skills/active-listening/SKILL.md"
+    },
+    {
+      "name": "after-action-review",
+      "type": "composite",
+      "category": "metacognition",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Compare intended outcome against actual outcome, diagnose the gap, and extract what to keep, drop, and change.",
+      "triggers": "after any effort worth learning from \u2014 not only failures; successes deserve review too, to learn *why* they worked rather than just assuming it'll repeat. Lighter-weight than a full root-cause investigation, and suited to routine, frequent use.",
+      "dependencies": [
+        "counterfactual-reasoning",
+        "decision-journaling",
+        "epistemic-tagging"
+      ],
+      "related": [
+        "retrospective-facilitation",
+        "root-cause-investigation"
+      ],
+      "path": "skills/after-action-review/SKILL.md"
+    },
+    {
+      "name": "analogical-reasoning",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Transfer structure from a well-understood source domain to a target problem, then explicitly verify the mapping holds where it matters.",
+      "triggers": "the problem resembles something solved elsewhere; generating approaches for a genuinely novel situation; evaluating someone else's persuasive analogy before accepting its conclusion.",
+      "related": [
+        "explanatory-analogy",
+        "concept-blending",
+        "mental-model-extraction"
+      ],
+      "path": "skills/analogical-reasoning/SKILL.md"
+    },
+    {
+      "name": "argument-construction",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Build a claim-evidence-warrant chain with counterargument slots designed in from the start, rather than bolted on defensively.",
+      "triggers": "writing persuasive content meant to survive scrutiny \u2014 proposals, briefs, pitches.",
+      "related": [
+        "argument-mapping",
+        "steelmanning",
+        "persuasive-case"
+      ],
+      "path": "skills/argument-construction/SKILL.md"
+    },
+    {
+      "name": "argument-mapping",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Lay out an argument's claims, premises, warrants, and rebuttals as an explicit structure so its strength can be assessed part by part.",
+      "triggers": "evaluating or writing a long-form argument; a disagreement keeps circling and mapping both sides would locate the crux.",
+      "related": [
+        "deductive-validation",
+        "argument-construction",
+        "steelmanning"
+      ],
+      "path": "skills/argument-mapping/SKILL.md"
+    },
+    {
+      "name": "assumption-audit",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Surface the load-bearing assumptions beneath a claim or plan and test each for fragility.",
+      "triggers": "before committing to a plan; a conclusion feels solid but stakes are high; someone says \"obviously\" about a claim that hasn't actually been checked.",
+      "related": [
+        "first-principles",
+        "premortem",
+        "disconfirmation-search",
+        "epistemic-tagging"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "chestertons-fence",
+          "distinction": "assumption-audit interrogates a claim/plan going forward; chestertons-fence interrogates an existing artifact before removal."
+        }
+      ],
+      "path": "skills/assumption-audit/SKILL.md"
+    },
+    {
+      "name": "audience-modeling",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Model the reader or listener's existing knowledge, goals, and likely objections before composing anything, and let that model drive every subsequent choice.",
+      "triggers": "before writing or presenting anything consequential; a draft isn't landing and it's unclear why.",
+      "related": [
+        "pyramid-structuring",
+        "precision-questioning",
+        "persuasive-case"
+      ],
+      "path": "skills/audience-modeling/SKILL.md"
+    },
+    {
+      "name": "backcasting",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Define a desired future state in detail, then work backward to derive the sequence of changes that would produce it.",
+      "triggers": "setting long-horizon strategy or vision; current trends don't lead anywhere close to the desired outcome; planning around a discontinuity you intend to cause.",
+      "related": [
+        "working-backwards",
+        "scenario-planning",
+        "strategic-planning"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "working-backwards",
+          "distinction": "working-backwards operates on concrete, near-term, well-specified goals (execution planning); backcasting operates on long-horizon, deliberately chosen future states (strategy)."
+        }
+      ],
+      "path": "skills/backcasting/SKILL.md"
+    },
+    {
+      "name": "batna-analysis",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Establish your own and the other side's best alternative to a negotiated agreement before negotiating.",
+      "triggers": "before any negotiation with real stakes; when feeling pressure to accept a deal, which is exactly when BATNA clarity is most needed and most likely to have eroded.",
+      "related": [
+        "negotiation",
+        "incentive-analysis",
+        "interest-based-bargaining"
+      ],
+      "path": "skills/batna-analysis/SKILL.md"
+    },
+    {
+      "name": "bayesian-updating",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Revise belief in a hypothesis by asking how much more likely the evidence is under that hypothesis than under its rivals.",
+      "triggers": "new information arrives on an open question; a belief flips on a single data point; diagnosing from symptoms or signals.",
+      "related": [
+        "reference-class-forecasting",
+        "confidence-calibration",
+        "competing-hypotheses"
+      ],
+      "path": "skills/bayesian-updating/SKILL.md"
+    },
+    {
+      "name": "bias-audit",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Run a targeted checklist of the specific cognitive biases a given task shape invites, with a concrete checkable symptom for each, rather than a generic \"watch out for bias\" gesture.",
+      "triggers": "a conclusion arrived too easily; high-stakes judgments; whenever the task shape carries a known bias risk (forecasting \u2192 overconfidence; own plan \u2192 optimism bias; hiring \u2192 affinity bias).",
+      "related": [
+        "disconfirmation-search",
+        "devils-advocacy",
+        "confidence-calibration",
+        "cognitive-triage"
+      ],
+      "path": "skills/bias-audit/SKILL.md"
+    },
+    {
+      "name": "bottleneck-analysis",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Locate the single binding constraint in a system and subordinate all other improvement effort to it.",
+      "triggers": "improvement effort feels diffuse or isn't moving the outcome metric; \"everything is a priority\"; a process has an obvious slow point everyone routes around instead of fixing.",
+      "related": [
+        "constraint-relaxation",
+        "systems-mapping",
+        "prioritization-triage"
+      ],
+      "path": "skills/bottleneck-analysis/SKILL.md"
+    },
+    {
+      "name": "case-analysis",
+      "type": "composite",
+      "category": "analysis",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "IRAC generalized - identify the issue, determine the governing rules or principles, apply them to the facts, and reach a conclusion.",
+      "triggers": "applying any rule system to a specific situation \u2014 legal questions, policy compliance, contractual interpretation, procedural rulings, or codified organizational policy.",
+      "dependencies": [
+        "question-decomposition",
+        "argument-mapping",
+        "steelmanning",
+        "analogical-reasoning"
+      ],
+      "related": [
+        "argument-mapping",
+        "analogical-reasoning",
+        "steelmanning"
+      ],
+      "path": "skills/case-analysis/SKILL.md"
+    },
+    {
+      "name": "causal-analysis",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Build an explicit causal model of a phenomenon, distinguishing causation from correlation, confounding, and selection.",
+      "triggers": "any claim of the form \"X causes, drives, or leads to Y\"; before intervening on X to change Y.",
+      "related": [
+        "counterfactual-reasoning",
+        "statistical-audit",
+        "root-cause-investigation",
+        "sanity-checking"
+      ],
+      "path": "skills/causal-analysis/SKILL.md"
+    },
+    {
+      "name": "chestertons-fence",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Before removing or changing something that seems useless, reconstruct why it was put there in the first place.",
+      "triggers": "about to remove, simplify, or bypass something inherited whose purpose isn't obvious; \"why do we even do this?\" moments.",
+      "related": [
+        "first-principles",
+        "assumption-audit"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "assumption-audit",
+          "distinction": "assumption-audit interrogates a claim/plan going forward; chestertons-fence interrogates an existing artifact before removal."
+        }
+      ],
+      "path": "skills/chestertons-fence/SKILL.md"
+    },
+    {
+      "name": "claim-verification",
+      "type": "composite",
+      "category": "research",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Journalism-grade fact-checking of a specific claim: decompose it, trace to origin, triangulate independently, and grade the verdict.",
+      "triggers": "a claim is load-bearing for a decision or about to be repeated onward; a statistic is doing heavy rhetorical work.",
+      "dependencies": [
+        "question-decomposition",
+        "search-strategy",
+        "source-credibility",
+        "evidence-triangulation",
+        "statistical-audit",
+        "epistemic-tagging"
+      ],
+      "related": [
+        "literature-synthesis",
+        "critical-reading"
+      ],
+      "path": "skills/claim-verification/SKILL.md"
+    },
+    {
+      "name": "coaching-dialogue",
+      "type": "composite",
+      "category": "collaboration",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "GROW - goal, reality, options, will - a question-led dialogue that helps someone reach their own insight and commitment, rather than being handed a solution.",
+      "triggers": "the person has the capability to solve their own problem and would benefit more from ownership than from a direct answer; a mentoring or management relationship where growth matters.",
+      "dependencies": [
+        "active-listening",
+        "precision-questioning",
+        "divergent-ideation"
+      ],
+      "related": [
+        "active-listening",
+        "socratic-teaching",
+        "feedback-delivery"
+      ],
+      "path": "skills/coaching-dialogue/SKILL.md"
+    },
+    {
+      "name": "cognitive-triage",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Classify an incoming task by its shape (decision, diagnosis, research, creative, communication, learning, negotiation) and its stakes, then select which skills to deploy at what depth.",
+      "triggers": "at first contact with any nontrivial task \u2014 the entry point other skills get dispatched from.",
+      "related": [
+        "effort-calibration",
+        "reversibility-classification",
+        "bias-audit",
+        "epistemic-tagging"
+      ],
+      "path": "skills/cognitive-triage/SKILL.md"
+    },
+    {
+      "name": "competing-hypotheses",
+      "type": "composite",
+      "category": "analysis",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Analysis of Competing Hypotheses - rank rival explanations by how much the evidence disconfirms each, rather than how much confirms any single favorite.",
+      "triggers": "high-stakes explanatory questions with ambiguous or contested evidence \u2014 intelligence-style assessment, complex diagnosis, contested historical or organizational questions.",
+      "dependencies": [
+        "abductive-inference",
+        "evidence-hierarchy",
+        "disconfirmation-search",
+        "bayesian-updating"
+      ],
+      "related": [
+        "differential-diagnosis",
+        "abductive-inference",
+        "bayesian-updating"
+      ],
+      "path": "skills/competing-hypotheses/SKILL.md"
+    },
+    {
+      "name": "concept-blending",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Merge two distinct conceptual frames into a new blended space, then develop the emergent properties that neither source frame had alone.",
+      "triggers": "two domains both seem relevant but neither alone solves the problem; naming or designing something that needs to evoke two different ideas at once.",
+      "related": [
+        "analogical-reasoning",
+        "triz-contradiction",
+        "random-stimulus"
+      ],
+      "path": "skills/concept-blending/SKILL.md"
+    },
+    {
+      "name": "confidence-calibration",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Attach numeric probabilities to beliefs and forecasts that match their actual hit rate over time, checked against base rates and scored against outcomes.",
+      "triggers": "stating any forecast or belief that matters enough to act on; after a process produces a conclusion needing a confidence label; periodically, to review a track record.",
+      "related": [
+        "reference-class-forecasting",
+        "decision-journaling",
+        "structured-forecasting"
+      ],
+      "path": "skills/confidence-calibration/SKILL.md"
+    },
+    {
+      "name": "conflict-mediation",
+      "type": "composite",
+      "category": "collaboration",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "As a third party, surface each side's narrative and underlying interests, find compatible ground, and broker an agreement neither side could reach alone.",
+      "triggers": "direct negotiation between parties has stalled or is too charged for them to conduct alone; a neutral structure is needed to make progress.",
+      "dependencies": [
+        "active-listening",
+        "empathy-mapping",
+        "interest-based-bargaining",
+        "steelmanning",
+        "nonviolent-communication"
+      ],
+      "related": [
+        "negotiation",
+        "difficult-conversations",
+        "active-listening"
+      ],
+      "path": "skills/conflict-mediation/SKILL.md"
+    },
+    {
+      "name": "consensus-mapping",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Measure the actual gradient of agreement across a group instead of forcing a binary vote that hides where the real disagreement lives.",
+      "triggers": "a group decision needs real buy-in, not just a nominal majority; a quick vote feels like it's hiding real dissent.",
+      "related": [
+        "interest-based-bargaining",
+        "retrospective-facilitation",
+        "session-design"
+      ],
+      "path": "skills/consensus-mapping/SKILL.md"
+    },
+    {
+      "name": "cost-benefit",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Tally the full costs and benefits of an action, including opportunity cost, hidden costs, and who they accrue to, before judging it worthwhile.",
+      "triggers": "justifying or challenging any investment of money, time, or attention.",
+      "related": [
+        "expected-value",
+        "second-order-scan",
+        "prioritization-triage"
+      ],
+      "path": "skills/cost-benefit/SKILL.md"
+    },
+    {
+      "name": "counterfactual-reasoning",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Evaluate \"what would have happened if X had been different\" by constructing the minimally-changed alternative world.",
+      "triggers": "attributing success or failure to a specific factor; evaluating a past decision; measuring the impact of anything (\"did the campaign actually work?\").",
+      "related": [
+        "causal-analysis",
+        "decision-journaling",
+        "after-action-review"
+      ],
+      "path": "skills/counterfactual-reasoning/SKILL.md"
+    },
+    {
+      "name": "creative-constraints",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Deliberately add artificial constraints to a generative task, since bounded problems provoke more inventive solutions than open ones.",
+      "triggers": "ideation under full freedom is producing only conventional output; a team needs to break out of \"the way we've always done it.\"",
+      "related": [
+        "constraint-relaxation",
+        "triz-contradiction",
+        "divergent-ideation"
+      ],
+      "path": "skills/creative-constraints/SKILL.md"
+    },
+    {
+      "name": "critical-reading",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Extract from a text its claims, evidence, assumptions, and omissions \u2014 reading what it does, not just what it says.",
+      "triggers": "any consequential document, especially polished, confident, or agreeable prose \u2014 agreement is exactly when critical reading is hardest and most needed.",
+      "related": [
+        "argument-mapping",
+        "frame-detection",
+        "statistical-audit"
+      ],
+      "path": "skills/critical-reading/SKILL.md"
+    },
+    {
+      "name": "curriculum-design",
+      "type": "composite",
+      "category": "learning",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Sequence learning objectives, instruction, and assessment coherently across a full learning arc, from where the learner starts to where they need to end up.",
+      "triggers": "designing a training program, course, or structured onboarding \u2014 anything with multiple sequenced learning stages.",
+      "dependencies": [
+        "learning-objectives",
+        "knowledge-gap-analysis",
+        "scaffolding",
+        "deliberate-practice-design",
+        "transfer-testing"
+      ],
+      "related": [
+        "learning-objectives",
+        "scaffolding",
+        "knowledge-gap-analysis",
+        "socratic-teaching"
+      ],
+      "path": "skills/curriculum-design/SKILL.md"
+    },
+    {
+      "name": "decision-analysis",
+      "type": "composite",
+      "category": "decision-making",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "The full pipeline for consequential choices: frame, generate options, model uncertainty, score, stress-test, decide, and record.",
+      "triggers": "reversibility-classification grades the decision costly-reversible or worse, and the options are genuinely open rather than pre-determined.",
+      "dependencies": [
+        "decision-framing",
+        "reversibility-classification",
+        "solution-space-mapping",
+        "weighted-scoring",
+        "expected-value",
+        "premortem",
+        "second-order-scan",
+        "tripwires",
+        "decision-journaling",
+        "confidence-calibration"
+      ],
+      "related": [
+        "structured-problem-solving",
+        "scenario-planning",
+        "negotiation"
+      ],
+      "path": "skills/decision-analysis/SKILL.md"
+    },
+    {
+      "name": "decision-framing",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Define what is actually being decided \u2014 options, decider, criteria, stakes, and deadline \u2014 before any evaluation begins.",
+      "triggers": "any nontrivial choice, especially group ones; a debate is circling; someone asks \"what do you think?\" about an unframed decision.",
+      "related": [
+        "problem-framing",
+        "decision-analysis",
+        "expectation-contracting",
+        "reversibility-classification"
+      ],
+      "path": "skills/decision-framing/SKILL.md"
+    },
+    {
+      "name": "decision-journaling",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Record the forecast, reasoning, alternatives considered, and confidence level at the moment of a decision, before the outcome is known, so it can be honestly scored later.",
+      "triggers": "any consequential decision, especially ones you'll be tempted to judge later purely by outcome; pairs naturally with the close of any structured decision process.",
+      "related": [
+        "confidence-calibration",
+        "counterfactual-reasoning",
+        "after-action-review"
+      ],
+      "path": "skills/decision-journaling/SKILL.md"
+    },
+    {
+      "name": "deductive-validation",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Check whether a conclusion actually follows from its premises, independent of whether the premises are true.",
+      "triggers": "evaluating any \"therefore\"; a conclusion feels off but the premises seem fine, or vice versa.",
+      "related": [
+        "argument-mapping",
+        "fallacy-detection",
+        "reductio"
+      ],
+      "path": "skills/deductive-validation/SKILL.md"
+    },
+    {
+      "name": "deliberate-practice-design",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Isolate a specific weakness, design a drill at the edge of current ability, and add immediate feedback - the structure that turns repetition into improvement.",
+      "triggers": "general practice has plateaued; a specific weakness has been identified but not isolated into a targeted drill; designing training or coaching programs.",
+      "related": [
+        "error-analysis",
+        "scaffolding",
+        "transfer-testing"
+      ],
+      "path": "skills/deliberate-practice-design/SKILL.md"
+    },
+    {
+      "name": "delphi-aggregation",
+      "type": "composite",
+      "category": "collaboration",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Aggregate independent expert estimates through anonymous, iterative rounds with feedback, avoiding the groupthink and status-anchoring that live group discussion produces.",
+      "triggers": "a question needs expert judgment but live group discussion would risk anchoring or status effects; forecasting under genuine expert disagreement.",
+      "dependencies": [
+        "question-decomposition",
+        "reference-class-forecasting",
+        "confidence-calibration"
+      ],
+      "related": [
+        "structured-forecasting",
+        "interview-synthesis",
+        "consensus-mapping"
+      ],
+      "path": "skills/delphi-aggregation/SKILL.md"
+    },
+    {
+      "name": "design-thinking",
+      "type": "recipe",
+      "category": "recipes",
+      "status": "built",
+      "one_line": "Design Thinking: empathize, define, ideate, (prototype), test \u2014 mapped onto interview-synthesis, empathy-mapping, problem-framing, ideation-sprint, scientific-method.",
+      "triggers": "user names 'design thinking' explicitly, or describes the empathize/define/ideate/prototype/test stages.",
+      "path": "recipes/design-thinking.md"
+    },
+    {
+      "name": "devils-advocacy",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Deliberately construct the best case against the group's current consensus, as an assigned role rather than a personal stance.",
+      "triggers": "a group converges quickly or uniformly; a decision is high-stakes and unanimous; dissent has been notably absent.",
+      "related": [
+        "red-teaming",
+        "inversion",
+        "steelmanning"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "steelmanning",
+          "distinction": "steelmanning reconstructs an opposing position charitably before arguing against it; devils-advocacy argues against your own group's consensus."
+        }
+      ],
+      "path": "skills/devils-advocacy/SKILL.md"
+    },
+    {
+      "name": "differential-diagnosis",
+      "type": "composite",
+      "category": "problem-solving",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Enumerate the possible causes of an observed condition, order them by probability and severity, and run the tests that discriminate fastest - medicine's algorithm, generalized.",
+      "triggers": "something is actively wrong, multiple causes are possible, and testing is costly \u2014 debugging, medical-style triage, churn spikes, machine faults.",
+      "dependencies": [
+        "abductive-inference",
+        "bayesian-updating",
+        "reference-class-forecasting",
+        "sanity-checking",
+        "disconfirmation-search"
+      ],
+      "related": [
+        "root-cause-investigation",
+        "competing-hypotheses"
+      ],
+      "path": "skills/differential-diagnosis/SKILL.md"
+    },
+    {
+      "name": "difficult-conversations",
+      "type": "composite",
+      "category": "communication",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Prepare for and conduct a high-stakes conversation - sharing a hard truth, addressing a conflict, delivering unwelcome news - without sacrificing the relationship or dodging the substance.",
+      "triggers": "a conversation has been avoided because it's uncomfortable but the cost of continued avoidance is rising; conflict has an emotional charge that a purely factual message would mishandle.",
+      "dependencies": [
+        "nonviolent-communication",
+        "active-listening",
+        "empathy-mapping",
+        "steelmanning"
+      ],
+      "related": [
+        "nonviolent-communication",
+        "active-listening",
+        "conflict-mediation",
+        "coaching-dialogue"
+      ],
+      "path": "skills/difficult-conversations/SKILL.md"
+    },
+    {
+      "name": "disconfirmation-search",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Ask \"what would change my mind?\" and then actually search for it, rather than only seeking evidence that confirms a current belief.",
+      "triggers": "a conclusion feels settled or obvious; before committing to a belief-driven action; as a final check on most reasoning processes.",
+      "related": [
+        "bias-audit",
+        "bayesian-updating",
+        "scientific-method"
+      ],
+      "path": "skills/disconfirmation-search/SKILL.md"
+    },
+    {
+      "name": "divergent-ideation",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Generate a large quantity of ideas with judgment explicitly deferred, on the principle that quantity produces quality's raw material.",
+      "triggers": "starting any generative task before a single approach has been chosen; a group is anchoring on the first idea proposed.",
+      "related": [
+        "idea-convergence",
+        "scamper",
+        "morphological-analysis"
+      ],
+      "path": "skills/divergent-ideation/SKILL.md"
+    },
+    {
+      "name": "effort-calibration",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Match the depth of analysis applied to a task's actual stakes and reversibility, instead of letting interest level or social pressure set the effort dial.",
+      "triggers": "paired with cognitive-triage on every nontrivial task; whenever you notice speeding through something important or laboring over something trivial.",
+      "related": [
+        "reversibility-classification",
+        "cognitive-triage",
+        "satisficing-thresholds"
+      ],
+      "path": "skills/effort-calibration/SKILL.md"
+    },
+    {
+      "name": "empathy-mapping",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Reconstruct what another party sees, hears, thinks, feels, and needs, from their position rather than your own assumptions about them.",
+      "triggers": "designing for users; preparing for a negotiation or difficult conversation; predicting a stakeholder's reaction.",
+      "related": [
+        "active-listening",
+        "stakeholder-mapping",
+        "interview-synthesis"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "active-listening",
+          "distinction": "active-listening operates in real-time, in-conversation, on what's actually being said; empathy-mapping is offline/preparatory, constructing a fuller model including unstated needs."
+        }
+      ],
+      "path": "skills/empathy-mapping/SKILL.md"
+    },
+    {
+      "name": "epistemic-tagging",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Label every claim in a piece of reasoning as fact, inference, assumption, or speculation, making the reasoning's actual evidential structure visible.",
+      "triggers": "writing or reviewing analysis where confidence level matters; a conclusion needs its foundation audited before acting on it.",
+      "related": [
+        "assumption-audit",
+        "critical-reading",
+        "confidence-calibration"
+      ],
+      "path": "skills/epistemic-tagging/SKILL.md"
+    },
+    {
+      "name": "error-analysis",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Classify mistakes by type and root cause, and target instruction or practice at the pattern behind them, not at the individual instance.",
+      "triggers": "reviewing test results, code review feedback, or any recurring-mistake pattern; designing a targeted intervention rather than generic \"be more careful\" feedback.",
+      "related": [
+        "deliberate-practice-design",
+        "self-explanation",
+        "root-cause-investigation"
+      ],
+      "path": "skills/error-analysis/SKILL.md"
+    },
+    {
+      "name": "ethical-framework-rotation",
+      "type": "atomic",
+      "category": "ethics",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Evaluate a decision or action through consequentialist, deontological, and virtue-ethics lenses in turn, and report where they agree and where they genuinely diverge.",
+      "triggers": "a decision has a genuine ethical dimension beyond pure preference or efficiency; a decision \"feels\" uncomfortable in a way cost-benefit alone doesn't capture; policy or precedent-setting decisions.",
+      "related": [
+        "stakeholder-impact",
+        "value-tradeoffs",
+        "steelmanning"
+      ],
+      "path": "skills/ethical-framework-rotation/SKILL.md"
+    },
+    {
+      "name": "evidence-hierarchy",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 3,
+      "status": "cataloged_not_built",
+      "one_line": "Rank the available evidence by its strength for the specific claim class \u2014 because evidence types have different power for different kinds of questions.",
+      "path": "skills/evidence-hierarchy/SKILL.md"
+    },
+    {
+      "name": "evidence-triangulation",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Require confirmation from independent sources, and actively test whether apparently separate sources share an upstream origin.",
+      "triggers": "a claim matters and multiple sources exist for it; a consensus feels suspiciously smooth; citation-chasing any \"well-established\" fact.",
+      "related": [
+        "source-credibility",
+        "search-strategy",
+        "bayesian-updating"
+      ],
+      "path": "skills/evidence-triangulation/SKILL.md"
+    },
+    {
+      "name": "executive-summarization",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Compress material to its decision-relevant essentials plus an explicit action ask, cutting everything the decision doesn't need.",
+      "triggers": "any document going to someone who needs to decide or act, not just absorb; a draft summary is really just a shortened introduction.",
+      "related": [
+        "pyramid-structuring",
+        "audience-modeling",
+        "precision-questioning"
+      ],
+      "path": "skills/executive-summarization/SKILL.md"
+    },
+    {
+      "name": "expectation-contracting",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Make roles, deliverables, and definitions-of-done explicit before work begins, converting assumed alignment into checkable agreement.",
+      "triggers": "starting any collaboration with unclear or unstated role boundaries; delegating work; cross-team projects.",
+      "related": [
+        "decision-framing",
+        "session-design"
+      ],
+      "path": "skills/expectation-contracting/SKILL.md"
+    },
+    {
+      "name": "expected-value",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Evaluate an uncertain option by weighing each outcome's payoff by its probability, including the unlikely tails.",
+      "triggers": "comparing gambles, bets, investments of time or money, or insurance-shaped choices.",
+      "related": [
+        "risk-matrix",
+        "monte-carlo-reasoning",
+        "cost-benefit"
+      ],
+      "path": "skills/expected-value/SKILL.md"
+    },
+    {
+      "name": "explanatory-analogy",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Construct an analogy to make an unfamiliar idea graspable via a familiar one, then explicitly mark where the analogy breaks down.",
+      "triggers": "introducing a genuinely new concept; a previous explanation attempt didn't land; simplifying for a non-expert audience.",
+      "related": [
+        "analogical-reasoning",
+        "progressive-disclosure",
+        "audience-modeling"
+      ],
+      "path": "skills/explanatory-analogy/SKILL.md"
+    },
+    {
+      "name": "fallacy-detection",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Scan an argument for named logical failure patterns, distinguishing a genuine fallacy from a merely weak or unwelcome argument.",
+      "triggers": "evaluating persuasive content; a conclusion seems to sneak past its support; debate moderation.",
+      "related": [
+        "deductive-validation",
+        "argument-mapping",
+        "critical-reading"
+      ],
+      "path": "skills/fallacy-detection/SKILL.md"
+    },
+    {
+      "name": "feedback-delivery",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Deliver feedback as situation, behavior, and impact, keeping it separated from identity judgments and unsolicited advice.",
+      "triggers": "giving performance or behavioral feedback in any professional or collaborative context.",
+      "related": [
+        "nonviolent-communication",
+        "coaching-dialogue",
+        "difficult-conversations"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "nonviolent-communication",
+          "distinction": "nonviolent-communication is the general interpersonal form, including the 'need' layer, suited to personal/relational conflict; feedback-delivery is the workplace-scoped variant (situation-behavior-impact)."
+        }
+      ],
+      "path": "skills/feedback-delivery/SKILL.md"
+    },
+    {
+      "name": "feedback-loop-analysis",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Identify the reinforcing and balancing loops that drive a system's behavior over time.",
+      "triggers": "something is growing, shrinking, or oscillating and you want to know why it will continue or stop; designing an intervention meant to persist.",
+      "related": [
+        "systems-mapping",
+        "leverage-points",
+        "second-order-scan"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "second-order-scan",
+          "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; feedback-loop-analysis requires building an actual structural model."
+        }
+      ],
+      "path": "skills/feedback-loop-analysis/SKILL.md"
+    },
+    {
+      "name": "fermi-estimation",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Bound an unknown quantity by decomposing it into factors you can estimate, then checking the result against an independent anchor.",
+      "triggers": "sizing anything \u2014 a market, a cost, a load, a time budget, a risk exposure \u2014 without direct data; sanity-checking someone else's reported number.",
+      "related": [
+        "sanity-checking",
+        "uncertainty-decomposition",
+        "reference-class-forecasting"
+      ],
+      "path": "skills/fermi-estimation/SKILL.md"
+    },
+    {
+      "name": "first-principles",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 3,
+      "status": "cataloged_not_built",
+      "one_line": "Decompose a problem into base truths and rebuild the solution without inherited assumptions.",
+      "path": "skills/first-principles/SKILL.md"
+    },
+    {
+      "name": "five-whys",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Iterate \"why did that happen?\" past the symptom until reaching a cause at the level of process or design \u2014 something fixable that prevents recurrence.",
+      "triggers": "any recurring problem; postmortems; a fix was applied and the problem came back.",
+      "related": [
+        "root-cause-investigation",
+        "causal-analysis",
+        "problem-framing"
+      ],
+      "path": "skills/five-whys/SKILL.md"
+    },
+    {
+      "name": "frame-detection",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Identify how a question, comparison, or presentation is pre-loaded to favor a particular answer, before answering it.",
+      "triggers": "a question has an oddly obvious answer; a choice is presented as binary; a statistic is framed as loss or gain; evaluating your own instructions or prompts for embedded bias.",
+      "related": [
+        "critical-reading",
+        "problem-framing",
+        "incentive-analysis"
+      ],
+      "path": "skills/frame-detection/SKILL.md"
+    },
+    {
+      "name": "game-theoretic-analysis",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Model a strategic interaction's players, moves, payoffs, and information to identify likely equilibria and exploitable asymmetries.",
+      "triggers": "negotiating, competing, or designing mechanisms and incentives where others will respond strategically; predicting a rival's move; auditing whether a policy is game-able.",
+      "related": [
+        "incentive-analysis",
+        "negotiation",
+        "wargaming",
+        "second-order-scan"
+      ],
+      "path": "skills/game-theoretic-analysis/SKILL.md"
+    },
+    {
+      "name": "idea-convergence",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Cluster, score, and select from a large idea pool without prematurely killing the variance that divergent generation worked to produce.",
+      "triggers": "immediately after any divergent generation phase; too many options exist to evaluate individually.",
+      "related": [
+        "divergent-ideation",
+        "weighted-scoring",
+        "ideation-sprint"
+      ],
+      "path": "skills/idea-convergence/SKILL.md"
+    },
+    {
+      "name": "ideation-sprint",
+      "type": "composite",
+      "category": "creativity",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Diverge, cross-pollinate, and converge in explicit phase-gated stages, so a group generates broadly before narrowing and never blurs the two.",
+      "triggers": "a group needs to generate and select new concepts under time pressure; kicking off a design or strategy effort that needs fresh options.",
+      "dependencies": [
+        "divergent-ideation",
+        "scamper",
+        "idea-convergence"
+      ],
+      "related": [
+        "divergent-ideation",
+        "idea-convergence",
+        "session-design"
+      ],
+      "path": "skills/ideation-sprint/SKILL.md"
+    },
+    {
+      "name": "incentive-analysis",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Map who gains and who loses from a claim, decision, or outcome \u2014 cui bono as a structured question, not an accusation.",
+      "triggers": "a party's position seems to track their interest suspiciously well; evaluating advice from someone who benefits from your choice; designing systems where you need to predict gaming.",
+      "related": [
+        "source-credibility",
+        "stakeholder-mapping",
+        "game-theoretic-analysis"
+      ],
+      "path": "skills/incentive-analysis/SKILL.md"
+    },
+    {
+      "name": "inductive-generalization",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Generalize from observed instances to a rule, with explicit checks on sample size, representativeness, and scope.",
+      "triggers": "concluding anything of the form \"Xs tend to Y\" from a set of cases; evaluating someone else's generalization before accepting it.",
+      "related": [
+        "reference-class-forecasting",
+        "statistical-audit",
+        "disconfirmation-search"
+      ],
+      "path": "skills/inductive-generalization/SKILL.md"
+    },
+    {
+      "name": "interest-based-bargaining",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Negotiate on the underlying interests behind each side's stated positions, rather than splitting the difference between the positions themselves.",
+      "triggers": "a negotiation has stalled on incompatible positions; both sides seem to be optimizing for the wrong variable.",
+      "related": [
+        "batna-analysis",
+        "negotiation",
+        "empathy-mapping"
+      ],
+      "path": "skills/interest-based-bargaining/SKILL.md"
+    },
+    {
+      "name": "inversion",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Solve the opposite problem \u2014 \"how would I guarantee failure?\" \u2014 and negate the answers into guardrails.",
+      "triggers": "planning anything (\"avoid stupidity before seeking brilliance\"); success criteria are vague but failure is obvious; a team is stuck trying to generate positive ideas directly.",
+      "related": [
+        "premortem",
+        "devils-advocacy"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "premortem",
+          "distinction": "inversion is the general content-free move (apply to any goal); premortem is the specific application to a concrete plan with a timeline, run as a group ritual."
+        }
+      ],
+      "path": "skills/inversion/SKILL.md"
+    },
+    {
+      "name": "knowledge-gap-analysis",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Map what's known, what's unknown-but-findable, and what's unknown-unknown for a task, so effort goes to the actual gap rather than re-covering the known.",
+      "triggers": "starting to learn a new domain or skill for a specific task; feeling like \"I don't know what I don't know.\"",
+      "related": [
+        "question-decomposition",
+        "mental-model-extraction",
+        "curriculum-design"
+      ],
+      "path": "skills/knowledge-gap-analysis/SKILL.md"
+    },
+    {
+      "name": "lean-startup",
+      "type": "recipe",
+      "category": "recipes",
+      "status": "built",
+      "one_line": "Lean Startup / Build-Measure-Learn: hypothesize, build, measure, learn, persevere-or-pivot \u2014 mapped onto decision-framing, scientific-method, bayesian-updating, confidence-calibration, decision-analysis.",
+      "triggers": "user names 'lean startup', 'build-measure-learn', or 'MVP' testing loop explicitly.",
+      "path": "recipes/lean-startup.md"
+    },
+    {
+      "name": "learning-objectives",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Define what a learner should be able to do, observably, and at what cognitive level, before designing any instruction toward it.",
+      "triggers": "designing any teaching, training, or documentation with a specific capability goal; a course or onboarding plan currently just lists topics instead of outcomes.",
+      "related": [
+        "curriculum-design",
+        "transfer-testing",
+        "knowledge-gap-analysis"
+      ],
+      "path": "skills/learning-objectives/SKILL.md"
+    },
+    {
+      "name": "leverage-points",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Rank potential interventions by depth, from adjusting parameters to changing rules, structure, goals, or paradigms, since deeper points change more with less effort.",
+      "triggers": "an intervention has been tried at the obvious level and didn't stick; seeking high-impact, resource-constrained interventions; a system keeps producing the same outcome despite parameter tweaks.",
+      "related": [
+        "systems-mapping",
+        "feedback-loop-analysis",
+        "second-order-scan"
+      ],
+      "path": "skills/leverage-points/SKILL.md"
+    },
+    {
+      "name": "mece-decomposition",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Split a problem or space into parts that are mutually exclusive and collectively exhaustive, so nothing is double-counted or dropped.",
+      "triggers": "sizing or diagnosing anything (\"where is the revenue leak?\"); dividing work among people; structuring a document or investigation.",
+      "related": [
+        "question-decomposition",
+        "fermi-estimation",
+        "bottleneck-analysis"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "question-decomposition",
+          "distinction": "mece-decomposition is the general structural technique (any space, exhaustive+exclusive); question-decomposition is its application specifically to research questions, with evidence-type tagging on the leaves."
+        }
+      ],
+      "path": "skills/mece-decomposition/SKILL.md"
+    },
+    {
+      "name": "mental-model-extraction",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Distill an expert's practice, a corpus, or a body of experience into an explicit, transferable model, making tacit expertise teachable.",
+      "triggers": "trying to learn from an expert whose explanations feel thin; building training material from tacit expertise; onboarding a successor.",
+      "related": [
+        "analogical-reasoning",
+        "interview-synthesis",
+        "curriculum-design"
+      ],
+      "path": "skills/mental-model-extraction/SKILL.md"
+    },
+    {
+      "name": "methodology-critique",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 4,
+      "status": "cataloged_not_built",
+      "one_line": "Find the design flaws that break a study's claimed inference \u2014 auditing how the knowledge was manufactured, not just what it concludes.",
+      "path": "skills/methodology-critique/SKILL.md"
+    },
+    {
+      "name": "monte-carlo-reasoning",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Mentally sample many possible runs of an uncertain process instead of reasoning about one representative story.",
+      "triggers": "an outcome depends on several compounding uncertain factors; a single \"expected case\" story is being used to plan for a process that's actually quite variable; tail risk matters.",
+      "related": [
+        "uncertainty-decomposition",
+        "expected-value",
+        "sensitivity-analysis"
+      ],
+      "path": "skills/monte-carlo-reasoning/SKILL.md"
+    },
+    {
+      "name": "morphological-analysis",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Decompose a design space into independent dimensions, enumerate the values each can take, then systematically recombine them to surface combinations nobody would have thought to propose directly.",
+      "triggers": "designing something with several genuinely independent parameters \u2014 a product configuration, a policy design, a narrative structure; the existing options all cluster around one combination.",
+      "related": [
+        "divergent-ideation",
+        "solution-space-mapping",
+        "scamper"
+      ],
+      "path": "skills/morphological-analysis/SKILL.md"
+    },
+    {
+      "name": "narrative-construction",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Structure material as setup, tension, and resolution so it holds attention and creates meaning through sequence, not just content.",
+      "triggers": "the goal is retention, persuasion, or emotional engagement, not just information transfer; telling a case study, a pitch, an incident story.",
+      "related": [
+        "pyramid-structuring",
+        "audience-modeling",
+        "persuasive-case"
+      ],
+      "path": "skills/narrative-construction/SKILL.md"
+    },
+    {
+      "name": "negotiation",
+      "type": "composite",
+      "category": "collaboration",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "The full pipeline - prepare BATNAs, probe for underlying interests, generate joint options, and converge on an agreement that survives both sides' scrutiny.",
+      "triggers": "any negotiation with meaningful stakes \u2014 commercial, employment, interpersonal, diplomatic.",
+      "dependencies": [
+        "batna-analysis",
+        "empathy-mapping",
+        "interest-based-bargaining",
+        "active-listening",
+        "game-theoretic-analysis"
+      ],
+      "related": [
+        "batna-analysis",
+        "interest-based-bargaining",
+        "conflict-mediation",
+        "game-theoretic-analysis"
+      ],
+      "path": "skills/negotiation/SKILL.md"
+    },
+    {
+      "name": "nonviolent-communication",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Structure a difficult message as observation, feeling, need, and request, stripped of evaluation and blame, so it can be heard rather than defended against.",
+      "triggers": "delivering feedback or a grievance likely to trigger defensiveness; a conflict conversation.",
+      "related": [
+        "feedback-delivery",
+        "active-listening",
+        "difficult-conversations"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "feedback-delivery",
+          "distinction": "nonviolent-communication is the general interpersonal form, including the 'need' layer, suited to personal/relational conflict; feedback-delivery is the workplace-scoped variant (situation-behavior-impact)."
+        }
+      ],
+      "path": "skills/nonviolent-communication/SKILL.md"
+    },
+    {
+      "name": "ooda-loop",
+      "type": "composite",
+      "category": "systems-strategy",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Observe, orient, decide, act, iterated fast enough that your tempo outpaces the environment's rate of change or an adversary's own loop.",
+      "triggers": "conditions change faster than a full analysis cycle; competitive or adversarial dynamics where tempo itself is an advantage; incident response.",
+      "dependencies": [
+        "sanity-checking",
+        "bayesian-updating",
+        "progress-monitoring",
+        "effort-calibration"
+      ],
+      "related": [
+        "wargaming",
+        "progress-monitoring",
+        "scenario-planning"
+      ],
+      "path": "skills/ooda-loop/SKILL.md"
+    },
+    {
+      "name": "peer-review",
+      "type": "composite",
+      "category": "analysis",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Structured evaluation of another's work for correctness, rigor, and significance - feedback that a capable stranger could act on.",
+      "triggers": "evaluating work before it ships, publishes, or gets relied upon; giving feedback that needs to be actionable, not just reactive.",
+      "dependencies": [
+        "critical-reading",
+        "methodology-critique",
+        "assumption-audit",
+        "steelmanning"
+      ],
+      "related": [
+        "methodology-critique",
+        "feedback-delivery",
+        "revision-pass"
+      ],
+      "path": "skills/peer-review/SKILL.md"
+    },
+    {
+      "name": "perspective-rotation",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Re-solve the same problem from a series of systematically different viewpoints, then compare what each vantage surfaces.",
+      "triggers": "a solution feels complete but stakeholder pushback keeps surfacing; designing for users unlike yourself; a decision looks different depending on who you ask.",
+      "related": [
+        "empathy-mapping",
+        "stakeholder-mapping",
+        "red-teaming"
+      ],
+      "path": "skills/perspective-rotation/SKILL.md"
+    },
+    {
+      "name": "persuasive-case",
+      "type": "composite",
+      "category": "communication",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Build an audience-modeled argument with objections pre-handled - the composite that turns a claim into a case someone else will actually accept.",
+      "triggers": "making a case to a specific audience with real stakes and plausible resistance \u2014 a pitch, a proposal, a negotiation opener.",
+      "dependencies": [
+        "audience-modeling",
+        "argument-construction",
+        "steelmanning",
+        "pyramid-structuring",
+        "narrative-construction"
+      ],
+      "related": [
+        "argument-construction",
+        "audience-modeling",
+        "negotiation"
+      ],
+      "path": "skills/persuasive-case/SKILL.md"
+    },
+    {
+      "name": "precision-questioning",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Ask questions engineered to isolate exactly the missing variable, rather than general questions that invite a general and often unhelpful answer.",
+      "triggers": "eliciting requirements, debugging someone's confused explanation, running a user interview, negotiating specifics.",
+      "related": [
+        "active-listening",
+        "interview-synthesis",
+        "audience-modeling"
+      ],
+      "path": "skills/precision-questioning/SKILL.md"
+    },
+    {
+      "name": "premortem",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Assume the plan has already failed, then work backwards to explain why \u2014 converting hindsight's clarity into foresight.",
+      "triggers": "before committing to any significant plan; when a team is uniformly optimistic; before taking irreversible steps.",
+      "related": [
+        "inversion",
+        "tripwires",
+        "red-teaming"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "inversion",
+          "distinction": "inversion is the general content-free move (apply to any goal); premortem is the specific application to a concrete plan with a timeline, run as a group ritual."
+        }
+      ],
+      "path": "skills/premortem/SKILL.md"
+    },
+    {
+      "name": "prioritization-triage",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Rank competing demands by value, urgency, and cost-of-delay under explicit capacity limits, and make the cut line real.",
+      "triggers": "demand exceeds capacity (nearly always); starting a planning cycle; feeling busy but unproductive.",
+      "related": [
+        "cost-benefit",
+        "satisficing-thresholds",
+        "bottleneck-analysis"
+      ],
+      "path": "skills/prioritization-triage/SKILL.md"
+    },
+    {
+      "name": "problem-framing",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Restate a problem several distinct ways before accepting any framing, because the framing chooses the solution space.",
+      "triggers": "starting any nontrivial problem; proposed solutions all feel wrong despite being individually reasonable; someone hands you a solution disguised as a problem (\"we need a dashboard\").",
+      "related": [
+        "first-principles",
+        "frame-detection",
+        "five-whys"
+      ],
+      "path": "skills/problem-framing/SKILL.md"
+    },
+    {
+      "name": "progress-monitoring",
+      "type": "atomic",
+      "category": "metacognition",
+      "difficulty": 2,
+      "status": "cataloged_not_built",
+      "one_line": "Periodically compare actual progress against the plan, and explicitly decide whether to continue, adjust, or replan \u2014 rather than drifting on autopilot.",
+      "path": "skills/progress-monitoring/SKILL.md"
+    },
+    {
+      "name": "progressive-disclosure",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Layer an explanation from gist to full depth, checking the audience's cognitive load at each layer before adding the next.",
+      "triggers": "explaining something complex to a mixed or unknown-depth audience; a first explanation attempt visibly overwhelmed the listener.",
+      "related": [
+        "audience-modeling",
+        "explanatory-analogy",
+        "pyramid-structuring"
+      ],
+      "path": "skills/progressive-disclosure/SKILL.md"
+    },
+    {
+      "name": "pyramid-structuring",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Lead with the answer, then support it with grouped, logically ordered reasons, inverting the build-up-to-the-conclusion instinct.",
+      "triggers": "writing any document or making any case meant to inform a decision; a draft currently builds up to its point instead of leading with it.",
+      "related": [
+        "executive-summarization",
+        "argument-construction",
+        "progressive-disclosure"
+      ],
+      "path": "skills/pyramid-structuring/SKILL.md"
+    },
+    {
+      "name": "question-decomposition",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Break a research question into independently answerable sub-questions whose answers compose back into the original.",
+      "triggers": "starting any investigation; a question keeps producing vague, unsatisfying answers; scoping a literature search before diving in.",
+      "related": [
+        "mece-decomposition",
+        "search-strategy",
+        "decision-framing"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "mece-decomposition",
+          "distinction": "mece-decomposition is the general structural technique (any space, exhaustive+exclusive); question-decomposition is its application specifically to research questions, with evidence-type tagging on the leaves."
+        }
+      ],
+      "path": "skills/question-decomposition/SKILL.md"
+    },
+    {
+      "name": "random-stimulus",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Force an association between the problem and a deliberately unrelated prompt to escape the local basin of familiar ideas.",
+      "triggers": "divergent ideation has plateaued; the same handful of ideas keep resurfacing in different words.",
+      "related": [
+        "divergent-ideation",
+        "analogical-reasoning",
+        "concept-blending"
+      ],
+      "path": "skills/random-stimulus/SKILL.md"
+    },
+    {
+      "name": "red-teaming",
+      "type": "composite",
+      "category": "analysis",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "A structured adversarial exercise - assign a team or role to attack a plan, argument, or system as a genuine opponent would, then feed findings back before commitment.",
+      "triggers": "the cost of being wrong in production or live exceeds the cost of a dedicated attack exercise; security-, safety-, or reputation-critical work; before major public commitments.",
+      "dependencies": [
+        "premortem",
+        "devils-advocacy",
+        "assumption-audit",
+        "incentive-analysis",
+        "second-order-scan"
+      ],
+      "related": [
+        "wargaming",
+        "devils-advocacy",
+        "premortem"
+      ],
+      "path": "skills/red-teaming/SKILL.md"
+    },
+    {
+      "name": "reductio",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Test a claim by assuming it's true, deriving its consequences, and hunting for a contradiction or absurdity.",
+      "triggers": "a general rule is proposed (\"we should always/never X\"); a definition or principle needs stress-testing; a proof or argument feels slippery without an obvious specific flaw.",
+      "related": [
+        "deductive-validation",
+        "structured-what-if",
+        "steelmanning"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "structured-what-if",
+          "distinction": "reductio traces forward specifically hunting for contradiction (refutation); structured-what-if traces forward to map implications neutrally (exploration)."
+        }
+      ],
+      "path": "skills/reductio/SKILL.md"
+    },
+    {
+      "name": "reference-class-forecasting",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Forecast by starting from the base rate of similar past cases, then adjusting for what's genuinely different about this case, in that order.",
+      "triggers": "estimating duration, cost, or success probability for any project, launch, or plan; whenever an inside-view estimate feels notably better than how \"these things\" usually go.",
+      "related": [
+        "inductive-generalization",
+        "fermi-estimation",
+        "structured-forecasting"
+      ],
+      "path": "skills/reference-class-forecasting/SKILL.md"
+    },
+    {
+      "name": "regret-minimization",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 1,
+      "status": "cataloged_not_built",
+      "one_line": "Evaluate options from the projected perspective of your future self, distinguishing regret over action from regret over inaction.",
+      "path": "skills/regret-minimization/SKILL.md"
+    },
+    {
+      "name": "retrospective-facilitation",
+      "type": "composite",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "A structured what-went-well, what-didn't, what-changes review that produces concrete action items rather than a venting session or a forgotten discussion.",
+      "triggers": "the end of any bounded effort where future work would benefit from explicit learning; recurring cadence like sprint-end, project-end, incident post-mortem.",
+      "dependencies": [
+        "after-action-review",
+        "active-listening",
+        "consensus-mapping"
+      ],
+      "related": [
+        "after-action-review",
+        "consensus-mapping",
+        "active-listening"
+      ],
+      "path": "skills/retrospective-facilitation/SKILL.md"
+    },
+    {
+      "name": "reversibility-classification",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Classify a pending decision as a one-way or two-way door \u2014 cheap-reversible, costly-reversible, or effectively irreversible \u2014 and size the decision process accordingly.",
+      "triggers": "at first contact with any decision \u2014 this runs *before* decision-framing or any other decision skill.",
+      "related": [
+        "effort-calibration",
+        "decision-framing",
+        "cognitive-triage"
+      ],
+      "path": "skills/reversibility-classification/SKILL.md"
+    },
+    {
+      "name": "revision-pass",
+      "type": "atomic",
+      "category": "communication",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Self-edit a draft in ordered, single-focus passes - structure, argument, clarity, then economy - rather than trying to fix everything at once.",
+      "triggers": "revising any consequential piece of writing before it ships.",
+      "related": [
+        "pyramid-structuring",
+        "argument-mapping",
+        "peer-review"
+      ],
+      "path": "skills/revision-pass/SKILL.md"
+    },
+    {
+      "name": "risk-matrix",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Grade risks by likelihood times impact, assign responses by quadrant, and re-grade on a schedule \u2014 a register, not a ritual.",
+      "triggers": "planning anything with multiple distinct failure modes; periodic review of an ongoing effort's risk posture.",
+      "related": [
+        "expected-value",
+        "premortem",
+        "tripwires"
+      ],
+      "path": "skills/risk-matrix/SKILL.md"
+    },
+    {
+      "name": "root-cause-investigation",
+      "type": "composite",
+      "category": "problem-solving",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Evidence-driven investigation of a failure: establish the timeline, generate causal hypotheses, test against evidence, and verify the fix prevents recurrence.",
+      "triggers": "the failure matters enough to prevent, not just patch; the same problem has recurred; multiple factors seem entangled.",
+      "dependencies": [
+        "five-whys",
+        "causal-analysis",
+        "abductive-inference",
+        "evidence-triangulation",
+        "assumption-audit",
+        "tripwires"
+      ],
+      "related": [
+        "differential-diagnosis",
+        "after-action-review"
+      ],
+      "path": "skills/root-cause-investigation/SKILL.md"
+    },
+    {
+      "name": "sanity-checking",
+      "type": "atomic",
+      "category": "reasoning",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Rapidly verify any result via units, magnitude, boundary conditions, and an independent approximation before trusting or presenting it.",
+      "triggers": "always \u2014 after any computation, estimate, or conclusion, and before presenting anything to anyone else.",
+      "related": [
+        "fermi-estimation",
+        "epistemic-tagging"
+      ],
+      "path": "skills/sanity-checking/SKILL.md"
+    },
+    {
+      "name": "satisficing-thresholds",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Define \"good enough\" criteria in advance, then take the first option clearing them, bounding search cost on decisions that don't reward optimization.",
+      "triggers": "many adequate options exist and differences among the acceptable ones are small or genuinely unknowable in advance \u2014 most purchases, tool choices, venue selection; when analysis has visibly become procrastination.",
+      "related": [
+        "effort-calibration",
+        "weighted-scoring",
+        "prioritization-triage"
+      ],
+      "path": "skills/satisficing-thresholds/SKILL.md"
+    },
+    {
+      "name": "scaffolding",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Provide support calibrated to the edge of a learner's current ability, and deliberately withdraw it as competence grows.",
+      "triggers": "teaching or onboarding anyone into a task harder than their current independent capability; designing curriculum or training progressions.",
+      "related": [
+        "deliberate-practice-design",
+        "curriculum-design",
+        "transfer-testing"
+      ],
+      "path": "skills/scaffolding/SKILL.md"
+    },
+    {
+      "name": "scamper",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Transform an existing thing by systematically applying seven operations - Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse.",
+      "triggers": "improving or reinventing something that already exists; stuck after direct brainstorming; a mature product or process needs fresh angles.",
+      "related": [
+        "divergent-ideation",
+        "morphological-analysis",
+        "triz-contradiction"
+      ],
+      "path": "skills/scamper/SKILL.md"
+    },
+    {
+      "name": "scenario-planning",
+      "type": "composite",
+      "category": "systems-strategy",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Construct several divergent, internally consistent futures and test candidate strategies against all of them, rather than betting everything on one forecast.",
+      "triggers": "long-horizon strategic decisions where the environment \u2014 market, technology, regulation, competition \u2014 is genuinely uncertain, not just internally uncertain.",
+      "dependencies": [
+        "uncertainty-decomposition",
+        "structured-what-if",
+        "second-order-scan",
+        "sensitivity-analysis",
+        "tripwires"
+      ],
+      "related": [
+        "backcasting",
+        "wargaming",
+        "structured-forecasting",
+        "decision-analysis"
+      ],
+      "path": "skills/scenario-planning/SKILL.md"
+    },
+    {
+      "name": "search-strategy",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Plan queries, sources, and stop-conditions before searching, then adapt on evidence of coverage rather than fatigue.",
+      "triggers": "any search beyond a single lookup; especially when the first page of results agrees suspiciously well with itself.",
+      "related": [
+        "evidence-triangulation",
+        "source-credibility",
+        "disconfirmation-search"
+      ],
+      "path": "skills/search-strategy/SKILL.md"
+    },
+    {
+      "name": "second-order-scan",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Trace the consequences of consequences \u2014 asking \"and then what?\" through at least two rounds of reactions and adaptations.",
+      "triggers": "changing incentives, rules, prices, metrics, or interfaces that people or systems will respond to.",
+      "related": [
+        "systems-mapping",
+        "game-theoretic-analysis",
+        "chestertons-fence"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "systems-mapping",
+          "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; systems-mapping requires building an actual structural model."
+        },
+        {
+          "skill": "feedback-loop-analysis",
+          "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; feedback-loop-analysis requires building an actual structural model."
+        }
+      ],
+      "path": "skills/second-order-scan/SKILL.md"
+    },
+    {
+      "name": "self-explanation",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 1,
+      "status": "built",
+      "one_line": "Explain material in your own plain terms and treat every gap or hand-wave in that explanation as a gap in your actual understanding.",
+      "triggers": "after learning something and before assuming it's understood; before teaching or presenting it to someone else; when a familiar-feeling topic needs to be actually verified.",
+      "related": [
+        "knowledge-gap-analysis",
+        "transfer-testing",
+        "error-analysis"
+      ],
+      "path": "skills/self-explanation/SKILL.md"
+    },
+    {
+      "name": "sensitivity-analysis",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Vary each input assumption to find which ones actually move the conclusion, separating load-bearing assumptions from decorative ones.",
+      "triggers": "a model or estimate has several assumptions of uneven confidence; deciding where to spend validation effort; presenting a number that needs to survive scrutiny.",
+      "related": [
+        "uncertainty-decomposition",
+        "weighted-scoring",
+        "monte-carlo-reasoning"
+      ],
+      "path": "skills/sensitivity-analysis/SKILL.md"
+    },
+    {
+      "name": "session-design",
+      "type": "atomic",
+      "category": "collaboration",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Design a working session backwards from its intended output, choosing structure, participants, and format to produce that output rather than defaulting to a status-update meeting.",
+      "triggers": "convening any group session beyond a routine sync; a recurring meeting has drifted from its original purpose.",
+      "related": [
+        "expectation-contracting",
+        "ideation-sprint",
+        "retrospective-facilitation"
+      ],
+      "path": "skills/session-design/SKILL.md"
+    },
+    {
+      "name": "socratic-teaching",
+      "type": "composite",
+      "category": "learning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Lead a learner to construct an insight themselves through a sequenced series of questions, rather than delivering the conclusion directly.",
+      "triggers": "the learner has the prerequisites to reach the insight and time allows for the slower discovery process; a delivered answer has previously failed to stick.",
+      "dependencies": [
+        "knowledge-gap-analysis",
+        "precision-questioning",
+        "scaffolding"
+      ],
+      "related": [
+        "scaffolding",
+        "precision-questioning",
+        "coaching-dialogue"
+      ],
+      "path": "skills/socratic-teaching/SKILL.md"
+    },
+    {
+      "name": "solution-space-mapping",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 2,
+      "status": "cataloged_not_built",
+      "one_line": "Enumerate the families of possible solutions before evaluating any candidate, so the choice is made from the full space rather than the first basin found.",
+      "referenced_by": [
+        "decision-analysis"
+      ],
+      "path": "skills/solution-space-mapping/SKILL.md"
+    },
+    {
+      "name": "source-credibility",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Grade a source on expertise, incentive, track record, and proximity to the events before letting its claims carry weight.",
+      "triggers": "weighing any consequential claim; sources conflict; a claim is surprising or unusually convenient.",
+      "related": [
+        "evidence-hierarchy",
+        "incentive-analysis",
+        "evidence-triangulation"
+      ],
+      "path": "skills/source-credibility/SKILL.md"
+    },
+    {
+      "name": "stakeholder-impact",
+      "type": "atomic",
+      "category": "ethics",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Enumerate every party affected by a decision and map the distribution of harms and benefits across them, including parties with no voice in the decision.",
+      "triggers": "any decision affecting people beyond the decider; especially decisions where the affected and the deciding parties differ.",
+      "related": [
+        "stakeholder-mapping",
+        "ethical-framework-rotation",
+        "second-order-scan"
+      ],
+      "path": "skills/stakeholder-impact/SKILL.md"
+    },
+    {
+      "name": "stakeholder-mapping",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Chart every actor touched by a decision along interest and influence, to see whose consent, input, or resistance actually matters.",
+      "triggers": "organizational or multi-party decisions; change likely to meet resistance; planning communication or rollout.",
+      "related": [
+        "incentive-analysis",
+        "empathy-mapping",
+        "negotiation"
+      ],
+      "path": "skills/stakeholder-mapping/SKILL.md"
+    },
+    {
+      "name": "statistical-audit",
+      "type": "atomic",
+      "category": "research",
+      "difficulty": 4,
+      "status": "cataloged_not_built",
+      "one_line": "Interrogate quantitative claims: base rates, denominators, comparison groups, significance, effect size, and the path the number took to reach you.",
+      "referenced_by": [
+        "lean-startup (recipe)"
+      ],
+      "path": "skills/statistical-audit/SKILL.md"
+    },
+    {
+      "name": "steelmanning",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Reconstruct the strongest possible version of a position before evaluating or arguing against it.",
+      "triggers": "about to argue against something; evaluating a proposal you're inclined to reject; writing a rebuttal to any position.",
+      "related": [
+        "devils-advocacy",
+        "argument-mapping",
+        "reductio"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "devils-advocacy",
+          "distinction": "steelmanning reconstructs an opposing position charitably before arguing against it; devils-advocacy argues against your own group's consensus."
+        }
+      ],
+      "path": "skills/steelmanning/SKILL.md"
+    },
+    {
+      "name": "strategic-planning",
+      "type": "composite",
+      "category": "systems-strategy",
+      "difficulty": 5,
+      "status": "built",
+      "one_line": "Rumelt's kernel - an honest diagnosis of the situation, a guiding policy for dealing with it, and a set of coherent actions.",
+      "triggers": "setting direction for an organization, team, or major effort facing real obstacles, not just \"grow more\"; a strategy conversation keeps producing aspirations instead of a plan.",
+      "dependencies": [
+        "problem-framing",
+        "first-principles",
+        "bottleneck-analysis",
+        "leverage-points",
+        "second-order-scan",
+        "premortem"
+      ],
+      "related": [
+        "backcasting",
+        "scenario-planning",
+        "decision-analysis"
+      ],
+      "path": "skills/strategic-planning/SKILL.md"
+    },
+    {
+      "name": "structured-forecasting",
+      "type": "composite",
+      "category": "forecasting",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "The superforecaster pipeline: decompose the question, anchor on a base rate, adjust with named evidence, express calibrated confidence, and schedule updates.",
+      "triggers": "a forecast will inform a real decision and is specific or resolvable enough to be scored later; recurring forecasting needs like planning cycles or risk assessment.",
+      "dependencies": [
+        "question-decomposition",
+        "reference-class-forecasting",
+        "bayesian-updating",
+        "uncertainty-decomposition",
+        "confidence-calibration",
+        "tripwires"
+      ],
+      "related": [
+        "decision-analysis",
+        "scenario-planning",
+        "delphi-aggregation"
+      ],
+      "path": "skills/structured-forecasting/SKILL.md"
+    },
+    {
+      "name": "structured-problem-solving",
+      "type": "composite",
+      "category": "problem-solving",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Polya's loop industrialized: understand the problem, plan an approach, execute with monitoring, and review, with explicit gates between phases.",
+      "triggers": "the problem is nontrivial, unfamiliar, and no specialized composite fits better.",
+      "dependencies": [
+        "problem-framing",
+        "mece-decomposition",
+        "solution-space-mapping",
+        "working-backwards",
+        "sanity-checking",
+        "progress-monitoring",
+        "after-action-review"
+      ],
+      "related": [
+        "decision-analysis",
+        "root-cause-investigation",
+        "scientific-method"
+      ],
+      "path": "skills/structured-problem-solving/SKILL.md"
+    },
+    {
+      "name": "structured-what-if",
+      "type": "atomic",
+      "category": "analysis",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Take a conclusion as fixed and reason forward through its implications, the exploratory twin of reductio.",
+      "triggers": "scenario exploration; testing a claim's plausibility by its implications; preparing contingencies.",
+      "related": [
+        "reductio",
+        "second-order-scan",
+        "scenario-planning"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "reductio",
+          "distinction": "reductio traces forward specifically hunting for contradiction (refutation); structured-what-if traces forward to map implications neutrally (exploration)."
+        }
+      ],
+      "path": "skills/structured-what-if/SKILL.md"
+    },
+    {
+      "name": "swot-analysis",
+      "type": "recipe",
+      "category": "recipes",
+      "status": "built",
+      "one_line": "SWOT analysis: internal/external scan, graded grid, framed decision \u2014 mapped onto stakeholder-mapping, second-order-scan, incentive-analysis, risk-matrix, weighted-scoring, decision-framing.",
+      "triggers": "user names 'SWOT' explicitly, or asks for a strengths/weaknesses/opportunities/threats analysis.",
+      "path": "recipes/swot-analysis.md"
+    },
+    {
+      "name": "systems-mapping",
+      "type": "atomic",
+      "category": "systems-strategy",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Model a system's stocks, flows, delays, and boundaries explicitly, so its behavior can be reasoned about structurally rather than narratively.",
+      "triggers": "behavior seems to have no single cause; oscillation, lag, or overshoot is observed; a system resists an obvious-seeming fix.",
+      "related": [
+        "feedback-loop-analysis",
+        "leverage-points",
+        "bottleneck-analysis"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "second-order-scan",
+          "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; systems-mapping requires building an actual structural model."
+        }
+      ],
+      "path": "skills/systems-mapping/SKILL.md"
+    },
+    {
+      "name": "transfer-testing",
+      "type": "atomic",
+      "category": "learning",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Verify real understanding by applying it in a structurally novel context, one that shares the underlying principle but not the surface features of how it was learned.",
+      "triggers": "confirming a learner, including yourself, actually understands a principle, not just recognizes familiar problems; before relying on a skill in a new context.",
+      "related": [
+        "self-explanation",
+        "error-analysis",
+        "analogical-reasoning"
+      ],
+      "path": "skills/transfer-testing/SKILL.md"
+    },
+    {
+      "name": "trend-breakpoint-analysis",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Extrapolate an observed trend while actively hunting for the mechanisms that would cause it to saturate, reverse, or undergo regime change.",
+      "triggers": "any trend is being extrapolated to justify a forecast or plan; a trend has \"always\" gone one direction; growth or decline seems too steady to trust blindly.",
+      "related": [
+        "reference-class-forecasting",
+        "leverage-points",
+        "structured-forecasting"
+      ],
+      "path": "skills/trend-breakpoint-analysis/SKILL.md"
+    },
+    {
+      "name": "tripwires",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Pre-commit to specific, observable indicators that will trigger a belief update, plan change, or decision review, decided before you're emotionally invested in the outcome.",
+      "triggers": "committing to any plan or forecast with real stakes; after a premortem or decision-analysis identifies key risks; entering an uncertain or adversarial situation.",
+      "related": [
+        "premortem",
+        "decision-journaling",
+        "risk-matrix"
+      ],
+      "path": "skills/tripwires/SKILL.md"
+    },
+    {
+      "name": "uncertainty-decomposition",
+      "type": "atomic",
+      "category": "forecasting",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Split uncertainty about a quantity into its reducible and irreducible components, and report ranges rather than false-precision points.",
+      "triggers": "any forecast or estimate that will inform a decision; a point estimate is being treated as exact; deciding whether more research is worth the cost.",
+      "related": [
+        "sensitivity-analysis",
+        "monte-carlo-reasoning",
+        "confidence-calibration"
+      ],
+      "path": "skills/uncertainty-decomposition/SKILL.md"
+    },
+    {
+      "name": "value-tradeoffs",
+      "type": "atomic",
+      "category": "ethics",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Make competing values explicit and price the actual exchange rate between them, rather than letting a decision silently smuggle in one value's priority over another.",
+      "triggers": "a decision keeps stalling because \"it depends what you prioritize\"; two people disagree despite agreeing on the facts; a decision has an uncomfortable tradeoff being avoided rather than named.",
+      "related": [
+        "ethical-framework-rotation",
+        "weighted-scoring",
+        "decision-framing"
+      ],
+      "path": "skills/value-tradeoffs/SKILL.md"
+    },
+    {
+      "name": "wargaming",
+      "type": "composite",
+      "category": "systems-strategy",
+      "difficulty": 4,
+      "status": "built",
+      "one_line": "Simulate an adversary's moves and countermoves across multiple turns to stress-test a strategy against active opposition, not a static environment.",
+      "triggers": "competitive strategy against a specific capable rival; military, security, or high-stakes competitive planning; testing a negotiating strategy against a sophisticated counterpart.",
+      "dependencies": [
+        "game-theoretic-analysis",
+        "incentive-analysis",
+        "red-teaming",
+        "second-order-scan"
+      ],
+      "related": [
+        "game-theoretic-analysis",
+        "red-teaming",
+        "scenario-planning"
+      ],
+      "path": "skills/wargaming/SKILL.md"
+    },
+    {
+      "name": "weighted-scoring",
+      "type": "atomic",
+      "category": "decision-making",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Score options against explicitly weighted criteria, using the matrix to expose disagreement and sensitivity rather than to outsource the decision.",
+      "triggers": "multi-attribute choices among genuinely comparable options \u2014 vendors, candidates, designs, sites.",
+      "related": [
+        "decision-analysis",
+        "satisficing-thresholds",
+        "sensitivity-analysis",
+        "decision-framing"
+      ],
+      "path": "skills/weighted-scoring/SKILL.md"
+    },
+    {
+      "name": "working-backwards",
+      "type": "atomic",
+      "category": "problem-solving",
+      "difficulty": 2,
+      "status": "built",
+      "one_line": "Start from a concrete goal state and chain prerequisites backwards until reaching actions available right now.",
+      "triggers": "planning toward a fixed outcome or deadline; the goal is clear but the path to it isn't; writing the \"press release\" before building the product it describes.",
+      "related": [
+        "backcasting",
+        "means-ends-analysis",
+        "premortem"
+      ],
+      "disambiguates_from": [
+        {
+          "skill": "backcasting",
+          "distinction": "working-backwards operates on concrete, near-term, well-specified goals (execution planning); backcasting operates on long-horizon, deliberately chosen future states (strategy)."
+        }
+      ],
+      "path": "skills/working-backwards/SKILL.md"
+    }
+  ]
+}
