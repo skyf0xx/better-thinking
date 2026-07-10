@@ -5,8 +5,8 @@
     "recipes/*.md"
   ],
   "counts": {
-    "total": 131,
-    "built": 131
+    "total": 130,
+    "built": 130
   },
   "skills": [
     {
@@ -1597,13 +1597,12 @@
       "category": "metacognition",
       "difficulty": 3,
       "status": "built",
-      "one_line": "Look up a named external framework (design thinking, lean startup, ...) in recipes/, then execute its mapped skill sequence stage by stage as a real orchestrated run.",
-      "triggers": "user names a known framework explicitly (\"run this as design thinking\", \"let's do a lean-startup loop\"), or describes a framework's stages without naming it, and wants it actually carried out.",
+      "one_line": "Look up a named external framework (design thinking, lean startup, ...) in recipes/, then execute its mapped skill sequence stage by stage as a real orchestrated run. If no framework is named, lists every recipe with a one-line description and runs whichever one the user picks.",
+      "triggers": "user names a known framework explicitly (\"run this as design thinking\", \"let's do a lean-startup loop\"), describes a framework's stages without naming it, or asks what recipes/frameworks are available and wants to browse before choosing one.",
       "related": [
         "better-thinking",
         "scientific-method",
-        "decision-analysis",
-        "better-thinking-recipes"
+        "decision-analysis"
       ],
       "path": "skills/recipe-runner/SKILL.md"
     },
@@ -2250,20 +2249,6 @@
         }
       ],
       "path": "skills/library/working-backwards.md"
-    },
-    {
-      "name": "better-thinking-recipes",
-      "type": "composite",
-      "category": "metacognition",
-      "difficulty": 2,
-      "status": "built",
-      "one_line": "Lists every named external framework recipe with a one-line description and runs whichever one the user picks via recipe-runner.",
-      "triggers": "user invokes this command directly, asks what recipes/frameworks are available, or wants to browse before naming one.",
-      "related": [
-        "recipe-runner",
-        "better-thinking"
-      ],
-      "path": "skills/better-thinking-recipes/SKILL.md"
     }
   ]
 }

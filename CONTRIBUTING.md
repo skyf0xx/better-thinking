@@ -13,7 +13,7 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
 ## Adding a new skill
 
 1. **Follow the template exactly.** Copy the structure in [SKILL_TEMPLATE.md](SKILL_TEMPLATE.md) — frontmatter fields, section order and names, everything. Orchestrators route on the `description` field alone, so it must contain real trigger vocabulary ("when comparing options…", "when a claim seems too clean…"), not a vague summary.
-2. **Create the file.** Only three names are real dispatcher entry points and get registered as slash commands by the harness: `better-thinking`, `better-thinking-recipes`, and `recipe-runner` — those live at `skills/<name>/SKILL.md`. Every other skill is reference content the dispatcher reads and applies inline, never independently invoked, and lives at `skills/library/<kebab-case-name>.md` (note: not named `SKILL.md`, and not in its own subdirectory — the Claude Code harness only auto-registers a slash command for a file literally named `SKILL.md` directly under `skills/<name>/`, so this shape keeps ordinary skills out of the command list by construction).
+2. **Create the file.** Only two names are real dispatcher entry points and get registered as slash commands by the harness: `better-thinking` and `recipe-runner` — those live at `skills/<name>/SKILL.md`. Every other skill is reference content the dispatcher reads and applies inline, never independently invoked, and lives at `skills/library/<kebab-case-name>.md` (note: not named `SKILL.md`, and not in its own subdirectory — the Claude Code harness only auto-registers a slash command for a file literally named `SKILL.md` directly under `skills/<name>/`, so this shape keeps ordinary skills out of the command list by construction).
 3. **Respect the rules in SKILL_TEMPLATE.md**, most importantly:
    - No personas, ever. Any "act as / you are a / think like a `<profession>`" fails review — encode what the professional *does*, stepwise, instead.
    - Every procedure ends by reporting residual uncertainty. No skill is allowed to launder confidence.
@@ -34,7 +34,7 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
 
 Recipes (`recipes/`) map a named, well-known framework (design thinking, lean startup, etc.) onto a sequence of *existing* skills — they don't introduce new cognition. If your idea requires a new atomic move to make the recipe work, build that skill first, then reference it from the recipe.
 
-A recipe doc alone is enough to make a framework runnable: [[recipe-runner]] auto-detects a named framework or its stage description and executes the mapped sequence directly from the doc — no skill file required. Discovery and direct invocation are both covered by two standing commands, not a per-recipe skill: [[better-thinking-recipes]] (`/better-thinking-recipes`) lists every recipe with a one-line description and runs whichever one the user picks, and naming a framework directly reaches it through `recipe-runner`'s own detection. Adding a recipe to `recipes/` is enough to make it reachable through both — do not add a new `better-thinking-<name>` shim skill per recipe.
+A recipe doc alone is enough to make a framework runnable: [[recipe-runner]] auto-detects a named framework or its stage description and executes the mapped sequence directly from the doc — no skill file required. It's also the single standing command for discovery: invoked with no framework named, it lists every recipe with a one-line description and runs whichever one the user picks; naming a framework directly reaches the same skill through its own detection instead. Adding a recipe to `recipes/` is enough to make it reachable both ways — do not add a new `better-thinking-<name>` shim skill per recipe.
 
 ## Categories
 
@@ -42,7 +42,7 @@ Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning
 
 ## Pull request checklist
 
-- [ ] Skill lives at `skills/<name>/SKILL.md` (entry points only: `better-thinking`, `better-thinking-recipes`, `recipe-runner`) or `skills/library/<name>.md` (everything else), and follows the template structure exactly
+- [ ] Skill lives at `skills/<name>/SKILL.md` (entry points only: `better-thinking`, `recipe-runner`) or `skills/library/<name>.md` (everything else), and follows the template structure exactly
 - [ ] `description` frontmatter contains concrete trigger conditions, not a vague summary
 - [ ] Atomic skill has no `dependencies`; composite skill's procedure invokes dependencies by name
 - [ ] Token estimate within budget (atomic ≤ 900, composite ≤ 1,700; [[recipe-runner]] is the sole exception, ≤ 2,200)

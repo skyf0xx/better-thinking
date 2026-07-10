@@ -49,7 +49,7 @@ TOKEN_BUDGET = {"atomic": 900, "composite": 1700}
 # Per-skill budget exceptions, documented in CONTRIBUTING.md's "Stay in
 # budget" section. Grant sparingly -- a skill earns one by actually needing
 # more procedure text for its specific job, not by category membership.
-TOKEN_BUDGET_EXCEPTIONS = {"recipe-runner": 2200}
+TOKEN_BUDGET_EXCEPTIONS = {"recipe-runner": 2500}
 
 errors = []
 warnings = []
