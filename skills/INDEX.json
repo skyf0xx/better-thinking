@@ -22,7 +22,7 @@
         "bayesian-updating",
         "causal-analysis"
       ],
-      "path": "skills/abductive-inference/SKILL.md"
+      "path": "skills/library/abductive-inference.md"
     },
     {
       "name": "active-listening",
@@ -43,7 +43,7 @@
           "distinction": "active-listening operates in real-time, in-conversation, on what's actually being said; empathy-mapping is offline/preparatory, constructing a fuller model including unstated needs."
         }
       ],
-      "path": "skills/active-listening/SKILL.md"
+      "path": "skills/library/active-listening.md"
     },
     {
       "name": "after-action-review",
@@ -62,7 +62,7 @@
         "retrospective-facilitation",
         "root-cause-investigation"
       ],
-      "path": "skills/after-action-review/SKILL.md"
+      "path": "skills/library/after-action-review.md"
     },
     {
       "name": "analogical-reasoning",
@@ -77,7 +77,7 @@
         "concept-blending",
         "mental-model-extraction"
       ],
-      "path": "skills/analogical-reasoning/SKILL.md"
+      "path": "skills/library/analogical-reasoning.md"
     },
     {
       "name": "argument-construction",
@@ -92,7 +92,7 @@
         "steelmanning",
         "persuasive-case"
       ],
-      "path": "skills/argument-construction/SKILL.md"
+      "path": "skills/library/argument-construction.md"
     },
     {
       "name": "argument-mapping",
@@ -107,7 +107,7 @@
         "argument-construction",
         "steelmanning"
       ],
-      "path": "skills/argument-mapping/SKILL.md"
+      "path": "skills/library/argument-mapping.md"
     },
     {
       "name": "assumption-audit",
@@ -129,7 +129,7 @@
           "distinction": "assumption-audit interrogates a claim/plan going forward; chestertons-fence interrogates an existing artifact before removal."
         }
       ],
-      "path": "skills/assumption-audit/SKILL.md"
+      "path": "skills/library/assumption-audit.md"
     },
     {
       "name": "audience-modeling",
@@ -144,7 +144,7 @@
         "precision-questioning",
         "persuasive-case"
       ],
-      "path": "skills/audience-modeling/SKILL.md"
+      "path": "skills/library/audience-modeling.md"
     },
     {
       "name": "backcasting",
@@ -165,7 +165,7 @@
           "distinction": "working-backwards operates on concrete, near-term, well-specified goals (execution planning); backcasting operates on long-horizon, deliberately chosen future states (strategy)."
         }
       ],
-      "path": "skills/backcasting/SKILL.md"
+      "path": "skills/library/backcasting.md"
     },
     {
       "name": "batna-analysis",
@@ -180,7 +180,7 @@
         "incentive-analysis",
         "interest-based-bargaining"
       ],
-      "path": "skills/batna-analysis/SKILL.md"
+      "path": "skills/library/batna-analysis.md"
     },
     {
       "name": "bayesian-updating",
@@ -195,7 +195,7 @@
         "confidence-calibration",
         "competing-hypotheses"
       ],
-      "path": "skills/bayesian-updating/SKILL.md"
+      "path": "skills/library/bayesian-updating.md"
     },
     {
       "name": "bias-audit",
@@ -211,7 +211,7 @@
         "confidence-calibration",
         "better-thinking"
       ],
-      "path": "skills/bias-audit/SKILL.md"
+      "path": "skills/library/bias-audit.md"
     },
     {
       "name": "bottleneck-analysis",
@@ -225,7 +225,7 @@
         "systems-mapping",
         "prioritization-triage"
       ],
-      "path": "skills/bottleneck-analysis/SKILL.md"
+      "path": "skills/library/bottleneck-analysis.md"
     },
     {
       "name": "case-analysis",
@@ -246,7 +246,7 @@
         "analogical-reasoning",
         "steelmanning"
       ],
-      "path": "skills/case-analysis/SKILL.md"
+      "path": "skills/library/case-analysis.md"
     },
     {
       "name": "causal-analysis",
@@ -262,7 +262,7 @@
         "root-cause-investigation",
         "sanity-checking"
       ],
-      "path": "skills/causal-analysis/SKILL.md"
+      "path": "skills/library/causal-analysis.md"
     },
     {
       "name": "chestertons-fence",
@@ -282,7 +282,7 @@
           "distinction": "assumption-audit interrogates a claim/plan going forward; chestertons-fence interrogates an existing artifact before removal."
         }
       ],
-      "path": "skills/chestertons-fence/SKILL.md"
+      "path": "skills/library/chestertons-fence.md"
     },
     {
       "name": "claim-verification",
@@ -303,7 +303,7 @@
       "related": [
         "critical-reading"
       ],
-      "path": "skills/claim-verification/SKILL.md"
+      "path": "skills/library/claim-verification.md"
     },
     {
       "name": "coaching-dialogue",
@@ -323,7 +323,7 @@
         "socratic-teaching",
         "feedback-delivery"
       ],
-      "path": "skills/coaching-dialogue/SKILL.md"
+      "path": "skills/library/coaching-dialogue.md"
     },
     {
       "name": "better-thinking",
@@ -361,7 +361,7 @@
         "abductive-inference",
         "bayesian-updating"
       ],
-      "path": "skills/competing-hypotheses/SKILL.md"
+      "path": "skills/library/competing-hypotheses.md"
     },
     {
       "name": "concept-blending",
@@ -375,7 +375,7 @@
         "analogical-reasoning",
         "random-stimulus"
       ],
-      "path": "skills/concept-blending/SKILL.md"
+      "path": "skills/library/concept-blending.md"
     },
     {
       "name": "confidence-calibration",
@@ -390,7 +390,7 @@
         "decision-journaling",
         "structured-forecasting"
       ],
-      "path": "skills/confidence-calibration/SKILL.md"
+      "path": "skills/library/confidence-calibration.md"
     },
     {
       "name": "conflict-mediation",
@@ -412,7 +412,7 @@
         "difficult-conversations",
         "active-listening"
       ],
-      "path": "skills/conflict-mediation/SKILL.md"
+      "path": "skills/library/conflict-mediation.md"
     },
     {
       "name": "consensus-mapping",
@@ -427,7 +427,7 @@
         "retrospective-facilitation",
         "session-design"
       ],
-      "path": "skills/consensus-mapping/SKILL.md"
+      "path": "skills/library/consensus-mapping.md"
     },
     {
       "name": "cost-benefit",
@@ -442,7 +442,7 @@
         "second-order-scan",
         "prioritization-triage"
       ],
-      "path": "skills/cost-benefit/SKILL.md"
+      "path": "skills/library/cost-benefit.md"
     },
     {
       "name": "counterfactual-reasoning",
@@ -457,7 +457,7 @@
         "decision-journaling",
         "after-action-review"
       ],
-      "path": "skills/counterfactual-reasoning/SKILL.md"
+      "path": "skills/library/counterfactual-reasoning.md"
     },
     {
       "name": "creative-constraints",
@@ -470,7 +470,7 @@
       "related": [
         "divergent-ideation"
       ],
-      "path": "skills/creative-constraints/SKILL.md"
+      "path": "skills/library/creative-constraints.md"
     },
     {
       "name": "critical-reading",
@@ -485,7 +485,7 @@
         "frame-detection",
         "statistical-audit"
       ],
-      "path": "skills/critical-reading/SKILL.md"
+      "path": "skills/library/critical-reading.md"
     },
     {
       "name": "curriculum-design",
@@ -508,7 +508,7 @@
         "knowledge-gap-analysis",
         "socratic-teaching"
       ],
-      "path": "skills/curriculum-design/SKILL.md"
+      "path": "skills/library/curriculum-design.md"
     },
     {
       "name": "decision-analysis",
@@ -536,7 +536,7 @@
         "negotiation",
         "recipe-runner"
       ],
-      "path": "skills/decision-analysis/SKILL.md"
+      "path": "skills/library/decision-analysis.md"
     },
     {
       "name": "decision-framing",
@@ -552,7 +552,7 @@
         "expectation-contracting",
         "reversibility-classification"
       ],
-      "path": "skills/decision-framing/SKILL.md"
+      "path": "skills/library/decision-framing.md"
     },
     {
       "name": "decision-journaling",
@@ -567,7 +567,7 @@
         "counterfactual-reasoning",
         "after-action-review"
       ],
-      "path": "skills/decision-journaling/SKILL.md"
+      "path": "skills/library/decision-journaling.md"
     },
     {
       "name": "deductive-validation",
@@ -582,7 +582,7 @@
         "fallacy-detection",
         "reductio"
       ],
-      "path": "skills/deductive-validation/SKILL.md"
+      "path": "skills/library/deductive-validation.md"
     },
     {
       "name": "deliberate-practice-design",
@@ -597,7 +597,7 @@
         "scaffolding",
         "transfer-testing"
       ],
-      "path": "skills/deliberate-practice-design/SKILL.md"
+      "path": "skills/library/deliberate-practice-design.md"
     },
     {
       "name": "delphi-aggregation",
@@ -617,7 +617,7 @@
         "interview-synthesis",
         "consensus-mapping"
       ],
-      "path": "skills/delphi-aggregation/SKILL.md"
+      "path": "skills/library/delphi-aggregation.md"
     },
     {
       "name": "devils-advocacy",
@@ -638,7 +638,7 @@
           "distinction": "steelmanning reconstructs an opposing position charitably before arguing against it; devils-advocacy argues against your own group's consensus."
         }
       ],
-      "path": "skills/devils-advocacy/SKILL.md"
+      "path": "skills/library/devils-advocacy.md"
     },
     {
       "name": "differential-diagnosis",
@@ -659,7 +659,7 @@
         "root-cause-investigation",
         "competing-hypotheses"
       ],
-      "path": "skills/differential-diagnosis/SKILL.md"
+      "path": "skills/library/differential-diagnosis.md"
     },
     {
       "name": "difficult-conversations",
@@ -681,7 +681,7 @@
         "conflict-mediation",
         "coaching-dialogue"
       ],
-      "path": "skills/difficult-conversations/SKILL.md"
+      "path": "skills/library/difficult-conversations.md"
     },
     {
       "name": "disconfirmation-search",
@@ -696,7 +696,7 @@
         "bayesian-updating",
         "scientific-method"
       ],
-      "path": "skills/disconfirmation-search/SKILL.md"
+      "path": "skills/library/disconfirmation-search.md"
     },
     {
       "name": "divergent-ideation",
@@ -711,7 +711,7 @@
         "scamper",
         "morphological-analysis"
       ],
-      "path": "skills/divergent-ideation/SKILL.md"
+      "path": "skills/library/divergent-ideation.md"
     },
     {
       "name": "effort-calibration",
@@ -726,7 +726,7 @@
         "better-thinking",
         "satisficing-thresholds"
       ],
-      "path": "skills/effort-calibration/SKILL.md"
+      "path": "skills/library/effort-calibration.md"
     },
     {
       "name": "empathy-mapping",
@@ -747,7 +747,7 @@
           "distinction": "active-listening operates in real-time, in-conversation, on what's actually being said; empathy-mapping is offline/preparatory, constructing a fuller model including unstated needs."
         }
       ],
-      "path": "skills/empathy-mapping/SKILL.md"
+      "path": "skills/library/empathy-mapping.md"
     },
     {
       "name": "epistemic-tagging",
@@ -762,7 +762,7 @@
         "critical-reading",
         "confidence-calibration"
       ],
-      "path": "skills/epistemic-tagging/SKILL.md"
+      "path": "skills/library/epistemic-tagging.md"
     },
     {
       "name": "error-analysis",
@@ -777,7 +777,7 @@
         "self-explanation",
         "root-cause-investigation"
       ],
-      "path": "skills/error-analysis/SKILL.md"
+      "path": "skills/library/error-analysis.md"
     },
     {
       "name": "ethical-framework-rotation",
@@ -792,7 +792,7 @@
         "value-tradeoffs",
         "steelmanning"
       ],
-      "path": "skills/ethical-framework-rotation/SKILL.md"
+      "path": "skills/library/ethical-framework-rotation.md"
     },
     {
       "name": "evidence-hierarchy",
@@ -807,7 +807,7 @@
         "statistical-audit",
         "bayesian-updating"
       ],
-      "path": "skills/evidence-hierarchy/SKILL.md"
+      "path": "skills/library/evidence-hierarchy.md"
     },
     {
       "name": "evidence-triangulation",
@@ -822,7 +822,7 @@
         "search-strategy",
         "bayesian-updating"
       ],
-      "path": "skills/evidence-triangulation/SKILL.md"
+      "path": "skills/library/evidence-triangulation.md"
     },
     {
       "name": "executive-summarization",
@@ -837,7 +837,7 @@
         "audience-modeling",
         "precision-questioning"
       ],
-      "path": "skills/executive-summarization/SKILL.md"
+      "path": "skills/library/executive-summarization.md"
     },
     {
       "name": "expectation-contracting",
@@ -851,7 +851,7 @@
         "decision-framing",
         "session-design"
       ],
-      "path": "skills/expectation-contracting/SKILL.md"
+      "path": "skills/library/expectation-contracting.md"
     },
     {
       "name": "expected-value",
@@ -866,7 +866,7 @@
         "monte-carlo-reasoning",
         "cost-benefit"
       ],
-      "path": "skills/expected-value/SKILL.md"
+      "path": "skills/library/expected-value.md"
     },
     {
       "name": "explanatory-analogy",
@@ -881,7 +881,7 @@
         "progressive-disclosure",
         "audience-modeling"
       ],
-      "path": "skills/explanatory-analogy/SKILL.md"
+      "path": "skills/library/explanatory-analogy.md"
     },
     {
       "name": "fallacy-detection",
@@ -896,7 +896,7 @@
         "argument-mapping",
         "critical-reading"
       ],
-      "path": "skills/fallacy-detection/SKILL.md"
+      "path": "skills/library/fallacy-detection.md"
     },
     {
       "name": "feedback-delivery",
@@ -917,7 +917,7 @@
           "distinction": "nonviolent-communication is the general interpersonal form, including the 'need' layer, suited to personal/relational conflict; feedback-delivery is the workplace-scoped variant (situation-behavior-impact)."
         }
       ],
-      "path": "skills/feedback-delivery/SKILL.md"
+      "path": "skills/library/feedback-delivery.md"
     },
     {
       "name": "feedback-loop-analysis",
@@ -938,7 +938,7 @@
           "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; feedback-loop-analysis requires building an actual structural model."
         }
       ],
-      "path": "skills/feedback-loop-analysis/SKILL.md"
+      "path": "skills/library/feedback-loop-analysis.md"
     },
     {
       "name": "fermi-estimation",
@@ -953,7 +953,7 @@
         "uncertainty-decomposition",
         "reference-class-forecasting"
       ],
-      "path": "skills/fermi-estimation/SKILL.md"
+      "path": "skills/library/fermi-estimation.md"
     },
     {
       "name": "first-principles",
@@ -967,7 +967,7 @@
         "assumption-audit",
         "chestertons-fence"
       ],
-      "path": "skills/first-principles/SKILL.md"
+      "path": "skills/library/first-principles.md"
     },
     {
       "name": "five-whys",
@@ -982,7 +982,7 @@
         "causal-analysis",
         "problem-framing"
       ],
-      "path": "skills/five-whys/SKILL.md"
+      "path": "skills/library/five-whys.md"
     },
     {
       "name": "frame-detection",
@@ -997,7 +997,7 @@
         "problem-framing",
         "incentive-analysis"
       ],
-      "path": "skills/frame-detection/SKILL.md"
+      "path": "skills/library/frame-detection.md"
     },
     {
       "name": "game-theoretic-analysis",
@@ -1013,7 +1013,7 @@
         "wargaming",
         "second-order-scan"
       ],
-      "path": "skills/game-theoretic-analysis/SKILL.md"
+      "path": "skills/library/game-theoretic-analysis.md"
     },
     {
       "name": "idea-convergence",
@@ -1028,7 +1028,7 @@
         "weighted-scoring",
         "ideation-sprint"
       ],
-      "path": "skills/idea-convergence/SKILL.md"
+      "path": "skills/library/idea-convergence.md"
     },
     {
       "name": "ideation-sprint",
@@ -1048,7 +1048,7 @@
         "idea-convergence",
         "session-design"
       ],
-      "path": "skills/ideation-sprint/SKILL.md"
+      "path": "skills/library/ideation-sprint.md"
     },
     {
       "name": "incentive-analysis",
@@ -1063,7 +1063,7 @@
         "stakeholder-mapping",
         "game-theoretic-analysis"
       ],
-      "path": "skills/incentive-analysis/SKILL.md"
+      "path": "skills/library/incentive-analysis.md"
     },
     {
       "name": "inductive-generalization",
@@ -1078,7 +1078,7 @@
         "statistical-audit",
         "disconfirmation-search"
       ],
-      "path": "skills/inductive-generalization/SKILL.md"
+      "path": "skills/library/inductive-generalization.md"
     },
     {
       "name": "interest-based-bargaining",
@@ -1093,7 +1093,7 @@
         "negotiation",
         "empathy-mapping"
       ],
-      "path": "skills/interest-based-bargaining/SKILL.md"
+      "path": "skills/library/interest-based-bargaining.md"
     },
     {
       "name": "interview-synthesis",
@@ -1115,7 +1115,7 @@
         "delphi-aggregation",
         "empathy-mapping"
       ],
-      "path": "skills/interview-synthesis/SKILL.md"
+      "path": "skills/library/interview-synthesis.md"
     },
     {
       "name": "inversion",
@@ -1135,7 +1135,7 @@
           "distinction": "inversion is the general content-free move (apply to any goal); premortem is the specific application to a concrete plan with a timeline, run as a group ritual."
         }
       ],
-      "path": "skills/inversion/SKILL.md"
+      "path": "skills/library/inversion.md"
     },
     {
       "name": "knowledge-gap-analysis",
@@ -1150,7 +1150,7 @@
         "mental-model-extraction",
         "curriculum-design"
       ],
-      "path": "skills/knowledge-gap-analysis/SKILL.md"
+      "path": "skills/library/knowledge-gap-analysis.md"
     },
     {
       "name": "learning-objectives",
@@ -1165,7 +1165,7 @@
         "transfer-testing",
         "knowledge-gap-analysis"
       ],
-      "path": "skills/learning-objectives/SKILL.md"
+      "path": "skills/library/learning-objectives.md"
     },
     {
       "name": "leverage-points",
@@ -1180,7 +1180,7 @@
         "feedback-loop-analysis",
         "second-order-scan"
       ],
-      "path": "skills/leverage-points/SKILL.md"
+      "path": "skills/library/leverage-points.md"
     },
     {
       "name": "mece-decomposition",
@@ -1201,7 +1201,7 @@
           "distinction": "mece-decomposition is the general structural technique (any space, exhaustive+exclusive); question-decomposition is its application specifically to research questions, with evidence-type tagging on the leaves."
         }
       ],
-      "path": "skills/mece-decomposition/SKILL.md"
+      "path": "skills/library/mece-decomposition.md"
     },
     {
       "name": "mental-model-extraction",
@@ -1216,7 +1216,7 @@
         "interview-synthesis",
         "curriculum-design"
       ],
-      "path": "skills/mental-model-extraction/SKILL.md"
+      "path": "skills/library/mental-model-extraction.md"
     },
     {
       "name": "methodology-critique",
@@ -1231,7 +1231,7 @@
         "statistical-audit",
         "peer-review"
       ],
-      "path": "skills/methodology-critique/SKILL.md"
+      "path": "skills/library/methodology-critique.md"
     },
     {
       "name": "monte-carlo-reasoning",
@@ -1246,7 +1246,7 @@
         "expected-value",
         "sensitivity-analysis"
       ],
-      "path": "skills/monte-carlo-reasoning/SKILL.md"
+      "path": "skills/library/monte-carlo-reasoning.md"
     },
     {
       "name": "morphological-analysis",
@@ -1261,7 +1261,7 @@
         "solution-space-mapping",
         "scamper"
       ],
-      "path": "skills/morphological-analysis/SKILL.md"
+      "path": "skills/library/morphological-analysis.md"
     },
     {
       "name": "narrative-construction",
@@ -1276,7 +1276,7 @@
         "audience-modeling",
         "persuasive-case"
       ],
-      "path": "skills/narrative-construction/SKILL.md"
+      "path": "skills/library/narrative-construction.md"
     },
     {
       "name": "negotiation",
@@ -1299,7 +1299,7 @@
         "conflict-mediation",
         "game-theoretic-analysis"
       ],
-      "path": "skills/negotiation/SKILL.md"
+      "path": "skills/library/negotiation.md"
     },
     {
       "name": "nonviolent-communication",
@@ -1320,7 +1320,7 @@
           "distinction": "nonviolent-communication is the general interpersonal form, including the 'need' layer, suited to personal/relational conflict; feedback-delivery is the workplace-scoped variant (situation-behavior-impact)."
         }
       ],
-      "path": "skills/nonviolent-communication/SKILL.md"
+      "path": "skills/library/nonviolent-communication.md"
     },
     {
       "name": "ooda-loop",
@@ -1341,7 +1341,7 @@
         "progress-monitoring",
         "scenario-planning"
       ],
-      "path": "skills/ooda-loop/SKILL.md"
+      "path": "skills/library/ooda-loop.md"
     },
     {
       "name": "peer-review",
@@ -1362,7 +1362,7 @@
         "feedback-delivery",
         "revision-pass"
       ],
-      "path": "skills/peer-review/SKILL.md"
+      "path": "skills/library/peer-review.md"
     },
     {
       "name": "perspective-rotation",
@@ -1377,7 +1377,7 @@
         "stakeholder-mapping",
         "red-teaming"
       ],
-      "path": "skills/perspective-rotation/SKILL.md"
+      "path": "skills/library/perspective-rotation.md"
     },
     {
       "name": "persuasive-case",
@@ -1399,7 +1399,7 @@
         "audience-modeling",
         "negotiation"
       ],
-      "path": "skills/persuasive-case/SKILL.md"
+      "path": "skills/library/persuasive-case.md"
     },
     {
       "name": "precision-questioning",
@@ -1414,7 +1414,7 @@
         "interview-synthesis",
         "audience-modeling"
       ],
-      "path": "skills/precision-questioning/SKILL.md"
+      "path": "skills/library/precision-questioning.md"
     },
     {
       "name": "premortem",
@@ -1435,7 +1435,7 @@
           "distinction": "inversion is the general content-free move (apply to any goal); premortem is the specific application to a concrete plan with a timeline, run as a group ritual."
         }
       ],
-      "path": "skills/premortem/SKILL.md"
+      "path": "skills/library/premortem.md"
     },
     {
       "name": "prioritization-triage",
@@ -1450,7 +1450,7 @@
         "satisficing-thresholds",
         "bottleneck-analysis"
       ],
-      "path": "skills/prioritization-triage/SKILL.md"
+      "path": "skills/library/prioritization-triage.md"
     },
     {
       "name": "problem-framing",
@@ -1465,7 +1465,7 @@
         "frame-detection",
         "five-whys"
       ],
-      "path": "skills/problem-framing/SKILL.md"
+      "path": "skills/library/problem-framing.md"
     },
     {
       "name": "progress-monitoring",
@@ -1480,7 +1480,7 @@
         "after-action-review",
         "ooda-loop"
       ],
-      "path": "skills/progress-monitoring/SKILL.md"
+      "path": "skills/library/progress-monitoring.md"
     },
     {
       "name": "progressive-disclosure",
@@ -1495,7 +1495,7 @@
         "explanatory-analogy",
         "pyramid-structuring"
       ],
-      "path": "skills/progressive-disclosure/SKILL.md"
+      "path": "skills/library/progressive-disclosure.md"
     },
     {
       "name": "pyramid-structuring",
@@ -1510,7 +1510,7 @@
         "argument-construction",
         "progressive-disclosure"
       ],
-      "path": "skills/pyramid-structuring/SKILL.md"
+      "path": "skills/library/pyramid-structuring.md"
     },
     {
       "name": "question-decomposition",
@@ -1531,7 +1531,7 @@
           "distinction": "mece-decomposition is the general structural technique (any space, exhaustive+exclusive); question-decomposition is its application specifically to research questions, with evidence-type tagging on the leaves."
         }
       ],
-      "path": "skills/question-decomposition/SKILL.md"
+      "path": "skills/library/question-decomposition.md"
     },
     {
       "name": "random-stimulus",
@@ -1546,7 +1546,7 @@
         "analogical-reasoning",
         "concept-blending"
       ],
-      "path": "skills/random-stimulus/SKILL.md"
+      "path": "skills/library/random-stimulus.md"
     },
     {
       "name": "red-teaming",
@@ -1568,7 +1568,7 @@
         "devils-advocacy",
         "premortem"
       ],
-      "path": "skills/red-teaming/SKILL.md"
+      "path": "skills/library/red-teaming.md"
     },
     {
       "name": "reductio",
@@ -1589,7 +1589,7 @@
           "distinction": "reductio traces forward specifically hunting for contradiction (refutation); structured-what-if traces forward to map implications neutrally (exploration)."
         }
       ],
-      "path": "skills/reductio/SKILL.md"
+      "path": "skills/library/reductio.md"
     },
     {
       "name": "recipe-runner",
@@ -1620,7 +1620,7 @@
         "fermi-estimation",
         "structured-forecasting"
       ],
-      "path": "skills/reference-class-forecasting/SKILL.md"
+      "path": "skills/library/reference-class-forecasting.md"
     },
     {
       "name": "retrospective-facilitation",
@@ -1640,7 +1640,7 @@
         "consensus-mapping",
         "active-listening"
       ],
-      "path": "skills/retrospective-facilitation/SKILL.md"
+      "path": "skills/library/retrospective-facilitation.md"
     },
     {
       "name": "reversibility-classification",
@@ -1655,7 +1655,7 @@
         "decision-framing",
         "better-thinking"
       ],
-      "path": "skills/reversibility-classification/SKILL.md"
+      "path": "skills/library/reversibility-classification.md"
     },
     {
       "name": "revision-pass",
@@ -1670,7 +1670,7 @@
         "argument-mapping",
         "peer-review"
       ],
-      "path": "skills/revision-pass/SKILL.md"
+      "path": "skills/library/revision-pass.md"
     },
     {
       "name": "risk-matrix",
@@ -1685,7 +1685,7 @@
         "premortem",
         "tripwires"
       ],
-      "path": "skills/risk-matrix/SKILL.md"
+      "path": "skills/library/risk-matrix.md"
     },
     {
       "name": "root-cause-investigation",
@@ -1707,7 +1707,7 @@
         "differential-diagnosis",
         "after-action-review"
       ],
-      "path": "skills/root-cause-investigation/SKILL.md"
+      "path": "skills/library/root-cause-investigation.md"
     },
     {
       "name": "sanity-checking",
@@ -1721,7 +1721,7 @@
         "fermi-estimation",
         "epistemic-tagging"
       ],
-      "path": "skills/sanity-checking/SKILL.md"
+      "path": "skills/library/sanity-checking.md"
     },
     {
       "name": "satisficing-thresholds",
@@ -1736,7 +1736,7 @@
         "weighted-scoring",
         "prioritization-triage"
       ],
-      "path": "skills/satisficing-thresholds/SKILL.md"
+      "path": "skills/library/satisficing-thresholds.md"
     },
     {
       "name": "scaffolding",
@@ -1751,7 +1751,7 @@
         "curriculum-design",
         "transfer-testing"
       ],
-      "path": "skills/scaffolding/SKILL.md"
+      "path": "skills/library/scaffolding.md"
     },
     {
       "name": "scamper",
@@ -1765,7 +1765,7 @@
         "divergent-ideation",
         "morphological-analysis"
       ],
-      "path": "skills/scamper/SKILL.md"
+      "path": "skills/library/scamper.md"
     },
     {
       "name": "scenario-planning",
@@ -1788,7 +1788,7 @@
         "structured-forecasting",
         "decision-analysis"
       ],
-      "path": "skills/scenario-planning/SKILL.md"
+      "path": "skills/library/scenario-planning.md"
     },
     {
       "name": "scientific-method",
@@ -1805,7 +1805,7 @@
         "structured-problem-solving",
         "recipe-runner"
       ],
-      "path": "skills/scientific-method/SKILL.md"
+      "path": "skills/library/scientific-method.md"
     },
     {
       "name": "search-strategy",
@@ -1820,7 +1820,7 @@
         "source-credibility",
         "disconfirmation-search"
       ],
-      "path": "skills/search-strategy/SKILL.md"
+      "path": "skills/library/search-strategy.md"
     },
     {
       "name": "second-order-scan",
@@ -1845,7 +1845,7 @@
           "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; feedback-loop-analysis requires building an actual structural model."
         }
       ],
-      "path": "skills/second-order-scan/SKILL.md"
+      "path": "skills/library/second-order-scan.md"
     },
     {
       "name": "self-explanation",
@@ -1860,7 +1860,7 @@
         "transfer-testing",
         "error-analysis"
       ],
-      "path": "skills/self-explanation/SKILL.md"
+      "path": "skills/library/self-explanation.md"
     },
     {
       "name": "sensitivity-analysis",
@@ -1875,7 +1875,7 @@
         "weighted-scoring",
         "monte-carlo-reasoning"
       ],
-      "path": "skills/sensitivity-analysis/SKILL.md"
+      "path": "skills/library/sensitivity-analysis.md"
     },
     {
       "name": "session-design",
@@ -1890,7 +1890,7 @@
         "ideation-sprint",
         "retrospective-facilitation"
       ],
-      "path": "skills/session-design/SKILL.md"
+      "path": "skills/library/session-design.md"
     },
     {
       "name": "socratic-teaching",
@@ -1910,7 +1910,7 @@
         "precision-questioning",
         "coaching-dialogue"
       ],
-      "path": "skills/socratic-teaching/SKILL.md"
+      "path": "skills/library/socratic-teaching.md"
     },
     {
       "name": "solution-space-mapping",
@@ -1925,7 +1925,7 @@
         "divergent-ideation",
         "decision-framing"
       ],
-      "path": "skills/solution-space-mapping/SKILL.md"
+      "path": "skills/library/solution-space-mapping.md"
     },
     {
       "name": "source-credibility",
@@ -1940,7 +1940,7 @@
         "incentive-analysis",
         "evidence-triangulation"
       ],
-      "path": "skills/source-credibility/SKILL.md"
+      "path": "skills/library/source-credibility.md"
     },
     {
       "name": "stakeholder-impact",
@@ -1955,7 +1955,7 @@
         "ethical-framework-rotation",
         "second-order-scan"
       ],
-      "path": "skills/stakeholder-impact/SKILL.md"
+      "path": "skills/library/stakeholder-impact.md"
     },
     {
       "name": "stakeholder-mapping",
@@ -1970,7 +1970,7 @@
         "empathy-mapping",
         "negotiation"
       ],
-      "path": "skills/stakeholder-mapping/SKILL.md"
+      "path": "skills/library/stakeholder-mapping.md"
     },
     {
       "name": "statistical-audit",
@@ -1984,7 +1984,7 @@
         "bayesian-updating",
         "methodology-critique"
       ],
-      "path": "skills/statistical-audit/SKILL.md"
+      "path": "skills/library/statistical-audit.md"
     },
     {
       "name": "steelmanning",
@@ -2005,7 +2005,7 @@
           "distinction": "steelmanning reconstructs an opposing position charitably before arguing against it; devils-advocacy argues against your own group's consensus."
         }
       ],
-      "path": "skills/steelmanning/SKILL.md"
+      "path": "skills/library/steelmanning.md"
     },
     {
       "name": "strategic-planning",
@@ -2028,7 +2028,7 @@
         "scenario-planning",
         "decision-analysis"
       ],
-      "path": "skills/strategic-planning/SKILL.md"
+      "path": "skills/library/strategic-planning.md"
     },
     {
       "name": "structured-forecasting",
@@ -2051,7 +2051,7 @@
         "scenario-planning",
         "delphi-aggregation"
       ],
-      "path": "skills/structured-forecasting/SKILL.md"
+      "path": "skills/library/structured-forecasting.md"
     },
     {
       "name": "structured-problem-solving",
@@ -2075,7 +2075,7 @@
         "root-cause-investigation",
         "scientific-method"
       ],
-      "path": "skills/structured-problem-solving/SKILL.md"
+      "path": "skills/library/structured-problem-solving.md"
     },
     {
       "name": "structured-what-if",
@@ -2096,7 +2096,7 @@
           "distinction": "reductio traces forward specifically hunting for contradiction (refutation); structured-what-if traces forward to map implications neutrally (exploration)."
         }
       ],
-      "path": "skills/structured-what-if/SKILL.md"
+      "path": "skills/library/structured-what-if.md"
     },
     {
       "name": "systems-mapping",
@@ -2117,7 +2117,7 @@
           "distinction": "second-order-scan is a fast, lightweight 'and then what?' check usable standalone in seconds; systems-mapping requires building an actual structural model."
         }
       ],
-      "path": "skills/systems-mapping/SKILL.md"
+      "path": "skills/library/systems-mapping.md"
     },
     {
       "name": "transfer-testing",
@@ -2132,7 +2132,7 @@
         "error-analysis",
         "analogical-reasoning"
       ],
-      "path": "skills/transfer-testing/SKILL.md"
+      "path": "skills/library/transfer-testing.md"
     },
     {
       "name": "trend-breakpoint-analysis",
@@ -2147,7 +2147,7 @@
         "leverage-points",
         "structured-forecasting"
       ],
-      "path": "skills/trend-breakpoint-analysis/SKILL.md"
+      "path": "skills/library/trend-breakpoint-analysis.md"
     },
     {
       "name": "tripwires",
@@ -2162,7 +2162,7 @@
         "decision-journaling",
         "risk-matrix"
       ],
-      "path": "skills/tripwires/SKILL.md"
+      "path": "skills/library/tripwires.md"
     },
     {
       "name": "uncertainty-decomposition",
@@ -2177,7 +2177,7 @@
         "monte-carlo-reasoning",
         "confidence-calibration"
       ],
-      "path": "skills/uncertainty-decomposition/SKILL.md"
+      "path": "skills/library/uncertainty-decomposition.md"
     },
     {
       "name": "value-tradeoffs",
@@ -2192,7 +2192,7 @@
         "weighted-scoring",
         "decision-framing"
       ],
-      "path": "skills/value-tradeoffs/SKILL.md"
+      "path": "skills/library/value-tradeoffs.md"
     },
     {
       "name": "wargaming",
@@ -2213,7 +2213,7 @@
         "red-teaming",
         "scenario-planning"
       ],
-      "path": "skills/wargaming/SKILL.md"
+      "path": "skills/library/wargaming.md"
     },
     {
       "name": "weighted-scoring",
@@ -2229,7 +2229,7 @@
         "sensitivity-analysis",
         "decision-framing"
       ],
-      "path": "skills/weighted-scoring/SKILL.md"
+      "path": "skills/library/weighted-scoring.md"
     },
     {
       "name": "working-backwards",
@@ -2249,7 +2249,7 @@
           "distinction": "working-backwards operates on concrete, near-term, well-specified goals (execution planning); backcasting operates on long-horizon, deliberately chosen future states (strategy)."
         }
       ],
-      "path": "skills/working-backwards/SKILL.md"
+      "path": "skills/library/working-backwards.md"
     },
     {
       "name": "better-thinking-recipes",

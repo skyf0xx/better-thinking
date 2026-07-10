@@ -54,7 +54,7 @@ Or from a local clone:
 /plugin install better-thinking@better-thinking
 ```
 
-This registers all 135 skills for discovery. It reads [skills/INDEX.json](skills/INDEX.json) to select the right skill instead of guessing from a crowded name list.
+This registers `/better-thinking` (plus `/better-thinking-recipes` and `/recipe-runner`) as slash commands. Every other skill is not independently invocable — `/better-thinking` reads [skills/INDEX.json](skills/INDEX.json) to select and apply the right one instead of surfacing a crowded name list.
 
 ## What a Skill is (and is not)
 
@@ -102,7 +102,11 @@ catalog/                ← full specification of every skill, by category
   11-learning.md
   12-metacognition.md
   13-ethics.md
-skills/                 ← one directory per skill: skills/<name>/SKILL.md
+skills/
+  better-thinking/SKILL.md         ← dispatcher entry point (slash command)
+  better-thinking-recipes/SKILL.md ← recipe discovery entry point (slash command)
+  recipe-runner/SKILL.md           ← recipe execution entry point (slash command)
+  library/<name>.md      ← every other skill: reference content the dispatcher reads and applies, not an independent slash command
   INDEX.json             ← machine-readable index; better-thinking reads this to route instead of relying on memorized recall
 recipes/                ← named-framework mappings (design thinking, ...) onto skill sequences
 ```

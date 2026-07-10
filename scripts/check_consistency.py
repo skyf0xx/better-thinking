@@ -2,15 +2,18 @@
 """Consistency checker for the better-thinking skill library.
 
 Checks, with no dependencies beyond the stdlib:
-  1. Every skills/<name>/SKILL.md has valid frontmatter with required fields.
+  1. Every built skill's file (resolved via its INDEX.json `path`) has valid
+     frontmatter with required fields. Entry-point skills (better-thinking,
+     better-thinking-recipes, recipe-runner) live at skills/<name>/SKILL.md;
+     every other skill lives at skills/library/<name>.md.
   2. Frontmatter type/dependency rules: atomic has no dependencies; composite does.
   3. Token budget: atomic <= 900, composite <= 1700 (chars/4 estimate),
      except per-skill overrides in TOKEN_BUDGET_EXCEPTIONS (documented in
      CONTRIBUTING.md).
-  4. skills/INDEX.json <-> filesystem: every built skill dir has an index entry
-     and vice versa; counts in INDEX.json match reality.
+  4. skills/INDEX.json <-> filesystem: every built skill's `path` resolves to
+     a real file; counts in INDEX.json match reality.
   5. skills/INDEX.json <-> frontmatter: name/type/category/difficulty/related
-     in the index match the SKILL.md frontmatter (index is generated from it).
+     in the index match the skill file's frontmatter (index is generated from it).
   6. No dangling [[wiki-links]]: every link in a built skill's body or
      frontmatter `related`/`dependencies` resolves to a built name in
      INDEX.json.
@@ -109,58 +112,76 @@ def estimate_tokens(path):
     return len(open(path, encoding="utf-8").read()) // 4
 
 
-def check_skill_files(index_by_name):
-    dirs = sorted(
-        d for d in os.listdir(SKILLS_DIR)
-        if os.path.isdir(os.path.join(SKILLS_DIR, d))
-    )
-    fm_by_name = {}
+# Entry-point skills stay at skills/<name>/SKILL.md and are real slash
+# commands; every other skill lives at skills/library/<name>.md, read by
+# the dispatcher as reference text rather than independently invocable.
+ENTRY_POINT_SKILLS = {"better-thinking", "better-thinking-recipes", "recipe-runner"}
 
-    for d in dirs:
-        path = os.path.join(SKILLS_DIR, d, "SKILL.md")
+
+def check_skill_files(index_by_name):
+    fm_by_name = {}
+    rel_by_name = {}
+
+    for name, entry in index_by_name.items():
+        if entry.get("category") == "recipes":
+            continue
+        if entry.get("status") != "built":
+            continue
+
+        rel_path = entry.get("path")
+        if not rel_path:
+            err(f"INDEX.json: '{name}' has no 'path' field")
+            continue
+
+        expected_rel = (
+            f"skills/{name}/SKILL.md" if name in ENTRY_POINT_SKILLS
+            else f"skills/library/{name}.md"
+        )
+        if rel_path != expected_rel:
+            err(f"INDEX.json: '{name}'.path={rel_path!r} does not match expected location {expected_rel!r}")
+
+        path = os.path.join(ROOT, rel_path)
         if not os.path.isfile(path):
-            err(f"skills/{d}/ has no SKILL.md")
+            err(f"'{name}': path {rel_path} does not exist")
             continue
 
         fm, body = parse_frontmatter(path)
         if fm is None:
-            err(f"skills/{d}/SKILL.md: missing or malformed frontmatter")
+            err(f"{rel_path}: missing or malformed frontmatter")
             continue
 
         for field in REQUIRED_FIELDS:
             if field not in fm:
-                err(f"skills/{d}/SKILL.md: missing required frontmatter field '{field}'")
+                err(f"{rel_path}: missing required frontmatter field '{field}'")
 
-        if fm.get("name") != d:
-            err(f"skills/{d}/SKILL.md: frontmatter name '{fm.get('name')}' != directory name '{d}'")
+        if fm.get("name") != name:
+            err(f"{rel_path}: frontmatter name '{fm.get('name')}' != INDEX.json name '{name}'")
 
         skill_type = fm.get("type")
         if skill_type not in ("atomic", "composite"):
-            err(f"skills/{d}/SKILL.md: type must be 'atomic' or 'composite', got {skill_type!r}")
+            err(f"{rel_path}: type must be 'atomic' or 'composite', got {skill_type!r}")
         elif skill_type == "atomic" and fm.get("dependencies"):
-            err(f"skills/{d}/SKILL.md: atomic skill has non-empty dependencies {fm['dependencies']}")
+            err(f"{rel_path}: atomic skill has non-empty dependencies {fm['dependencies']}")
         elif skill_type == "composite" and not fm.get("dependencies"):
-            err(f"skills/{d}/SKILL.md: composite skill has no dependencies")
+            err(f"{rel_path}: composite skill has no dependencies")
 
         category = fm.get("category")
         if category and category not in VALID_CATEGORIES:
-            err(f"skills/{d}/SKILL.md: unknown category '{category}'")
+            err(f"{rel_path}: unknown category '{category}'")
 
         if skill_type in TOKEN_BUDGET:
             actual = estimate_tokens(path)
-            budget = TOKEN_BUDGET_EXCEPTIONS.get(d, TOKEN_BUDGET[skill_type])
+            budget = TOKEN_BUDGET_EXCEPTIONS.get(name, TOKEN_BUDGET[skill_type])
             if actual > budget:
-                warn(f"skills/{d}/SKILL.md: ~{actual} tokens exceeds {skill_type} budget of {budget}")
+                warn(f"{rel_path}: ~{actual} tokens exceeds {skill_type} budget of {budget}")
 
-        fm_by_name[d] = fm
+        fm_by_name[name] = fm
+        rel_by_name[name] = rel_path
 
-        if d not in index_by_name:
-            err(f"skills/{d}/SKILL.md exists but has no entry in INDEX.json")
-
-    return fm_by_name, set(dirs)
+    return fm_by_name, rel_by_name
 
 
-def check_index_sync(index_data, fm_by_name, fs_dirs):
+def check_index_sync(index_data, fm_by_name):
     index_by_name = {s["name"]: s for s in index_data["skills"]}
 
     built = [s for s in index_data["skills"] if s["status"] == "built"]
@@ -175,12 +196,9 @@ def check_index_sync(index_data, fm_by_name, fs_dirs):
         name = s["name"]
         if s.get("category") == "recipes":
             continue  # recipes live under recipes/, not skills/
-        if name not in fs_dirs:
-            err(f"INDEX.json: '{name}' has status 'built' but skills/{name}/ does not exist")
-            continue
         fm = fm_by_name.get(name)
         if not fm:
-            continue
+            continue  # already reported as missing/unresolvable by check_skill_files
         for field in ("type", "category", "difficulty"):
             idx_val, fm_val = s.get(field), fm.get(field)
             fm_val_cast = int(fm_val) if field == "difficulty" and fm_val is not None else fm_val
@@ -194,22 +212,23 @@ def check_index_sync(index_data, fm_by_name, fs_dirs):
     return index_by_name
 
 
-def check_dangling_links(fm_by_name, index_by_name):
+def check_dangling_links(fm_by_name, rel_by_name, index_by_name):
     known = set(index_by_name) | {"better-thinking"}
     for name, fm in fm_by_name.items():
         if index_by_name.get(name, {}).get("status") != "built":
             continue
-        path = os.path.join(SKILLS_DIR, name, "SKILL.md")
+        rel_path = rel_by_name[name]
+        path = os.path.join(ROOT, rel_path)
         text = open(path, encoding="utf-8").read()
         for link in re.findall(r"\[\[([a-z0-9-]+)\]\]", text):
             if link not in known:
-                err(f"skills/{name}/SKILL.md: dangling link [[{link}]] (no such skill, built or cataloged)")
+                err(f"{rel_path}: dangling link [[{link}]] (no such skill, built or cataloged)")
         for dep in fm.get("dependencies", []):
             if dep not in known:
-                err(f"skills/{name}/SKILL.md: dependency '{dep}' does not resolve to any known skill")
+                err(f"{rel_path}: dependency '{dep}' does not resolve to any known skill")
         for rel in fm.get("related", []):
             if rel not in known:
-                err(f"skills/{name}/SKILL.md: related '{rel}' does not resolve to any known skill")
+                err(f"{rel_path}: related '{rel}' does not resolve to any known skill")
 
 
 def check_catalog_coverage(index_by_name):
@@ -226,7 +245,7 @@ def check_catalog_coverage(index_by_name):
         for name in re.findall(r"^### ([a-z0-9-]+) `(?:atomic|composite)", text, re.MULTILINE):
             if name not in known:
                 err(f"catalog/{fname} fully specs '{name}' but INDEX.json has no entry for it — "
-                    f"either build it (skills/{name}/SKILL.md) or remove the catalog spec")
+                    f"either build it (skills/library/{name}.md) or remove the catalog spec")
 
 
 def main():
@@ -240,9 +259,9 @@ def main():
         return 1
 
     index_by_name_raw = {s["name"]: s for s in index_data["skills"]}
-    fm_by_name, fs_dirs = check_skill_files(index_by_name_raw)
-    index_by_name = check_index_sync(index_data, fm_by_name, fs_dirs)
-    check_dangling_links(fm_by_name, index_by_name)
+    fm_by_name, rel_by_name = check_skill_files(index_by_name_raw)
+    index_by_name = check_index_sync(index_data, fm_by_name)
+    check_dangling_links(fm_by_name, rel_by_name, index_by_name)
     check_catalog_coverage(index_by_name)
 
     if warnings:
@@ -255,7 +274,7 @@ def main():
             print(f"  ERROR: {e}")
         return 1
 
-    print(f"OK: {len(fs_dirs)} skill dirs, {len(index_data['skills'])} index entries, no inconsistencies found.")
+    print(f"OK: {len(fm_by_name)} skill files, {len(index_data['skills'])} index entries, no inconsistencies found.")
     return 0
 
 

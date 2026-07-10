@@ -13,12 +13,12 @@ Better Thinking is a library of thinking *procedures*, not a library of prompts,
 ## Adding a new skill
 
 1. **Follow the template exactly.** Copy the structure in [SKILL_TEMPLATE.md](SKILL_TEMPLATE.md) — frontmatter fields, section order and names, everything. Orchestrators route on the `description` field alone, so it must contain real trigger vocabulary ("when comparing options…", "when a claim seems too clean…"), not a vague summary.
-2. **Create the file** at `skills/<kebab-case-name>/SKILL.md`.
+2. **Create the file.** Only three names are real dispatcher entry points and get registered as slash commands by the harness: `better-thinking`, `better-thinking-recipes`, and `recipe-runner` — those live at `skills/<name>/SKILL.md`. Every other skill is reference content the dispatcher reads and applies inline, never independently invoked, and lives at `skills/library/<kebab-case-name>.md` (note: not named `SKILL.md`, and not in its own subdirectory — the Claude Code harness only auto-registers a slash command for a file literally named `SKILL.md` directly under `skills/<name>/`, so this shape keeps ordinary skills out of the command list by construction).
 3. **Respect the rules in SKILL_TEMPLATE.md**, most importantly:
    - No personas, ever. Any "act as / you are a / think like a `<profession>`" fails review — encode what the professional *does*, stepwise, instead.
    - Every procedure ends by reporting residual uncertainty. No skill is allowed to launder confidence.
    - Examples must span **at least two unrelated domains** — this is the transferability test.
-   - Composite procedures must name the atomic skill they invoke (e.g. "Run `assumption-audit` on the leading hypothesis"), never inline its logic.
+   - Composite procedures must name the atomic skill they invoke (e.g. "Run `assumption-audit` on the leading hypothesis"), never inline its logic. This is always a textual reference read and applied within the same response — no skill in this repo invokes another as a separate tool call, so "invoke"/"run" here means "read that skill's file and apply its procedure inline," not a mechanical sub-invocation.
 4. **Stay in budget.** Token estimate (chars ÷ 4) is enforced: atomic skills ≤ 900 tokens, composite ≤ 1,700. If a skill keeps pushing past its ceiling, it's doing too much — split it.
    - **Exception: interactive orchestrators.** [[recipe-runner]] is exempt from the 1,700 ceiling, capped instead at 2,200. Its procedure must specify checkpoint behavior (when to stop and wait for user go-ahead between stages) on top of the stage-invocation logic every composite carries, and that costs real procedure text. This exception is granted per-skill, not by category — a new composite doesn't get the higher ceiling just for being multi-stage; it has to actually orchestrate a paused, multi-turn interaction the same way.
 5. **Update `skills/INDEX.json`.** Add an entry matching your `SKILL.md` frontmatter (`name`, `type`, `category`, `difficulty`, `status: "built"`, `one_line`, `triggers`, `related`, `path`). This is what the `/better-thinking` dispatcher reads to route — an undocumented skill is invisible to it.
@@ -42,14 +42,14 @@ Every skill belongs to exactly one of the 13 categories in `catalog/`: reasoning
 
 ## Pull request checklist
 
-- [ ] Skill lives at `skills/<name>/SKILL.md` and follows the template structure exactly
+- [ ] Skill lives at `skills/<name>/SKILL.md` (entry points only: `better-thinking`, `better-thinking-recipes`, `recipe-runner`) or `skills/library/<name>.md` (everything else), and follows the template structure exactly
 - [ ] `description` frontmatter contains concrete trigger conditions, not a vague summary
 - [ ] Atomic skill has no `dependencies`; composite skill's procedure invokes dependencies by name
 - [ ] Token estimate within budget (atomic ≤ 900, composite ≤ 1,700; [[recipe-runner]] is the sole exception, ≤ 2,200)
 - [ ] Examples span ≥2 unrelated domains
 - [ ] No personas — procedure only
 - [ ] Final procedure step reports residual uncertainty
-- [ ] `skills/INDEX.json` updated with a matching entry
+- [ ] `skills/INDEX.json` updated with a matching entry, including a `path` field pointing at the correct location
 - [ ] `related` links added both directions
 - [ ] `python3 scripts/build_route_index.py` re-run (regenerates `skills/ROUTE_INDEX.json`, the router's lexical index — goes stale otherwise)
 - [ ] `python3 scripts/check_consistency.py` passes
