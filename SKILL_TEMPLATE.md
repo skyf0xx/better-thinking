@@ -1,6 +1,6 @@
 # SKILL.md Template
 
-Every skill follows this exact structure — frontmatter is machine-readable (orchestrators route on it); the body is the algorithm. Only the two dispatcher entry points (`better-thinking`, `recipe-runner`) live at `skills/<skill-name>/SKILL.md` and are independently invocable as slash commands. Every other skill lives at `skills/library/<skill-name>.md` — same structure, same frontmatter, but read by the dispatcher as reference content rather than registered as its own command (the harness only auto-registers a slash command for a file literally named `SKILL.md` directly under `skills/<name>/`).
+Every skill follows this exact structure — frontmatter is machine-readable (orchestrators route on it); the body is the algorithm. Only the two dispatcher entry points (`better-thinking`, `better-thinking-recipes`) live at `skills/<skill-name>/SKILL.md` and are independently invocable as slash commands. Every other skill lives at `skills/library/<skill-name>.md` — same structure, same frontmatter, but read by the dispatcher as reference content rather than registered as its own command (the harness only auto-registers a slash command for a file literally named `SKILL.md` directly under `skills/<name>/`).
 
 ```markdown
 ---

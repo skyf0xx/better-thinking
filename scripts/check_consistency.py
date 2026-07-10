@@ -4,8 +4,8 @@
 Checks, with no dependencies beyond the stdlib:
   1. Every built skill's file (resolved via its INDEX.json `path`) has valid
      frontmatter with required fields. Entry-point skills (better-thinking,
-     better-thinking-recipes, recipe-runner) live at skills/<name>/SKILL.md;
-     every other skill lives at skills/library/<name>.md.
+     better-thinking-recipes) live at skills/<name>/SKILL.md; every other
+     skill lives at skills/library/<name>.md.
   2. Frontmatter type/dependency rules: atomic has no dependencies; composite does.
   3. Token budget: atomic <= 900, composite <= 1700 (chars/4 estimate),
      except per-skill overrides in TOKEN_BUDGET_EXCEPTIONS (documented in
@@ -49,7 +49,7 @@ TOKEN_BUDGET = {"atomic": 900, "composite": 1700}
 # Per-skill budget exceptions, documented in CONTRIBUTING.md's "Stay in
 # budget" section. Grant sparingly -- a skill earns one by actually needing
 # more procedure text for its specific job, not by category membership.
-TOKEN_BUDGET_EXCEPTIONS = {"recipe-runner": 2500}
+TOKEN_BUDGET_EXCEPTIONS = {"better-thinking-recipes": 2500}
 
 errors = []
 warnings = []
@@ -115,7 +115,7 @@ def estimate_tokens(path):
 # Entry-point skills stay at skills/<name>/SKILL.md and are real slash
 # commands; every other skill lives at skills/library/<name>.md, read by
 # the dispatcher as reference text rather than independently invocable.
-ENTRY_POINT_SKILLS = {"better-thinking", "better-thinking-recipes", "recipe-runner"}
+ENTRY_POINT_SKILLS = {"better-thinking", "better-thinking-recipes"}
 
 
 def check_skill_files(index_by_name):

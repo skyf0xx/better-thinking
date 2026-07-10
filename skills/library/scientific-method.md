@@ -10,7 +10,7 @@ category: research
 difficulty: 4
 tokens: ~1000
 dependencies: [abductive-inference, assumption-audit, bayesian-updating, disconfirmation-search, sanity-checking, confidence-calibration, causal-analysis]
-related: [differential-diagnosis, structured-forecasting, decision-analysis, structured-problem-solving, recipe-runner]
+related: [differential-diagnosis, structured-forecasting, decision-analysis, structured-problem-solving, better-thinking-recipes]
 ---
 
 # Scientific Method

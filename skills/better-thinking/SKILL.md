@@ -10,7 +10,7 @@ category: metacognition
 difficulty: 3
 tokens: ~987
 dependencies: []
-related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, recipe-runner]
+related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, better-thinking-recipes]
 ---
 
 # Better Thinking

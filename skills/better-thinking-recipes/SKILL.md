@@ -1,5 +1,5 @@
 ---
-name: recipe-runner
+name: better-thinking-recipes
 description: >
   Look up a named external framework (design thinking, lean startup, ...) in
   recipes/, then execute its mapped skill sequence stage by stage as a real
@@ -17,7 +17,7 @@ dependencies: [interview-synthesis, empathy-mapping, problem-framing, ideation-s
 related: [better-thinking, scientific-method, decision-analysis]
 ---
 
-# Recipe Runner
+# Recipes
 
 Given a named external framework — or a request to browse what's available — load its mapping from `recipes/` and run the mapped skill sequence as one continuous, orchestrated pass.
 
@@ -45,7 +45,7 @@ A recipe doc under `recipes/` states which skills implement each stage of a fram
 
 ## Procedure
 
-1. If a framework is already named or its stages already described, skip to step 2. Otherwise — the user invoked this skill directly with no framework in mind, or asked what's available — read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description, plain-language purpose rather than stage sequence or framework jargon. Resolve `recipes/README.md` relative to this skill's own base directory, not the user's project: take the `Base directory for this skill:` value supplied with this invocation (a path ending in `.../skills/recipe-runner`), go up one level to its parent, and read `recipes/README.md` there (a sibling of `skills/`) — don't search the current working directory for it. Ask which number the user wants, and for the task to run it against if not already given, then stop the turn and wait for their pick — listing and executing are two separate turns.
+1. If a framework is already named or its stages already described, skip to step 2. Otherwise — the user invoked this skill directly with no framework in mind, or asked what's available — read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description, plain-language purpose rather than stage sequence or framework jargon. Resolve `recipes/README.md` relative to this skill's own base directory, not the user's project: take the `Base directory for this skill:` value supplied with this invocation (a path ending in `.../skills/better-thinking-recipes`), go up one level to its parent, and read `recipes/README.md` there (a sibling of `skills/`) — don't search the current working directory for it. Ask which number the user wants, and for the task to run it against if not already given, then stop the turn and wait for their pick — listing and executing are two separate turns.
 2. Identify the named framework (from step 1's pick, or as directly named) and confirm a matching file exists at `recipes/<name>.md`, resolved the same way (sibling of `skills/`, not the user's project). Do not search the current working directory or project root for a `recipes/` folder — it lives in the plugin's own install location. If none matches, say so and hand back to `better-thinking`'s normal routing rather than forcing a fit.
 3. Read the recipe doc's full skill sequence and its **Residual gap** section before starting. State the full stage list up front (names only, one line) so the user knows the shape of the run before committing to it — this is the one place the whole sequence is shown at once.
 4. Run **one stage only**: invoke that stage's named skill(s) (e.g. `interview-synthesis` then `empathy-mapping` for Design Thinking's Empathize stage), then present that stage's output in full.
@@ -67,7 +67,7 @@ A recipe doc under `recipes/` states which skills implement each stage of a fram
 
 ## Examples
 
-- User types `/recipe-runner` with no further context — gets a numbered list of all five recipes, picks "2" for Lean Startup, supplies a pricing-experiment task, and the run begins at the next turn.
+- User types `/better-thinking-recipes` with no further context — gets a numbered list of all five recipes, picks "2" for Lean Startup, supplies a pricing-experiment task, and the run begins at the next turn.
 - "Run this new feature idea through design thinking" — loads `recipes/design-thinking.md`, states the five-stage shape, then runs `interview-synthesis` + `empathy-mapping` for Empathize alone, presents that output, and stops for go-ahead before touching Define.
 - "Let's do build-measure-learn on this pricing experiment" — loads `recipes/lean-startup.md`, runs the hypothesize stage via `decision-framing`, checkpoints, and only reaches the persevere-or-pivot `decision-analysis` stage (logged via `decision-journaling`) turns later, once the user has confirmed each prior stage.
 - A user describes empathize/define/ideate stages without naming "design thinking" — recognizes the shape from `recipes/README.md`'s index, confirms the framework match, then runs and checkpoints Empathize the same as any named-framework invocation.

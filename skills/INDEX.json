@@ -338,7 +338,7 @@
         "reversibility-classification",
         "bias-audit",
         "epistemic-tagging",
-        "recipe-runner"
+        "better-thinking-recipes"
       ],
       "path": "skills/better-thinking/SKILL.md"
     },
@@ -534,7 +534,7 @@
         "structured-problem-solving",
         "scenario-planning",
         "negotiation",
-        "recipe-runner"
+        "better-thinking-recipes"
       ],
       "path": "skills/library/decision-analysis.md"
     },
@@ -1592,7 +1592,7 @@
       "path": "skills/library/reductio.md"
     },
     {
-      "name": "recipe-runner",
+      "name": "better-thinking-recipes",
       "type": "composite",
       "category": "metacognition",
       "difficulty": 3,
@@ -1604,7 +1604,7 @@
         "scientific-method",
         "decision-analysis"
       ],
-      "path": "skills/recipe-runner/SKILL.md"
+      "path": "skills/better-thinking-recipes/SKILL.md"
     },
     {
       "name": "reference-class-forecasting",
@@ -1802,7 +1802,7 @@
         "structured-forecasting",
         "decision-analysis",
         "structured-problem-solving",
-        "recipe-runner"
+        "better-thinking-recipes"
       ],
       "path": "skills/library/scientific-method.md"
     },
