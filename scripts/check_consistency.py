@@ -6,10 +6,12 @@ Checks, with no dependencies beyond the stdlib:
      frontmatter with required fields. Entry-point skills (better-thinking,
      better-thinking-recipes) live at skills/<name>/SKILL.md; every other
      skill lives at skills/library/<name>.md.
-  2. Frontmatter type/dependency rules: atomic has no dependencies; composite does.
-  3. Token budget: atomic <= 900, composite <= 1700 (chars/4 estimate),
-     except per-skill overrides in TOKEN_BUDGET_EXCEPTIONS (documented in
-     CONTRIBUTING.md).
+  2. Frontmatter type/dependency rules: atomic and dispatcher have no
+     dependencies; composite does. 'dispatcher' is reserved for the
+     entry-point skills in ENTRY_POINT_SKILLS.
+  3. Token budget: atomic <= 900, composite <= 1700, dispatcher <= 2000
+     (chars/4 estimate), except per-skill overrides in
+     TOKEN_BUDGET_EXCEPTIONS (documented in CONTRIBUTING.md).
   4. skills/INDEX.json <-> filesystem: every built skill's `path` resolves to
      a real file; counts in INDEX.json match reality.
   5. skills/INDEX.json <-> frontmatter: name/type/category/difficulty/related
@@ -45,7 +47,7 @@ VALID_CATEGORIES = {
     "systems-strategy", "forecasting", "creativity", "communication",
     "collaboration", "learning", "metacognition", "ethics",
 }
-TOKEN_BUDGET = {"atomic": 900, "composite": 1700}
+TOKEN_BUDGET = {"atomic": 900, "composite": 1700, "dispatcher": 2000}
 # Per-skill budget exceptions, documented in CONTRIBUTING.md's "Stay in
 # budget" section. Grant sparingly -- a skill earns one by actually needing
 # more procedure text for its specific job, not by category membership.
@@ -158,10 +160,12 @@ def check_skill_files(index_by_name):
             err(f"{rel_path}: frontmatter name '{fm.get('name')}' != INDEX.json name '{name}'")
 
         skill_type = fm.get("type")
-        if skill_type not in ("atomic", "composite"):
-            err(f"{rel_path}: type must be 'atomic' or 'composite', got {skill_type!r}")
-        elif skill_type == "atomic" and fm.get("dependencies"):
-            err(f"{rel_path}: atomic skill has non-empty dependencies {fm['dependencies']}")
+        if skill_type not in ("atomic", "composite", "dispatcher"):
+            err(f"{rel_path}: type must be 'atomic', 'composite', or 'dispatcher', got {skill_type!r}")
+        elif skill_type == "dispatcher" and name not in ENTRY_POINT_SKILLS:
+            err(f"{rel_path}: type 'dispatcher' is reserved for entry-point skills {ENTRY_POINT_SKILLS}, got '{name}'")
+        elif skill_type in ("atomic", "dispatcher") and fm.get("dependencies"):
+            err(f"{rel_path}: {skill_type} skill has non-empty dependencies {fm['dependencies']}")
         elif skill_type == "composite" and not fm.get("dependencies"):
             err(f"{rel_path}: composite skill has no dependencies")
 

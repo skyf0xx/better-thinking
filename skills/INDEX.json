@@ -327,7 +327,7 @@
     },
     {
       "name": "better-thinking",
-      "type": "atomic",
+      "type": "dispatcher",
       "category": "metacognition",
       "difficulty": 3,
       "status": "built",

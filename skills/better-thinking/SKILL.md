@@ -5,10 +5,10 @@ description: >
   creative, communication, learning, negotiation) and its stakes, then select
   which skills to deploy at what depth. Use as the first move on any
   nontrivial task, before any substantive work begins.
-type: atomic
+type: dispatcher
 category: metacognition
 difficulty: 3
-tokens: ~987
+tokens: ~1821
 dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, better-thinking-recipes]
 ---
