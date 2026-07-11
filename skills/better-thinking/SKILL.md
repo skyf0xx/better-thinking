@@ -8,7 +8,7 @@ description: >
 type: dispatcher
 category: metacognition
 difficulty: 3
-tokens: ~1950
+tokens: ~2000
 dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, better-thinking-recipes]
 ---
@@ -47,7 +47,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
 5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
 6. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `**🧠 Classifying...**` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
-7. Proceed with the selected skills at the selected depth. Label each procedure step inline as you produce it, so the response body itself — not just the bookends — reads as visibly distinct from unstructured prose: bold the step's name tagged with its skill's category emoji, e.g. `**🎯 Framing:**`, `**🧩 Options:**`, `**📐 Scoring:**`, `**🪞 Stress-test:**`, drawn from that step's own procedure line (a decision-analysis step called "Model uncertainty" becomes `**🎯 Uncertainty:**`, not a verbatim copy of the procedure text). Keep labels short (one or two words) and keep the prose under each label as normal, readable writing — the label marks provenance, it doesn't replace the sentence. Skip inline labels on trivial/quick answers, same as the bookend markers.
+7. Proceed with the selected skills at the selected depth. Label each procedure step inline as you produce it, so the response body itself reads as visibly distinct from unstructured prose: bold the step's name tagged with its category emoji, e.g. `**🎯 Framing:**`, `**🧩 Options:**`, drawn from that step's own procedure line, not copied verbatim. Keep labels short and reserved for that role — don't bold anything else. Keep each block to 2–3 sentences, or a lead sentence plus a bulleted list for enumerable content; blank-line-separate every block. Use a GFM table when comparing 2+ items on 2+ shared dimensions. On 4+-step answers, an optional `###` (not `##`) header may group related steps. Skip inline labels on trivial/quick answers, like the bookend markers.
 8. Re-triage explicitly if the actual shape turns out different mid-work — mark the pivot with `**🔄 Re-triaging...**` and say what changed, rather than adjusting silently. Report remaining ambiguity in shape or stakes as residual uncertainty.
 9. Always close with a one-line footer, prefixed **🧠**, naming the skill(s) applied — each tagged with its category emoji below — and the stakes/depth call, e.g. `**🧠 Applied:** 🎯 premortem → 📐 red-teaming → 🎯 decision-analysis (high stakes, hard to reverse)` or `**🧠 Applied:** 🔍 fermi-estimation (low stakes, reversible)`. One line even for a single skill — the emoji mark it as a recognizable signature, not a badge to escalate.
 10. On multi-skill or non-obvious-depth tasks only (the same bar as step 6), follow the Applied footer with one more line, `**✨ Caught:**`, naming the *specific* thing this task's structure surfaced that a fast, unstructured answer would have missed — a risk, an assumption, a wrong default, a hidden dependency. It must name the concrete finding from this exact task, not a generic claim like "a more thorough analysis" or "extra confidence." If nothing structure-dependent was actually surfaced (the process confirmed the obvious answer), omit the line rather than inventing one — a false "Caught" line is worse than none.
@@ -66,6 +66,8 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Sprinkling 🧠/🔄 markers on trivial, single-line answers — they mark that real triage happened, so they're wasted (and desensitizing) on answers with no triage to show.
 - Copying a step's procedure sentence verbatim into its label instead of naming what it actually is (e.g. `**🎯 Step 4:**` instead of `**🎯 Uncertainty:**`).
 - Writing a `**✨ Caught:**` line that's generic praise ("this was thoroughly vetted") instead of the one specific thing surfaced — if there's nothing specific, omit the line.
+- Writing 4+ unbroken sentences under a label, or a multi-item comparison in prose, instead of a list/table.
+- Bolding words in the prose beyond the label, or heading a short 2–3-step answer.
 
 ## Examples
 
