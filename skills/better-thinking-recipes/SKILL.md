@@ -12,7 +12,7 @@ description: >
 type: composite
 category: metacognition
 difficulty: 3
-tokens: ~2350
+tokens: ~2600
 dependencies: [interview-synthesis, empathy-mapping, problem-framing, ideation-sprint, scientific-method, decision-framing, bayesian-updating, confidence-calibration, decision-analysis, statistical-audit, premortem, second-order-scan, decision-journaling]
 related: [better-thinking, scientific-method, decision-analysis]
 ---
@@ -23,7 +23,7 @@ Given a named external framework — or a request to browse what's available —
 
 ## Why
 
-A recipe doc under `recipes/` states which skills implement each stage of a framework like Design Thinking, but a doc sitting unread doesn't run itself — without an orchestrator, the mapping is reference material a human has to manually walk. This skill is the bridge: it makes a named framework actually executable, the same way a composite skill makes its own procedure executable. And a user who doesn't yet know this collection's recipe names — or the jargon of the frameworks themselves — needs a way to discover them without reading `recipes/README.md` directly, so browsing and running live in one place rather than forcing a second command per recipe.
+A recipe doc under `recipes/` states which skills implement each stage of a framework like Design Thinking, but a doc sitting unread doesn't run itself — without an orchestrator, it's reference material a human has to manually walk. This skill is the bridge: it makes a named framework actually executable, the same way a composite skill makes its own procedure executable. A user who doesn't yet know this collection's recipe names, or the frameworks' jargon, also needs a way to discover them without reading `recipes/README.md` directly — so browsing and running live in one place.
 
 ## Use when / Don't use when
 
@@ -48,18 +48,23 @@ A recipe doc under `recipes/` states which skills implement each stage of a fram
 1. If a framework is already named or its stages already described, skip to step 2. Otherwise — the user invoked this skill directly with no framework in mind, or asked what's available — read `recipes/README.md`'s index table and render it as a numbered list: recipe name, and its "What it's for" column as the one-line description, plain-language purpose rather than stage sequence or framework jargon. Resolve `recipes/README.md` relative to this skill's own base directory, not the user's project: take the `Base directory for this skill:` value supplied with this invocation (a path ending in `.../skills/better-thinking-recipes`), go up one level to its parent, and read `recipes/README.md` there (a sibling of `skills/`) — don't search the current working directory for it. Ask which number the user wants, and for the task to run it against if not already given, then stop the turn and wait for their pick — listing and executing are two separate turns.
 2. Identify the named framework (from step 1's pick, or as directly named) and confirm a matching file exists at `recipes/<name>.md`, resolved the same way (sibling of `skills/`, not the user's project). Do not search the current working directory or project root for a `recipes/` folder — it lives in the plugin's own install location. If none matches, say so and hand back to `better-thinking`'s normal routing rather than forcing a fit.
 3. Read the recipe doc's full skill sequence and its **Residual gap** section before starting. State the full stage list up front (names only, one line) so the user knows the shape of the run before committing to it — this is the one place the whole sequence is shown at once.
-4. Run **one stage only**: invoke that stage's named skill(s) (e.g. `interview-synthesis` then `empathy-mapping` for Design Thinking's Empathize stage), then present that stage's output in full.
-5. Stop the turn. State which stage just ran and which stage is next, then wait for the user's explicit go-ahead (approval, edit, or redirect) before touching the next stage. Do not draft, preview, or summarize a later stage while waiting — a stage that hasn't been checkpointed hasn't happened yet.
-6. When the user responds, treat any correction or added detail as an amendment to the just-completed stage's output before it feeds forward — the next stage should consume the corrected version, not the original.
-7. When a stage is marked as outside this collection's scope (e.g. Prototype, Build), state that explicitly as its own checkpoint and pause for the human/external work to happen, rather than skipping silently, hallucinating a substitute, or bundling it into an adjacent stage's turn.
-8. On loop-shaped recipes (e.g. Lean Startup's persevere-or-pivot), treat the return to stage 1 as a genuine new pass with updated inputs, checkpointed the same way as the first pass — not a repeat run inline in the same turn as the pivot decision.
-9. On the final stage, report which stages ran, which were out-of-scope gaps, and any point where the task's actual shape diverged from the recipe's assumed shape — recipes are a good fit until they aren't, and forcing one past its fit is a common failure mode.
+4. Before running the next stage, check its skill(s)' **Inputs** line against what's in hand, and triage any gap:
+   - **Supplied** — pasted by the user, or produced earlier. Proceed.
+   - **Fetchable** — public info a live lookup can retrieve. Use `WebSearch`/`WebFetch`, and label the result as fetched (with source).
+   - **Human-only** — real interviews, proprietary metrics, internal input. Stop and ask the user to supply it; never fabricate a substitute.
+5. Run **one stage only**: invoke that stage's named skill(s) (e.g. `interview-synthesis` then `empathy-mapping` for Design Thinking's Empathize stage), then present that stage's output in full.
+6. Stop the turn. State which stage just ran and which stage is next, then wait for the user's explicit go-ahead (approval, edit, or redirect) before touching the next stage. Do not draft, preview, or summarize a later stage while waiting — a stage that hasn't been checkpointed hasn't happened yet.
+7. When the user responds, treat any correction or added detail as an amendment to the just-completed stage's output before it feeds forward — the next stage should consume the corrected version, not the original.
+8. When a stage is marked as outside this collection's scope (e.g. Prototype, Build), state that explicitly as its own checkpoint and pause for the human/external work to happen, rather than skipping silently, hallucinating a substitute, or bundling it into an adjacent stage's turn.
+9. On loop-shaped recipes (e.g. Lean Startup's persevere-or-pivot), treat the return to stage 1 as a genuine new pass with updated inputs, checkpointed the same way as the first pass — not a repeat run inline in the same turn as the pivot decision.
+10. On the final stage, report which stages ran, which were out-of-scope gaps, which used fetched external data (and its sources), and any point where the task's shape diverged from the recipe's assumed shape.
 
 ## Common mistakes
 
 - Running every stage in one turn and presenting the whole recipe as a finished report — this defeats the checkpoint model as completely as skipping it outright; a recipe is a workshop the user steps through, not a document generated at them.
 - Improvising a plausible-sounding skill sequence instead of reading the actual recipe doc, silently drifting from its deliberate stage-to-skill choices.
 - Silently skipping or faking an out-of-scope stage (Build, Prototype) instead of naming it as a residual gap and its own checkpoint.
+- Fabricating human-only data instead of stopping to ask, or fetching real data without labeling it as such.
 - Running stages out of order or without waiting for go-ahead, losing the compounding effect of each stage consuming the last one's (possibly user-corrected) output.
 - Skipping straight to execution on a guessed recipe instead of listing and confirming the user's actual pick, when no framework was named.
 - Letting the rendered list go stale relative to `recipes/README.md` — always read the file fresh rather than reusing a remembered list from earlier in the conversation.
