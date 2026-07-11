@@ -8,7 +8,7 @@ description: >
 type: dispatcher
 category: metacognition
 difficulty: 3
-tokens: ~1821
+tokens: ~1950
 dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, better-thinking-recipes]
 ---
@@ -42,7 +42,8 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 
 1. Identify the task's shape: decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination.
 2. Identify stakes and reversibility — a gut check, or run [[reversibility-classification]] if unclear.
-3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. If it prints a stderr warning about zero/no signal (short or abstract queries tokenize to nothing), discard its output and rely on the index skim alone. Separately skim `skills/INDEX.json`'s `name`+`category`+`one_line` for the shape's category — a cheap net for a right answer the router missed on wording. Merge both, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
+3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. If it prints a stderr warning about zero/no signal, discard its output and rely on step 3b alone.
+3b. Always — even when step 3 looks confident — skim every `name`+`category`+`one_line` in `skills/INDEX.json` for the task's shape, judging by *concept*, not shared words. Mandatory, not just a fallback: `route.py` is lexical and structurally blind to a same-concept, different-vocabulary match (e.g. "why does checkout conversion keep dropping" shares zero tokens with `differential-diagnosis`'s own description, yet is a strong fit). Merge both lists, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
 4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
 5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
 6. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `**🧠 Classifying...**` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
@@ -59,6 +60,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Skipping triage on tasks that look routine but carry hidden stakes.
 - Triaging once and never revisiting, even after the true shape becomes clear.
 - Picking a skill from memory instead of the index when two names sound alike.
+- Trusting `route.py`'s top-8 as sufficient because it looks plausible, and skipping the full-index skim — the router can score a strong conceptual fit at 0 purely on vocabulary mismatch, and a plausible-looking wrong answer is harder to catch than an obviously empty one.
 - Turning the footer into a dashboard (badges, progress bars, extra emoji beyond the 🧠 prefix and one category tag per skill) instead of one plain line.
 - Omitting the footer on single-skill answers — it should appear every time, not just for multi-skill pipelines.
 - Sprinkling 🧠/🔄 markers on trivial, single-line answers — they mark that real triage happened, so they're wasted (and desensitizing) on answers with no triage to show.
