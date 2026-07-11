@@ -56,6 +56,15 @@ Or from a local clone:
 
 This registers `/better-thinking` (plus `/better-thinking-recipes` for named frameworks) as slash commands. Every other skill is not independently invocable — `/better-thinking` reads [skills/INDEX.json](skills/INDEX.json) to select and apply the right one instead of surfacing a crowded name list.
 
+To update an already-installed copy to the latest version:
+
+```
+claude plugin marketplace update better-thinking
+claude plugin update better-thinking@better-thinking
+```
+
+Restart Claude Code (or start a new session) afterward — updates only take effect on the next session.
+
 ## What a Skill is (and is not)
 
 A Skill encodes a *procedure*, never a *persona*.

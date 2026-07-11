@@ -16,3 +16,19 @@ This repo is the source for the `better-thinking` Claude Code plugin: a library 
   ```
   `check_consistency.py` checks frontmatter validity, INDEX.json↔filesystem↔frontmatter sync, dangling `[[wiki-links]]`, and catalog specs with no corresponding built skill. Fix everything it reports before considering the change done — this is exactly the class of drift that accumulates silently otherwise (see git history around 2026-07-09 for the incident that motivated writing it: a fully-specified `scientific-method` composite that several other skills depended on but that was never actually built — since resolved, the skill is built and registered). `build_route_index.py` must be re-run any time the text it's built from changes, or the router's shortlist goes stale relative to the actual skills.
 - There is no other build/test step. A change to this repo is a change to markdown and JSON files (plus regenerating `ROUTE_INDEX.json` when its inputs change).
+
+## Installing from the marketplace
+
+```
+/plugin marketplace add skyf0xx/better-thinking
+/plugin install better-thinking@better-thinking
+```
+
+To update an already-installed copy to the latest pushed commit:
+
+```
+claude plugin marketplace update better-thinking
+claude plugin update better-thinking@better-thinking
+```
+
+Restart Claude Code (or start a new session) afterward — the updated skill set only takes effect on the next session.
