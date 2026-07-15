@@ -9,7 +9,7 @@ category: creativity
 difficulty: 2
 tokens: ~710
 dependencies: []
-related: [divergent-ideation, weighted-scoring, ideation-sprint]
+related: [divergent-ideation, weighted-scoring, ideation-sprint, spread-potential-scoring]
 ---
 
 # Idea Convergence
@@ -62,3 +62,4 @@ Divergent ideation fails if the follow-on evaluation just picks the most familia
 - [[divergent-ideation]] — the upstream generation phase this consumes.
 - [[weighted-scoring]] — the mechanical scoring tool used within this process.
 - [[ideation-sprint]] — the composite that runs generation and convergence as phase-gated stages.
+- [[spread-potential-scoring]] — a specialized alternative when the ideas are specifically consumer products/features meant to spread person-to-person; use that rubric instead of this general one in that case.

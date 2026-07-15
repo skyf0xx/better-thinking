@@ -8,9 +8,9 @@ description: >
 type: atomic
 category: decision-making
 difficulty: 2
-tokens: ~870
+tokens: ~895
 dependencies: []
-related: [decision-analysis, satisficing-thresholds, sensitivity-analysis, decision-framing]
+related: [decision-analysis, satisficing-thresholds, sensitivity-analysis, decision-framing, spread-potential-scoring]
 ---
 
 # Weighted Scoring
@@ -19,7 +19,7 @@ Score options against explicitly weighted criteria, using the matrix to expose d
 
 ## Why
 
-Unstructured comparison lets one vivid attribute silently dominate the whole judgment. A weighted matrix forces every criterion into the open and shows precisely *why* one option wins — and, just as importantly, exactly where a single judgment flip would change the answer.
+Unstructured comparison lets one vivid attribute silently dominate the judgment. A weighted matrix forces every criterion into the open and shows precisely *why* one option wins — and where a single judgment flip would change the answer.
 
 ## Use when / Don't use when
 
@@ -65,3 +65,4 @@ Unstructured comparison lets one vivid attribute silently dominate the whole jud
 - [[decision-analysis]] — the fuller pipeline this scoring step sits inside for high-stakes choices.
 - [[satisficing-thresholds]] — the cheaper alternative when precise optimizing isn't worth it.
 - [[decision-framing]] — should run before this, to establish options and criteria.
+- [[spread-potential-scoring]] — a multiplicative variant specialized for P2P/spread-oriented ideas.

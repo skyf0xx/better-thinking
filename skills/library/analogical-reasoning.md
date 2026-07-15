@@ -9,9 +9,9 @@ description: >
 type: atomic
 category: reasoning
 difficulty: 3
-tokens: ~890
+tokens: ~900
 dependencies: []
-related: [explanatory-analogy, concept-blending, mental-model-extraction]
+related: [explanatory-analogy, concept-blending, mental-model-extraction, multi-framework-ideation]
 ---
 
 # Analogical Reasoning
@@ -20,12 +20,12 @@ Transfer structure from a well-understood source domain to a target problem, the
 
 ## Why
 
-Analogy is the fastest way to import a solved problem's machinery into a new one — and, unverified, the fastest way to import wrong conclusions when surface similarity masks a real structural difference. The verification step is what turns analogy from rhetoric into reasoning.
+Analogy is the fastest way to import a solved problem's machinery — and, unverified, the fastest way to import wrong conclusions when surface similarity masks real structural difference. Verification turns analogy from rhetoric into reasoning.
 
 ## Use when / Don't use when
 
 - **Use when:** the problem resembles something solved elsewhere; generating approaches for a genuinely novel situation; evaluating someone else's persuasive analogy before accepting its conclusion.
-- **Don't use when:** direct analysis of the target problem is cheap and available — analogy is a bridge to insight, not a destination in itself.
+- **Don't use when:** direct analysis of the target is cheap and available — analogy is a bridge to insight, not a destination.
 
 ## Inputs → Outputs
 
@@ -51,7 +51,7 @@ Analogy is the fastest way to import a solved problem's machinery into a new one
 ## Common mistakes
 
 - Matching on surface features instead of relational structure.
-- Riding the analogy past its breaking point instead of stopping at the boundary found in step 6.
+- Riding the analogy past its breaking point instead of stopping at step 6's boundary.
 - Adopting the first analogy that comes to mind instead of comparing several candidates.
 
 ## Examples
@@ -65,3 +65,4 @@ Analogy is the fastest way to import a solved problem's machinery into a new one
 - [[explanatory-analogy]] — the same machinery, aimed at teaching rather than problem-solving.
 - [[concept-blending]] — a stronger move merging two frames into a new space rather than just transferring one.
 - [[mental-model-extraction]] — often supplies the source domain's structure.
+- [[multi-framework-ideation]] — runs this as one of four generation passes.

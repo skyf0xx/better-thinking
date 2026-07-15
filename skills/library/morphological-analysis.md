@@ -10,7 +10,7 @@ category: creativity
 difficulty: 2
 tokens: ~840
 dependencies: []
-related: [divergent-ideation, solution-space-mapping, scamper]
+related: [divergent-ideation, solution-space-mapping, scamper, multi-framework-ideation]
 ---
 
 # Morphological Analysis
@@ -64,3 +64,4 @@ Direct brainstorming samples the design space unevenly, clustering near familiar
 - [[divergent-ideation]] — the unstructured sibling this systematic technique complements.
 - [[solution-space-mapping]] — the family-level version of the same instinct.
 - [[scamper]] — a lighter-weight transformation technique for single-item variation.
+- [[multi-framework-ideation]] — runs this technique as one of four generation passes alongside analogical, provocation, and first-principles.

@@ -10,7 +10,7 @@ category: creativity
 difficulty: 1
 tokens: ~710
 dependencies: []
-related: [idea-convergence, scamper, morphological-analysis]
+related: [idea-convergence, scamper, morphological-analysis, multi-framework-ideation]
 ---
 
 # Divergent Ideation
@@ -63,3 +63,4 @@ Evaluating each idea as it's generated kills fluency — the mind self-censors t
 - [[idea-convergence]] — the required next phase.
 - [[scamper]] — a systematic push technique for plateaus.
 - [[morphological-analysis]] — the combinatorial alternative to unstructured generation.
+- [[multi-framework-ideation]] — the heavier multi-pass sibling; use it instead when a single push technique keeps collapsing to the obvious answer.

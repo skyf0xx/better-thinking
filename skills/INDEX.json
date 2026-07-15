@@ -5,8 +5,8 @@
     "recipes/*.md"
   ],
   "counts": {
-    "total": 130,
-    "built": 130
+    "total": 132,
+    "built": 132
   },
   "skills": [
     {
@@ -75,7 +75,8 @@
       "related": [
         "explanatory-analogy",
         "concept-blending",
-        "mental-model-extraction"
+        "mental-model-extraction",
+        "multi-framework-ideation"
       ],
       "path": "skills/library/analogical-reasoning.md"
     },
@@ -709,7 +710,8 @@
       "related": [
         "idea-convergence",
         "scamper",
-        "morphological-analysis"
+        "morphological-analysis",
+        "multi-framework-ideation"
       ],
       "path": "skills/library/divergent-ideation.md"
     },
@@ -1026,7 +1028,8 @@
       "related": [
         "divergent-ideation",
         "weighted-scoring",
-        "ideation-sprint"
+        "ideation-sprint",
+        "spread-potential-scoring"
       ],
       "path": "skills/library/idea-convergence.md"
     },
@@ -1259,9 +1262,26 @@
       "related": [
         "divergent-ideation",
         "solution-space-mapping",
-        "scamper"
+        "scamper",
+        "multi-framework-ideation"
       ],
       "path": "skills/library/morphological-analysis.md"
+    },
+    {
+      "name": "multi-framework-ideation",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Generate ideas by running several structurally different generation mechanisms — morphological, analogical, provocation, first-principles — as separate passes, instead of one prompt that collapses toward a single region of idea-space.",
+      "triggers": "asked to brainstorm, name something, or generate many options, especially if prior AI-generated ideas felt samey or interchangeable.",
+      "related": [
+        "divergent-ideation",
+        "morphological-analysis",
+        "analogical-reasoning",
+        "spread-potential-scoring"
+      ],
+      "path": "skills/library/multi-framework-ideation.md"
     },
     {
       "name": "narrative-construction",
@@ -1942,6 +1962,21 @@
       "path": "skills/library/source-credibility.md"
     },
     {
+      "name": "spread-potential-scoring",
+      "type": "atomic",
+      "category": "creativity",
+      "difficulty": 3,
+      "status": "built",
+      "one_line": "Score consumer product/feature ideas meant to spread person-to-person on five multiplicative gates — Payload, Transport-Reach, Sender Payoff, Receive Conversion, Loop Closure — in a single skeptical pass.",
+      "triggers": "ranking, narrowing, or evaluating ideas specifically for virality or organic growth potential after a divergence step; not a fit for naming, B2B, or ideas with no P2P spread mechanic.",
+      "related": [
+        "idea-convergence",
+        "weighted-scoring",
+        "multi-framework-ideation"
+      ],
+      "path": "skills/library/spread-potential-scoring.md"
+    },
+    {
       "name": "stakeholder-impact",
       "type": "atomic",
       "category": "ethics",
@@ -2226,7 +2261,8 @@
         "decision-analysis",
         "satisficing-thresholds",
         "sensitivity-analysis",
-        "decision-framing"
+        "decision-framing",
+        "spread-potential-scoring"
       ],
       "path": "skills/library/weighted-scoring.md"
     },

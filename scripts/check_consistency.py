@@ -51,7 +51,16 @@ TOKEN_BUDGET = {"atomic": 900, "composite": 1700, "dispatcher": 2000}
 # Per-skill budget exceptions, documented in CONTRIBUTING.md's "Stay in
 # budget" section. Grant sparingly -- a skill earns one by actually needing
 # more procedure text for its specific job, not by category membership.
-TOKEN_BUDGET_EXCEPTIONS = {"better-thinking-recipes": 2500}
+TOKEN_BUDGET_EXCEPTIONS = {
+    "better-thinking-recipes": 2500,
+    # Fixed 4-mechanism enumeration (morphological/analogical/provocation/
+    # first-principles) plus an evidence-sourcing rule; none can be cut
+    # without losing a distinct generation mechanism the skill encodes.
+    "multi-framework-ideation": 1300,
+    # Fixed 5-gate rubric plus two modifiers and a hard filter; none can be
+    # cut without losing part of the scoring mechanic the skill encodes.
+    "spread-potential-scoring": 1250,
+}
 
 errors = []
 warnings = []
