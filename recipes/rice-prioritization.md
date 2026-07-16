@@ -27,3 +27,4 @@ RICE presumes a backlog of already-identified candidate features; it doesn't gen
 - [[jobs-to-be-done]] — typically feeds this recipe's backlog: JTBD identifies real needs worth building for, RICE then sequences which to build first.
 - [[lean-startup]] — once a RICE-prioritized feature ships, lean-startup's measure/learn loop is how its actual impact gets checked against the Impact/Confidence estimate used to rank it.
 - [[dmaic]] — if Improve surfaces multiple candidate fixes competing for the same limited engineering time across several processes at once, RICE is the natural way to sequence them.
+- [[growth-loop-design]] — a specialized alternative to this recipe's sequencing step when the candidates are specifically growth-loop mechanics already gate-scored for spread potential.

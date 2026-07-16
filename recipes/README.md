@@ -10,6 +10,7 @@
 | [rice-prioritization.md](rice-prioritization.md) | RICE Prioritization | You have a long list of things you could work on and limited time to do them. | A ranked order, backed by a transparent score, so you can defend why X comes before Y. |
 | [five-forces-strategy.md](five-forces-strategy.md) | Five Forces Competitive Strategy | You want to understand why an industry is profitable (or brutal) and where your business stands in it. | A clear-eyed picture of the competitive pressures at play, and a stance for how to respond to them. |
 | [dmaic.md](dmaic.md) | DMAIC (Six Sigma) | You have an existing process that's underperforming and want to fix the real cause, not just the symptom. | A verified root cause, a priced fix, and controls that catch the process drifting back to its old failure mode. |
+| [growth-loop-design.md](growth-loop-design.md) | Growth Loop Design | You want your product to spread person-to-person and need a real viral mechanic, not a hopeful referral-program bolt-on. | A diverse set of candidate loop mechanics, gate-scored on whether they actually spread, with the strongest one sequenced to build first. |
 
 ## Conventions
 

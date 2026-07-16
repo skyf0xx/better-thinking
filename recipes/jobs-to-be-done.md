@@ -27,3 +27,4 @@ Actually recruiting and scheduling interview subjects, and any quantitative mark
 
 - [[lean-startup]] — JTBD determines whether a falsifiable hypothesis exists at all; lean-startup takes that hypothesis and runs the build-measure-learn loop on it.
 - [[design-thinking]] — shares the empathize-first instinct, but JTBD is narrower and more falsification-oriented: it exists specifically to kill false market signals before they become build decisions.
+- [[growth-loop-design]] — a natural downstream consumer: once JTBD establishes the real job and friction, that same Who×Job×Friction material seeds growth-loop-design's ideation step directly.
