@@ -2,7 +2,7 @@
   "name": "better-thinking",
   "displayName": "Better Thinking",
   "description": "An operating system for cognition: 135 composable Agent Skills that encode transferable thinking procedures (reasoning, decision-making, research, analysis, forecasting, creativity, communication, collaboration, learning, metacognition, ethics), routed through a better-thinking dispatcher backed by a machine-readable index.",
-  "version": "0.9.5",
+  "version": "0.10.0",
   "author": {
     "name": "Will"
   },
