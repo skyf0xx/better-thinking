@@ -8,7 +8,7 @@ description: >
 type: dispatcher
 category: metacognition
 difficulty: 3
-tokens: ~2000
+tokens: ~2250
 dependencies: []
 related: [effort-calibration, reversibility-classification, bias-audit, epistemic-tagging, better-thinking-recipes]
 ---
@@ -36,21 +36,23 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Classify by shape first — decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination. Shape determines which skill family is even relevant.
 - Classify by stakes and reversibility second. This determines depth, independent of shape.
 - A task can be routine in domain but high-stakes in consequence — don't classify by surface topic or tone alone.
+- Resolve vague or underspecified language before routing — routing a fuzzy restatement of the request just picks the wrong tool with more confidence.
 - Re-triage if the task's real shape differs once underway; the initial classification is a hypothesis, not a commitment.
 
 ## Procedure
 
 1. Identify the task's shape: decision, diagnosis, research question, creative generation, communication, learning, negotiation, or a combination.
 2. Identify stakes and reversibility — a gut check, or run [[reversibility-classification]] if unclear.
-3. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. If it prints a stderr warning about zero/no signal, discard its output and rely on step 3b alone.
-3b. Always — even when step 3 looks confident — skim every `name`+`category`+`one_line` in `skills/INDEX.json` for the task's shape, judging by *concept*, not shared words. Mandatory, not just a fallback: `route.py` is lexical and structurally blind to a same-concept, different-vocabulary match (e.g. "why does checkout conversion keep dropping" shares zero tokens with `differential-diagnosis`'s own description, yet is a strong fit). Merge both lists, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
-4. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
-5. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
-6. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `**🧠 Classifying...**` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
-7. Proceed with the selected skills at the selected depth. Label each procedure step inline as you produce it, so the response body itself reads as visibly distinct from unstructured prose: bold the step's name tagged with its category emoji, e.g. `**🎯 Framing:**`, `**🧩 Options:**`, drawn from that step's own procedure line, not copied verbatim. Keep labels short and reserved for that role — don't bold anything else. Keep each block to 2–3 sentences, or a lead sentence plus a bulleted list for enumerable content; blank-line-separate every block. Use a GFM table when comparing 2+ items on 2+ shared dimensions. On 4+-step answers, an optional `###` (not `##`) header may group related steps. Skip inline labels on trivial/quick answers, like the bookend markers.
-8. Re-triage explicitly if the actual shape turns out different mid-work — mark the pivot with `**🔄 Re-triaging...**` and say what changed, rather than adjusting silently. Report remaining ambiguity in shape or stakes as residual uncertainty.
-9. Always close with a one-line footer, prefixed **🧠**, naming the skill(s) applied — each tagged with its category emoji below — and the stakes/depth call, e.g. `**🧠 Applied:** 🎯 premortem → 📐 red-teaming → 🎯 decision-analysis (high stakes, hard to reverse)` or `**🧠 Applied:** 🔍 fermi-estimation (low stakes, reversible)`. One line even for a single skill — the emoji mark it as a recognizable signature, not a badge to escalate.
-10. On multi-skill or non-obvious-depth tasks only (the same bar as step 6), follow the Applied footer with one more line, `**✨ Caught:**`, naming the *specific* thing this task's structure surfaced that a fast, unstructured answer would have missed — a risk, an assumption, a wrong default, a hidden dependency. It must name the concrete finding from this exact task, not a generic claim like "a more thorough analysis" or "extra confidence." If nothing structure-dependent was actually surfaced (the process confirmed the obvious answer), omit the line rather than inventing one — a false "Caught" line is worse than none.
+3. Check for a missing or ambiguous objective, success criteria, or binding constraint — vague verbs ("improve," "handle"), an unstated audience/format, an open scope boundary. If found: ask when guessing wrong would waste real work, otherwise state the inferred assumption and proceed. Skip when the request is already concrete.
+4. Run `python3 scripts/route.py "<task>"` for a lexical top-8 shortlist. If it prints a stderr warning about zero/no signal, discard its output and rely on step 4b alone.
+4b. Always — even when step 4 looks confident — skim every `name`+`category`+`one_line` in `skills/INDEX.json` for the task's shape, judging by *concept*, not shared words. Mandatory, not just a fallback: `route.py` is lexical and structurally blind to a same-concept, different-vocabulary match (e.g. "why does checkout conversion keep dropping" shares zero tokens with `differential-diagnosis`'s own description, yet is a strong fit). Merge both lists, narrow by `triggers`, use `disambiguates_from` to break ties. Neither method is an oracle: verify picks, don't guess from memory.
+5. Match candidates to depth: a quick, reversible decision needs a lightweight atomic; a high-stakes, hard-to-reverse one needs a full composite pipeline.
+6. Note cross-cutting needs — most nontrivial tasks benefit from at least [[epistemic-tagging]] and [[bias-audit]] regardless of shape.
+7. On a nontrivial task (multi-skill or non-obvious depth), open with a one-line `**🧠 Classifying...**` marker before proceeding — cheap signal that triage is happening, not a report in itself. Skip it on trivial/quick answers.
+8. Proceed with the selected skills at the selected depth. Label each procedure step inline as you produce it, so the response body itself reads as visibly distinct from unstructured prose: bold the step's name tagged with its category emoji, e.g. `**🎯 Framing:**`, `**🧩 Options:**`, drawn from that step's own procedure line, not copied verbatim. Keep labels short and reserved for that role — don't bold anything else. Keep each block to 2–3 sentences, or a lead sentence plus a bulleted list for enumerable content; blank-line-separate every block. Use a GFM table when comparing 2+ items on 2+ shared dimensions. On 4+-step answers, an optional `###` (not `##`) header may group related steps. Skip inline labels on trivial/quick answers, like the bookend markers.
+9. Re-triage explicitly if the actual shape turns out different mid-work — mark the pivot with `**🔄 Re-triaging...**` and say what changed, rather than adjusting silently. Report remaining ambiguity in shape or stakes as residual uncertainty.
+10. Always close with a one-line footer, prefixed **🧠**, naming the skill(s) applied — each tagged with its category emoji below — and the stakes/depth call, e.g. `**🧠 Applied:** 🎯 premortem → 📐 red-teaming → 🎯 decision-analysis (high stakes, hard to reverse)` or `**🧠 Applied:** 🔍 fermi-estimation (low stakes, reversible)`. One line even for a single skill — the emoji mark it as a recognizable signature, not a badge to escalate.
+11. On multi-skill or non-obvious-depth tasks only (the same bar as step 7), follow the Applied footer with one more line, `**✨ Caught:**`, naming the *specific* thing this task's structure surfaced that a fast, unstructured answer would have missed — a risk, an assumption, a wrong default, a hidden dependency. It must name the concrete finding from this exact task, not a generic claim like "a more thorough analysis" or "extra confidence." If nothing structure-dependent was actually surfaced (the process confirmed the obvious answer), omit the line rather than inventing one — a false "Caught" line is worse than none.
 
 **Category emoji** (for the footer, keyed to each skill's `category` in `skills/INDEX.json`): decision-making 🎯 · problem-solving 🧩 · reasoning 🔍 · analysis 📐 · forecasting 📈 · creativity 🎨 · communication 💬 · collaboration 🤝 · learning 📚 · metacognition 🪞 · ethics ⚖️ · systems-strategy ⚙️ · research 🔎.
 
@@ -58,6 +60,8 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 
 - Applying a heavyweight composite to a low-stakes task out of habit or thoroughness-signaling.
 - Skipping triage on tasks that look routine but carry hidden stakes.
+- Routing on literal wording when a vague verb or unstated constraint leaves the real objective unpinned — this picks a confident-looking wrong skill instead of the right one.
+- Asking a clarifying question when a stated assumption would do — over-clarifying trivial ambiguity taxes the user too.
 - Triaging once and never revisiting, even after the true shape becomes clear.
 - Picking a skill from memory instead of the index when two names sound alike.
 - Trusting `route.py`'s top-8 as sufficient because it looks plausible, and skipping the full-index skim — the router can score a strong conceptual fit at 0 purely on vocabulary mismatch, and a plausible-looking wrong answer is harder to catch than an obviously empty one.
@@ -74,6 +78,7 @@ Applying full machinery to a trivial task wastes effort; applying none to a cons
 - Routing "should we relocate the warehouse or expand the current one" to a full decision pipeline, but "which font should I use" to no formal process.
 - Recognizing a "quick question" about odd behavior is actually a diagnosis task needing a structured differential.
 - Catching that a casually-worded request feeds a board decision, and escalating depth accordingly.
+- "Make the onboarding better" — stating the inferred read (cut drop-off at step 2, not a redesign) before routing, instead of guessing silently.
 
 ## Related
 
